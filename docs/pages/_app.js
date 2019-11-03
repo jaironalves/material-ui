@@ -359,7 +359,7 @@ MyApp.propTypes = {
 MyApp.getInitialProps = async ({ ctx, Component }) => {
   let pageProps = {};
 
-  if (Component.getInitialProps) {
+  if (typeof Component.getInitialProps === 'function') {
     pageProps = await Component.getInitialProps(ctx);
   }
 
