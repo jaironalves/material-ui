@@ -3,15 +3,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import throttle from 'lodash/throttle';
 import clsx from 'clsx';
-import Box from '@material-ui/core/Box';
 import { useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import DiamondSponsors from 'docs/src/modules/components/DiamondSponsors';
 import Link from 'docs/src/modules/components/Link';
 import PageContext from 'docs/src/modules/components/PageContext';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     top: 70,
     // Fix IE 11 position sticky issue.
@@ -34,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   ul: {
     padding: 0,
     margin: 0,
-    listStyle: 'none',
+    listStyleType: 'none',
   },
   item: {
     fontSize: 13,
@@ -58,28 +56,6 @@ const useStyles = makeStyles((theme) => ({
   active: {},
 }));
 
-// TODO: these nodes are mutable sources. Use createMutableSource once it's stable
-function getItemsClient(headings) {
-  const itemsWithNode = [];
-
-  headings.forEach((item) => {
-    itemsWithNode.push({
-      ...item,
-      node: document.getElementById(item.hash),
-    });
-
-    if (item.children.length > 0) {
-      item.children.forEach((subitem) => {
-        itemsWithNode.push({
-          ...subitem,
-          node: document.getElementById(subitem.hash),
-        });
-      });
-    }
-  });
-  return itemsWithNode;
-}
-
 const noop = () => {};
 
 function useThrottledOnScroll(callback, delay) {
@@ -101,17 +77,11 @@ function useThrottledOnScroll(callback, delay) {
   }, [throttledCallback]);
 }
 
-export default function AppTableOfContents(props) {
+export default function ScrollableTableOfContents(props) {
   const { items } = props;
   const classes = useStyles();
-  const t = useSelector((state) => state.options.t);
+  const t = useSelector(state => state.options.t);
 
-  const itemsWithNodeRef = React.useRef([]);
-  React.useEffect(() => {
-    itemsWithNodeRef.current = getItemsClient(items);
-  }, [items]);
-
-  const { activePage } = React.useContext(PageContext);
   const [activeState, setActiveState] = React.useState(null);
   const clickedRef = React.useRef(false);
   const unsetClickedRef = React.useRef(null);
@@ -122,14 +92,14 @@ export default function AppTableOfContents(props) {
     }
 
     let active;
-    for (let i = itemsWithNodeRef.current.length - 1; i >= 0; i -= 1) {
+    for (let i = items.length - 1; i >= 0; i -= 1) {
       // No hash if we're near the top of the page
       if (document.documentElement.scrollTop < 200) {
         active = { hash: null };
         break;
       }
 
-      const item = itemsWithNodeRef.current[i];
+      const item = items[i];
 
       if (process.env.NODE_ENV !== 'production') {
         if (!item.node) {
@@ -150,24 +120,12 @@ export default function AppTableOfContents(props) {
     if (active && activeState !== active.hash) {
       setActiveState(active.hash);
     }
-  }, [activeState]);
+  }, [activeState, items]);
 
   // Corresponds to 10 frames at 60 Hz
   useThrottledOnScroll(items.length > 0 ? findActiveIndex : null, 166);
 
-  const handleClick = (hash) => (event) => {
-    // Ignore click for new tab/new window behavior
-    if (
-      event.defaultPrevented ||
-      event.button !== 0 || // ignore everything but left-click
-      event.metaKey ||
-      event.ctrlKey ||
-      event.altKey ||
-      event.shiftKey
-    ) {
-      return;
-    }
-
+  const handleClick = hash => () => {
     // Used to disable findActiveIndex if the page scrolls due to a click
     clickedRef.current = true;
     unsetClickedRef.current = setTimeout(() => {
@@ -185,6 +143,8 @@ export default function AppTableOfContents(props) {
     },
     [],
   );
+
+  const { activePage } = React.useContext(PageContext);
 
   const itemLink = (item, secondary) => (
     <Link
@@ -205,34 +165,27 @@ export default function AppTableOfContents(props) {
 
   return (
     <nav className={classes.root} aria-label={t('pageTOC')}>
-      {items.length > 0 ? (
-        <React.Fragment>
-          <Typography gutterBottom className={classes.contents}>
-            {t('tableOfContents')}
-          </Typography>
-          <Typography component="ul" className={classes.ul}>
-            {items.map((item) => (
-              <li key={item.text}>
-                {itemLink(item)}
-                {item.children.length > 0 ? (
-                  <ul className={classes.ul}>
-                    {item.children.map((subitem) => (
-                      <li key={subitem.text}>{itemLink(subitem, true)}</li>
-                    ))}
-                  </ul>
-                ) : null}
-              </li>
-            ))}
-          </Typography>
-        </React.Fragment>
-      ) : null}
-      <Box mt={3} mb={2} mx={1.5}>
-        <DiamondSponsors />
-      </Box>
+      <Typography gutterBottom className={classes.contents}>
+        {t('tableOfContents')}
+      </Typography>
+      <Typography component="ul" className={classes.ul}>
+        {items.map(item2 => (
+          <li key={item2.text}>
+            {itemLink(item2)}
+            {item2.children.length > 0 ? (
+              <ul className={classes.ul}>
+                {item2.children.map(item3 => (
+                  <li key={item3.text}>{itemLink(item3, true)}</li>
+                ))}
+              </ul>
+            ) : null}
+          </li>
+        ))}
+      </Typography>
     </nav>
   );
 }
 
-AppTableOfContents.propTypes = {
+ScrollableTableOfContents.propTypes = {
   items: PropTypes.array.isRequired,
 };
