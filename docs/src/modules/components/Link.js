@@ -2,7 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
-import { Router as NextRouter, useRouter } from 'next/router';
+import { useRouter } from 'next/router';
+import { rewriteUrlForNextExport } from 'next/dist/next-server/lib/router/rewrite-url-for-export';
 import NextLink from 'next/link';
 import MuiLink from '@material-ui/core/Link';
 import { useSelector } from 'react-redux';
@@ -30,7 +31,7 @@ function Link(props) {
     activeClassName = 'active',
     as: asProp,
     className: classNameProps,
-    href,
+    href: hrefRouter,
     innerRef,
     naked,
     role: roleProp,
@@ -38,14 +39,14 @@ function Link(props) {
   } = props;
   const pathname =
     // eslint-disable-next-line no-nested-ternary
-    typeof href === 'string'
-      ? href
-      : href != null
+    typeof hrefRouter === 'string'
+      ? hrefRouter
+      : hrefRouter != null
       ? // href object for next/link: { pathname: string, query?: string }
-        href.pathname
+      hrefRouter.pathname
       : undefined;
-  /* eslint-disable-next-line no-underscore-dangle */
-  let asPath = NextRouter._rewriteUrlForNextExport(asProp || href);
+
+  let asPath = rewriteUrlForNextExport(asProp || hrefRouter);
 
   const userLanguage = useSelector((state) => state.options.userLanguage);
   if (userLanguage !== 'en' && pathname.indexOf('/') === 0 && pathname.indexOf('/blog') !== 0) {
@@ -53,7 +54,7 @@ function Link(props) {
   }
 
   // apply nextjs rewrites
-  // const href = routerHref.replace(/\/api-docs\/(.*)/, '/api/$1');
+  const href = asPath.replace(/\/api-docs\/(.*)/, '/api/$1');
 
   const router = useRouter();
   const isActivePage = router.asPath === asPath;
@@ -64,7 +65,7 @@ function Link(props) {
   // catch role passed from ButtonBase. This is definitely a link
   const role = roleProp === 'button' ? undefined : roleProp;
 
-  const isExternal = href.indexOf('https:') === 0 || href.indexOf('mailto:') === 0;
+  const isExternal = 1 === 2;// href.indexOf('https:') === 0 || href.indexOf('mailto:') === 0;
 
   if (isExternal) {
     return <MuiLink className={className} href={href} ref={innerRef} role={role} {...other} />;
