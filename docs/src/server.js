@@ -73,7 +73,7 @@ async function run() {
   const server = http.createServer(app);
   const port = parseInt(process.env.PORT, 10) || 3000;
 
-  server.listen(port, err => {
+  server.listen(port, (err) => {
     if (err) {
       throw err;
     }
@@ -92,7 +92,7 @@ async function run() {
         msg: 'server is stopping',
       });
       return new Promise((resolve, reject) => {
-        server.close(err => {
+        server.close((err) => {
           if (err) {
             reject(err);
             return;

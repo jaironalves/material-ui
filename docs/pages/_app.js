@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import 'docs/src/modules/components/bootstrap';
 // --- Post bootstrap -----
 import React from 'react';
@@ -37,24 +36,12 @@ function useFirstRender() {
   return firstRenderRef.current;
 }
 
-acceptLanguage.languages(['en', 'zh', 'pt']);
-
-function loadCrowdin() {
-  window._jipt = [];
-  window._jipt.push(['project', 'material-ui-docs']);
-  loadScript('https://cdn.crowdin.com/jipt/jipt.js', document.querySelector('head'));
-}
+acceptLanguage.languages(['en', 'zh', 'pt', 'ru']);
 
 function LanguageNegotiation() {
   const dispatch = useDispatch();
   const router = useRouter();
   const userLanguage = useSelector((state) => state.options.userLanguage);
-
-  React.useEffect(() => {
-    if (userLanguage === 'aa') {
-      loadCrowdin();
-    }
-  }, [userLanguage]);
 
   React.useEffect(() => {
     const { userLanguage: userLanguageUrl, canonical } = pathnameToLanguage(
@@ -345,18 +332,6 @@ MyApp.propTypes = {
 };
 
 MyApp.getInitialProps = async ({ ctx, Component }) => {
-  // let pageProps = {};
-
-  // if (Component.getInitialProps) {
-  //   pageProps = await Component.getInitialProps(ctx);
-  // }
-
-  // return {
-  //   pageProps: {
-  //     userLanguage: ctx.query.userLanguage || 'en',
-  //     ...pageProps,
-  //   },
-  // };
   let pageProps = {};
 
   if (typeof Component.getInitialProps === 'function') {
@@ -377,7 +352,29 @@ MyApp.getInitialProps = async ({ ctx, Component }) => {
     };
   }
 
+  // console.log('MyApp.getInitialProps')
+  // console.log(pageProps)
   return {
-    pageProps,
+    pageProps: {
+      userLanguage: ctx.query.userLanguage || 'en',
+      ...pageProps,
+    },
   };
 };
+
+// Track fraction of actual events to prevent exceeding event quota.
+// Filter sessions instead of individual events so that we can track multiple metrics per device.
+const disableWebVitalsReporting = Math.random() > 0.0001;
+export function reportWebVitals({ id, name, label, value }) {
+  if (disableWebVitalsReporting) {
+    return;
+  }
+
+  window.ga('send', 'event', {
+    eventCategory: label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
+    eventAction: name,
+    eventValue: Math.round(name === 'CLS' ? value * 1000 : value), // values must be integers
+    eventLabel: id, // id unique to current page load
+    nonInteraction: true, // avoids affecting bounce rate.
+  });
+}

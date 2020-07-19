@@ -8,7 +8,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import NoSsr from '@material-ui/core/NoSsr';
 import Link from 'docs/src/modules/components/Link';
-import PageContext from 'docs/src/modules/components/PageContext';
 import Ad from 'docs/src/modules/components/Ad';
 
 const useStyles = makeStyles((theme) => ({
@@ -109,7 +108,6 @@ export default function ScrollableTableOfContents(props) {
     itemsWithNodeRef.current = getItemsClient(items);
   }, [items]);
 
-  const { activePage } = React.useContext(PageContext);
   const [activeState, setActiveState] = React.useState(null);
   const clickedRef = React.useRef(false);
   const unsetClickedRef = React.useRef(null);
@@ -188,7 +186,7 @@ export default function ScrollableTableOfContents(props) {
     <Link
       display="block"
       color={activeState === item.hash ? 'textPrimary' : 'textSecondary'}
-      href={`${activePage.pathname}#${item.hash}`}
+      href={`#${item.hash}`}
       underline="none"
       onClick={handleClick(item.hash)}
       className={clsx(

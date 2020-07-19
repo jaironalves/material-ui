@@ -87,8 +87,8 @@ function FunctionSignature(props) {
     return null;
   }
 
-  const paramTags = tags.filter(tag => tag.title === 'param');
-  const returnTag = tags.find(tag => tag.title === 'returns') || { type: { name: 'void' } };
+  const paramTags = tags.filter((tag) => tag.title === 'param');
+  const returnTag = tags.find((tag) => tag.title === 'returns') || { type: { name: 'void' } };
 
   return (
     <React.Fragment>
@@ -97,7 +97,7 @@ function FunctionSignature(props) {
       <code>
         function(
         <Join separator=", ">
-          {paramTags.map(tag => {
+          {paramTags.map((tag) => {
             if (tag.type.type === 'AllLiteral') {
               return `${tag.name}: any`;
             }
@@ -113,7 +113,7 @@ function FunctionSignature(props) {
       </code>
       <br />
       <Join separator={<br />}>
-        {paramTags.map(tag => {
+        {paramTags.map((tag) => {
           if (tag.description == null) {
             throw new TypeError(`@param tag '${tag.name}' has no description`);
           }
@@ -213,7 +213,7 @@ function PropType(props) {
         <React.Fragment>
           {'{ '}
           <Join separator=", ">
-            {Object.keys(type.value).map(key => {
+            {Object.keys(type.value).map((key) => {
               const subType = type.value[key];
               return (
                 <React.Fragment key={key}>
@@ -238,7 +238,7 @@ function PropType(props) {
             </React.Fragment>
           }
         >
-          {type.value.map(member => {
+          {type.value.map((member) => {
             return member.value;
           })}
         </Join>
@@ -278,7 +278,7 @@ function PropType(props) {
 
 PropType.propTypes = { type: PropTypes.object.isRequired };
 
-const useComponentPropStyles = makeStyles(theme => {
+const useComponentPropStyles = makeStyles((theme) => {
   // let the specificity games begin
   return {
     propDefault: {
@@ -353,7 +353,7 @@ function ComponentPropsTable(props) {
         </tr>
       </thead>
       <tbody>
-        {Object.keys(propsApi).map(propName => {
+        {Object.keys(propsApi).map((propName) => {
           return <ComponentProp key={propName} name={propName} prop={propsApi[propName]} />;
         })}
       </tbody>
@@ -411,7 +411,7 @@ function ClassesTable(props) {
         </tr>
       </thead>
       <tbody>
-        {styles.classes.map(styleRule => {
+        {styles.classes.map((styleRule) => {
           return (
             <tr key={styleRule}>
               <td className={classes.propName}>{styleRule}</td>
@@ -436,7 +436,7 @@ function ClassesList(props) {
 
   return (
     <ul>
-      {styles.classes.map(styleRule => {
+      {styles.classes.map((styleRule) => {
         return <li key={styleRule}>{styleRule}</li>;
       })}
     </ul>
@@ -537,7 +537,7 @@ function ComponentDemos(props) {
 
   return (
     <ul>
-      {pages.map(pathname => {
+      {pages.map((pathname) => {
         return (
           <li key={pathname}>
             <Link href={pathname}>{pageToTitle({ pathname })}</Link>
@@ -585,7 +585,7 @@ function useTocItems(api) {
   }, [api]);
 
   return React.useMemo(() => {
-    const items = ids.map(id => {
+    const items = ids.map((id) => {
       return {
         children: [],
         hash: id,
@@ -602,7 +602,7 @@ function useTocItems(api) {
 
 const useMarkdownStyles = makeStyles(markdownStyles);
 const useComponentApiStyles = makeStyles(
-  theme => {
+  (theme) => {
     return {
       container: {
         position: 'relative',
@@ -624,7 +624,7 @@ function ComponentApi(props) {
 
   const toCItems = useTocItems(api);
   const headings = {};
-  toCItems.forEach(item => {
+  toCItems.forEach((item) => {
     headings[item.hash] = item;
   });
 
@@ -715,7 +715,7 @@ function ApiPage(props) {
 }
 
 function kebapToCamelCase(kebapCased) {
-  return kebapCased.replace(/-([a-z])/g, g => {
+  return kebapCased.replace(/-([a-z])/g, (g) => {
     return g[1].toUpperCase();
   });
 }
@@ -724,7 +724,7 @@ function uppercaseFirst(string) {
   return string[0].toUpperCase() + string.slice(1);
 }
 
-ApiPage.getInitialProps = async ctx => {
+ApiPage.getInitialProps = async (ctx) => {
   const { query, req } = ctx;
   if (query.component === undefined) {
     return {};
