@@ -1,5 +1,6 @@
 {
-  "description": "The Grow transition is used by the [Tooltip](/components/tooltips/) and\n[Popover](/components/popover/) components.\nIt uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.",
+  "description": "The Grow transition is used by the [Tooltip](/components/tooltips/) and\r\n[Popover](/components/popover/) components.\r\nIt uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.",
+  "displayName": "Grow",
   "methods": [],
   "props": {
     "children": {
@@ -8,6 +9,18 @@
       },
       "required": false,
       "description": "A single child content element.",
+      "tags": []
+    },
+    "disableStrictModeCompat": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Enable this prop if you encounter 'Function components cannot be given refs',\r\nuse `unstable_createStrictModeTheme`,\r\nand can't forward the ref in the child component.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
       "tags": []
     },
     "in": {
@@ -23,11 +36,24 @@
         "name": "union",
         "value": [
           {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'auto'",
+                "computed": false
+              }
+            ]
+          },
+          {
             "name": "number"
           },
           {
             "name": "shape",
             "value": {
+              "appear": {
+                "name": "number",
+                "required": false
+              },
               "enter": {
                 "name": "number",
                 "required": false
@@ -37,20 +63,11 @@
                 "required": false
               }
             }
-          },
-          {
-            "name": "enum",
-            "value": [
-              {
-                "value": "'auto'",
-                "computed": false
-              }
-            ]
           }
         ]
       },
       "required": false,
-      "description": "The duration for the transition, in milliseconds.\nYou may specify a single timeout for all transitions, or individually with an object.\n\nSet to 'auto' to automatically calculate transition time based on height.",
+      "description": "The duration for the transition, in milliseconds.\r\nYou may specify a single timeout for all transitions, or individually with an object.\r\n\r\nSet to 'auto' to automatically calculate transition time based on height.",
       "defaultValue": {
         "value": "'auto'",
         "computed": false
@@ -66,7 +83,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Grow/Grow.js",
+  "filename": "\\packages\\material-ui\\src\\Grow\\Grow.js",
   "inheritance": {
     "component": "Transition",
     "pathname": "https://reactcommunity.org/react-transition-group/transition#Transition-props"

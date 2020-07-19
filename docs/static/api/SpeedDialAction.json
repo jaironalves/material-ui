@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "SpeedDialAction",
   "methods": [],
   "props": {
     "classes": {
@@ -7,7 +8,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "delay": {
@@ -42,12 +43,28 @@
       "description": "The Icon to display in the SpeedDial Fab.",
       "tags": []
     },
+    "id": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "This prop is used to help implement the accessibility logic.\r\nIf you don't provide this prop. It falls back to a randomly generated id.",
+      "tags": []
+    },
+    "open": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the tooltip is shown.",
+      "tags": []
+    },
     "TooltipClasses": {
       "type": {
         "name": "object"
       },
       "required": false,
-      "description": "Classes applied to the [`Tooltip`](/api/tooltip/) element.",
+      "description": "`classes` prop applied to the [`Tooltip`](/api/tooltip/) element.",
       "tags": []
     },
     "tooltipOpen": {
@@ -166,7 +183,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLButtonElement",
-  "filename": "/packages/material-ui-lab/src/SpeedDialAction/SpeedDialAction.js",
+  "filename": "\\packages\\material-ui-lab\\src\\SpeedDialAction\\SpeedDialAction.js",
   "inheritance": {
     "component": "Tooltip",
     "pathname": "/api/tooltip"

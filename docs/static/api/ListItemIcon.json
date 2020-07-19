@@ -1,21 +1,22 @@
 {
   "description": "A simple wrapper to apply `List` styles to an `Icon` or `SvgIcon`.",
+  "displayName": "ListItemIcon",
   "methods": [],
   "props": {
     "children": {
       "type": {
-        "name": "element"
+        "name": "node"
       },
-      "required": true,
-      "description": "The content of the component, normally `Icon`, `SvgIcon`,\nor a `@material-ui/icons` SVG icon element.",
+      "required": false,
+      "description": "The content of the component, normally `Icon`, `SvgIcon`,\r\nor a `@material-ui/icons` SVG icon element.",
       "tags": []
     },
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     }
   },
@@ -37,7 +38,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/ListItemIcon/ListItemIcon.js",
+  "filename": "\\packages\\material-ui\\src\\ListItemIcon\\ListItemIcon.js",
   "inheritance": null,
   "usedInPages": [
     "/components/lists"

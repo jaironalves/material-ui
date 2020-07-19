@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "ToggleButtonGroup",
   "methods": [],
   "props": {
     "children": {
@@ -15,7 +16,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "exclusive": {
@@ -48,7 +49,7 @@
         },
         {
           "title": "param",
-          "description": "of the selected buttons. When `exclusive` is true\nthis is a single value; when false an array of selected values. If no value\nis selected and `exclusive` is true the value is null; when false an empty array.",
+          "description": "of the selected buttons. When `exclusive` is true\r\nthis is a single value; when false an array of selected values. If no value\r\nis selected and `exclusive` is true the value is null; when false an empty array.",
           "type": {
             "type": "NameExpression",
             "name": "any"
@@ -56,6 +57,28 @@
           "name": "value"
         }
       ]
+    },
+    "orientation": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'horizontal'",
+            "computed": false
+          },
+          {
+            "value": "'vertical'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The group orientation (layout flow direction).",
+      "defaultValue": {
+        "value": "'horizontal'",
+        "computed": false
+      },
+      "tags": []
     },
     "size": {
       "type": {
@@ -88,7 +111,7 @@
         "name": "any"
       },
       "required": false,
-      "description": "The currently selected value within the group or an array of selected\nvalues when `exclusive` is false.",
+      "description": "The currently selected value within the group or an array of selected\r\nvalues when `exclusive` is false.\r\n\r\nThe value must have reference equality with the option in order to be selected.",
       "tags": []
     }
   },
@@ -96,27 +119,30 @@
   "styles": {
     "classes": [
       "root",
+      "vertical",
       "grouped",
-      "groupedSizeSmall",
-      "groupedSizeLarge"
+      "groupedHorizontal",
+      "groupedVertical"
     ],
     "name": "MuiToggleButtonGroup",
     "descriptions": {
       "root": "Styles applied to the root element.",
+      "vertical": "Styles applied to the root element if `orientation=\"vertical\"`.",
       "grouped": "Styles applied to the children.",
-      "groupedSizeSmall": "Styles applied to the children if `size=\"small\"`.",
-      "groupedSizeLarge": "Styles applied to the children if `size=\"large\"`."
+      "groupedHorizontal": "Styles applied to the children if `orientation=\"horizontal\"`.",
+      "groupedVertical": "Styles applied to the children if `orientation=\"vertical\"`."
     },
     "globalClasses": {
       "root": "MuiToggleButtonGroup-root",
+      "vertical": "MuiToggleButtonGroup-vertical",
       "grouped": "MuiToggleButtonGroup-grouped",
-      "groupedSizeSmall": "MuiToggleButtonGroup-groupedSizeSmall",
-      "groupedSizeLarge": "MuiToggleButtonGroup-groupedSizeLarge"
+      "groupedHorizontal": "MuiToggleButtonGroup-groupedHorizontal",
+      "groupedVertical": "MuiToggleButtonGroup-groupedVertical"
     }
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui-lab/src/ToggleButtonGroup/ToggleButtonGroup.js",
+  "filename": "\\packages\\material-ui-lab\\src\\ToggleButtonGroup\\ToggleButtonGroup.js",
   "inheritance": null,
   "usedInPages": [
     "/components/toggle-button"

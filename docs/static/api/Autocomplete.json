@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Autocomplete",
   "methods": [],
   "props": {
     "autoComplete": {
@@ -84,6 +85,18 @@
       "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
+    "clearOnBlur": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the input's text will be cleared on blur if no value is selected.\n\nSet to `true` if you want to help the user enter a new value.\nSet to `false` if you want to help the user resume his search.",
+      "defaultValue": {
+        "value": "!props.freeSolo",
+        "computed": false
+      },
+      "tags": []
+    },
     "clearOnEscape": {
       "type": {
         "name": "bool"
@@ -137,7 +150,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the popup will ignore the blur event if the input if filled.\nYou can inspect the popup markup with your browser tools.\nConsider this option when you need to customize the component.",
+      "description": "If `true`, the popup will ignore the blur event if the input is filled.\nYou can inspect the popup markup with your browser tools.\nConsider this option when you need to customize the component.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -146,15 +159,7 @@
     },
     "defaultValue": {
       "type": {
-        "name": "union",
-        "value": [
-          {
-            "name": "any"
-          },
-          {
-            "name": "array"
-          }
-        ]
+        "name": "any"
       },
       "required": false,
       "description": "The default input value. Use when the component is not controlled.",
@@ -200,6 +205,18 @@
       },
       "tags": []
     },
+    "disabledItemsFocusable": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, will allow focus on disabled items.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
     "disableListWrap": {
       "type": {
         "name": "bool"
@@ -217,7 +234,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "Disable the portal behavior.\nThe children stay within it's parent DOM hierarchy.",
+      "description": "The `Popper` content will be inside the DOM hierarchy of the parent component.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -327,13 +344,73 @@
       },
       "tags": []
     },
+    "fullWidth": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the input will take up the full width of its container.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
+    "getLimitTagsText": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "The label to display when the tags are truncated (`limitTags`).",
+      "defaultValue": {
+        "value": "(more) => `+${more}`",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "param",
+          "description": "The number of truncated tags.",
+          "type": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "name": "more"
+        },
+        {
+          "title": "returns",
+          "description": null,
+          "type": {
+            "type": "NameExpression",
+            "name": "ReactNode"
+          }
+        }
+      ]
+    },
     "getOptionDisabled": {
       "type": {
         "name": "func"
       },
       "required": false,
       "description": "Used to determine the disabled state for a given option.",
-      "tags": []
+      "tags": [
+        {
+          "title": "param",
+          "description": "The option to test.",
+          "type": {
+            "type": "NameExpression",
+            "name": "T"
+          },
+          "name": "option"
+        },
+        {
+          "title": "returns",
+          "description": null,
+          "type": {
+            "type": "NameExpression",
+            "name": "boolean"
+          }
+        }
+      ]
     },
     "getOptionLabel": {
       "type": {
@@ -342,18 +419,63 @@
       "required": false,
       "description": "Used to determine the string value for a given option.\nIt's used to fill the input (and the list box options if `renderOption` is not provided).",
       "defaultValue": {
-        "value": "x => x",
+        "value": "(x) => x",
         "computed": false
       },
-      "tags": []
+      "tags": [
+        {
+          "title": "param",
+          "description": null,
+          "type": {
+            "type": "NameExpression",
+            "name": "T"
+          },
+          "name": "option"
+        },
+        {
+          "title": "returns",
+          "description": null,
+          "type": {
+            "type": "NameExpression",
+            "name": "string"
+          }
+        }
+      ]
     },
     "getOptionSelected": {
       "type": {
         "name": "func"
       },
       "required": false,
-      "description": "Used to determine if an option is selected.\nUses strict equality by default.",
-      "tags": []
+      "description": "Used to determine if an option is selected, considering the current value.\nUses strict equality by default.",
+      "tags": [
+        {
+          "title": "param",
+          "description": "The option to test.",
+          "type": {
+            "type": "NameExpression",
+            "name": "T"
+          },
+          "name": "option"
+        },
+        {
+          "title": "param",
+          "description": "The value to test against.",
+          "type": {
+            "type": "NameExpression",
+            "name": "T"
+          },
+          "name": "value"
+        },
+        {
+          "title": "returns",
+          "description": null,
+          "type": {
+            "type": "NameExpression",
+            "name": "boolean"
+          }
+        }
+      ]
     },
     "groupBy": {
       "type": {
@@ -364,7 +486,7 @@
       "tags": [
         {
           "title": "param",
-          "description": "The option to group.",
+          "description": "The options to group.",
           "type": {
             "type": "NameExpression",
             "name": "T"
@@ -380,6 +502,18 @@
           }
         }
       ]
+    },
+    "handleHomeEndKeys": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the component handles the \"Home\" and \"End\" keys when the popup is open.\nIt should move focus to the first option and last option, respectively.",
+      "defaultValue": {
+        "value": "!props.freeSolo",
+        "computed": false
+      },
+      "tags": []
     },
     "id": {
       "type": {
@@ -407,6 +541,18 @@
       },
       "required": false,
       "description": "The input value.",
+      "tags": []
+    },
+    "limitTags": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "The maximum number of tags that will be visible when not focused.\nSet `-1` to disable the limit.",
+      "defaultValue": {
+        "value": "-1",
+        "computed": false
+      },
       "tags": []
     },
     "ListboxComponent": {
@@ -495,12 +641,39 @@
         },
         {
           "title": "param",
-          "description": "The new value of the Autocomplete",
+          "description": "The new value of the component.",
           "type": {
-            "type": "NameExpression",
-            "name": "T"
+            "type": "UnionType",
+            "elements": [
+              {
+                "type": "NameExpression",
+                "name": "T"
+              },
+              {
+                "type": "TypeApplication",
+                "expression": {
+                  "type": "NameExpression",
+                  "name": "Array"
+                },
+                "applications": [
+                  {
+                    "type": "NameExpression",
+                    "name": "T"
+                  }
+                ]
+              }
+            ]
           },
           "name": "value"
+        },
+        {
+          "title": "param",
+          "description": "One of \"create-option\", \"select-option\", \"remove-option\", \"blur\" or \"clear\".",
+          "type": {
+            "type": "NameExpression",
+            "name": "string"
+          },
+          "name": "reason"
         }
       ]
     },
@@ -519,6 +692,51 @@
             "name": "object"
           },
           "name": "event"
+        },
+        {
+          "title": "param",
+          "description": "Can be: `\"toggleInput\"`, `\"escape\"`, `\"select-option\"`, `\"blur\"`.",
+          "type": {
+            "type": "NameExpression",
+            "name": "string"
+          },
+          "name": "reason"
+        }
+      ]
+    },
+    "onHighlightChange": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "Callback fired when the highlight option changes.",
+      "tags": [
+        {
+          "title": "param",
+          "description": "The event source of the callback.",
+          "type": {
+            "type": "NameExpression",
+            "name": "object"
+          },
+          "name": "event"
+        },
+        {
+          "title": "param",
+          "description": "The highlighted option.",
+          "type": {
+            "type": "NameExpression",
+            "name": "T"
+          },
+          "name": "option"
+        },
+        {
+          "title": "param",
+          "description": "Can be: `\"keyboard\"`, `\"auto\"`, `\"mouse\"`.",
+          "type": {
+            "type": "NameExpression",
+            "name": "string"
+          },
+          "name": "reason"
         }
       ]
     },
@@ -819,15 +1037,7 @@
     },
     "value": {
       "type": {
-        "name": "union",
-        "value": [
-          {
-            "name": "any"
-          },
-          {
-            "name": "array"
-          }
-        ]
+        "name": "any"
       },
       "required": false,
       "description": "The value of the autocomplete.\n\nThe value must have reference equality with the option in order to be selected.\nYou can customize the equality behavior with the `getOptionSelected` prop.",
@@ -838,6 +1048,7 @@
   "styles": {
     "classes": [
       "root",
+      "fullWidth",
       "focused",
       "tag",
       "tagSizeSmall",
@@ -864,6 +1075,8 @@
     "name": "MuiAutocomplete",
     "descriptions": {
       "root": "Styles applied to the root element.",
+      "": "Avoid double tap issue on iOS",
+      "fullWidth": "Styles applied to the root element if `fullWidth={true}`.",
       "focused": "Pseudo-class applied to the root element if focused.",
       "tag": "Styles applied to the tag elements, e.g. the chips.",
       "tagSizeSmall": "Styles applied to the tag elements, e.g. the chips if `size=\"small\"`.",
@@ -890,6 +1103,7 @@
     },
     "globalClasses": {
       "root": "MuiAutocomplete-root",
+      "fullWidth": "MuiAutocomplete-fullWidth",
       "focused": "Mui-focused",
       "tag": "MuiAutocomplete-tag",
       "tagSizeSmall": "MuiAutocomplete-tagSizeSmall",
@@ -916,7 +1130,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui-lab/src/Autocomplete/Autocomplete.js",
+  "filename": "\\packages\\material-ui-lab\\src\\Autocomplete\\Autocomplete.js",
   "inheritance": null,
   "usedInPages": [
     "/components/autocomplete"

@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "CardActionArea",
   "methods": [],
   "props": {
     "children": {
@@ -14,8 +15,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     }
   },
@@ -40,7 +41,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLButtonElement",
-  "filename": "/packages/material-ui/src/CardActionArea/CardActionArea.js",
+  "filename": "\\packages\\material-ui\\src\\CardActionArea\\CardActionArea.js",
   "inheritance": {
     "component": "ButtonBase",
     "pathname": "/api/button-base"

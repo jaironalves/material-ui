@@ -1,14 +1,12 @@
 {
   "description": "",
+  "displayName": "Slider",
   "methods": [],
   "props": {
     "aria-label": {
       "type": {
-        "name": "chained",
-        "raw": "chainPropTypes(PropTypes.string, props => {\n  const range = Array.isArray(props.value || props.defaultValue);\n\n  if (range && props['aria-label'] != null) {\n    return new Error(\n      'Material-UI: you need to use the `getAriaLabel` prop instead of `aria-label` when using a range slider.',\n    );\n  }\n\n  return null;\n})",
-        "chained": {
-          "name": "string"
-        }
+        "name": "custom",
+        "raw": "chainPropTypes(PropTypes.string, (props) => {\r\n  const range = Array.isArray(props.value || props.defaultValue);\r\n\r\n  if (range && props['aria-label'] != null) {\r\n    return new Error(\r\n      'Material-UI: You need to use the `getAriaLabel` prop instead of `aria-label` when using a range slider.',\r\n    );\r\n  }\r\n\r\n  return null;\r\n})"
       },
       "required": false,
       "description": "The label of the slider.",
@@ -24,11 +22,8 @@
     },
     "aria-valuetext": {
       "type": {
-        "name": "chained",
-        "raw": "chainPropTypes(PropTypes.string, props => {\n  const range = Array.isArray(props.value || props.defaultValue);\n\n  if (range && props['aria-valuetext'] != null) {\n    return new Error(\n      'Material-UI: you need to use the `getAriaValueText` prop instead of `aria-valuetext` when using a range slider.',\n    );\n  }\n\n  return null;\n})",
-        "chained": {
-          "name": "string"
-        }
+        "name": "custom",
+        "raw": "chainPropTypes(PropTypes.string, (props) => {\r\n  const range = Array.isArray(props.value || props.defaultValue);\r\n\r\n  if (range && props['aria-valuetext'] != null) {\r\n    return new Error(\r\n      'Material-UI: You need to use the `getAriaValueText` prop instead of `aria-valuetext` when using a range slider.',\r\n    );\r\n  }\r\n\r\n  return null;\r\n})"
       },
       "required": false,
       "description": "A string value that provides a user-friendly name for the current value of the slider.",
@@ -38,8 +33,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
@@ -69,7 +64,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'span'",
         "computed": false
@@ -81,13 +76,13 @@
         "name": "union",
         "value": [
           {
-            "name": "number"
-          },
-          {
             "name": "arrayOf",
             "value": {
               "name": "number"
             }
+          },
+          {
+            "name": "number"
           }
         ]
       },
@@ -173,15 +168,28 @@
         "name": "union",
         "value": [
           {
-            "name": "bool"
+            "name": "arrayOf",
+            "value": {
+              "name": "shape",
+              "value": {
+                "label": {
+                  "name": "node",
+                  "required": false
+                },
+                "value": {
+                  "name": "number",
+                  "required": true
+                }
+              }
+            }
           },
           {
-            "name": "array"
+            "name": "bool"
           }
         ]
       },
       "required": false,
-      "description": "Marks indicate predetermined values to which the user can move the slider.\nIf `true` the marks will be spaced according the value of the `step` prop.\nIf an array, it should contain objects with `value` and an optional `label` keys.",
+      "description": "Marks indicate predetermined values to which the user can move the slider.\r\nIf `true` the marks will be spaced according the value of the `step` prop.\r\nIf an array, it should contain objects with `value` and an optional `label` keys.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -193,7 +201,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "The maximum allowed value of the slider.\nShould not be equal to min.",
+      "description": "The maximum allowed value of the slider.\r\nShould not be equal to min.",
       "defaultValue": {
         "value": "100",
         "computed": false
@@ -205,7 +213,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "The minimum allowed value of the slider.\nShould not be equal to max.",
+      "description": "The minimum allowed value of the slider.\r\nShould not be equal to max.",
       "defaultValue": {
         "value": "0",
         "computed": false
@@ -229,7 +237,7 @@
       "tags": [
         {
           "title": "param",
-          "description": "The event source of the callback.",
+          "description": "The event source of the callback. **Warning**: This is a generic event not a change event.",
           "type": {
             "type": "NameExpression",
             "name": "object"
@@ -274,7 +282,7 @@
       "tags": [
         {
           "title": "param",
-          "description": "The event source of the callback.",
+          "description": "The event source of the callback. **Warning**: This is a generic event not a change event.",
           "type": {
             "type": "NameExpression",
             "name": "object"
@@ -339,7 +347,7 @@
       "required": false,
       "description": "A transformation function, to change the scale of the slider.",
       "defaultValue": {
-        "value": "x => x",
+        "value": "(x) => x",
         "computed": false
       },
       "tags": []
@@ -349,7 +357,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "The granularity with which the slider can step through values. (A \"discrete\" slider.)\nThe `min` prop serves as the origin for the valid values.\nWe recommend (max - min) to be evenly divisible by the step.\n\nWhen step is `null`, the thumb can only be slid onto marks provided with the `marks` prop.",
+      "description": "The granularity with which the slider can step through values. (A \"discrete\" slider.)\r\nThe `min` prop serves as the origin for the valid values.\r\nWe recommend (max - min) to be evenly divisible by the step.\r\n\r\nWhen step is `null`, the thumb can only be slid onto marks provided with the `marks` prop.",
       "defaultValue": {
         "value": "1",
         "computed": false
@@ -373,21 +381,21 @@
         "name": "enum",
         "value": [
           {
+            "value": "'inverted'",
+            "computed": false
+          },
+          {
             "value": "'normal'",
             "computed": false
           },
           {
             "value": "false",
             "computed": false
-          },
-          {
-            "value": "'inverted'",
-            "computed": false
           }
         ]
       },
       "required": false,
-      "description": "The track presentation:\n\n- `normal` the track will render a bar representing the slider value.\n- `inverted` the track will render a bar representing the remaining slider value.\n- `false` the track will render without a bar.",
+      "description": "The track presentation:\r\n\r\n- `normal` the track will render a bar representing the slider value.\r\n- `inverted` the track will render a bar representing the remaining slider value.\r\n- `false` the track will render without a bar.",
       "defaultValue": {
         "value": "'normal'",
         "computed": false
@@ -399,18 +407,18 @@
         "name": "union",
         "value": [
           {
-            "name": "number"
-          },
-          {
             "name": "arrayOf",
             "value": {
               "name": "number"
             }
+          },
+          {
+            "name": "number"
           }
         ]
       },
       "required": false,
-      "description": "The value of the slider.\nFor ranged sliders, provide an array with two values.",
+      "description": "The value of the slider.\r\nFor ranged sliders, provide an array with two values.",
       "tags": []
     },
     "ValueLabelComponent": {
@@ -430,21 +438,21 @@
         "name": "enum",
         "value": [
           {
-            "value": "'on'",
-            "computed": false
-          },
-          {
             "value": "'auto'",
             "computed": false
           },
           {
             "value": "'off'",
             "computed": false
+          },
+          {
+            "value": "'on'",
+            "computed": false
           }
         ]
       },
       "required": false,
-      "description": "Controls when the value label is displayed:\n\n- `auto` the value label will display when the thumb is hovered or focused.\n- `on` will display persistently.\n- `off` will never display.",
+      "description": "Controls when the value label is displayed:\r\n\r\n- `auto` the value label will display when the thumb is hovered or focused.\r\n- `on` will display persistently.\r\n- `off` will never display.",
       "defaultValue": {
         "value": "'off'",
         "computed": false
@@ -456,17 +464,17 @@
         "name": "union",
         "value": [
           {
-            "name": "string"
+            "name": "func"
           },
           {
-            "name": "func"
+            "name": "string"
           }
         ]
       },
       "required": false,
-      "description": "The format function the value label's value.\n\nWhen a function is provided, it should have the following signature:\n\n- {number} value The value label's value to format\n- {number} index The value label's index to format",
+      "description": "The format function the value label's value.\r\n\r\nWhen a function is provided, it should have the following signature:\r\n\r\n- {number} value The value label's value to format\r\n- {number} index The value label's index to format",
       "defaultValue": {
-        "value": "x => x",
+        "value": "(x) => x",
         "computed": false
       },
       "tags": []
@@ -544,7 +552,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLSpanElement",
-  "filename": "/packages/material-ui/src/Slider/Slider.js",
+  "filename": "\\packages\\material-ui\\src\\Slider\\Slider.js",
   "inheritance": null,
   "usedInPages": [
     "/components/slider"

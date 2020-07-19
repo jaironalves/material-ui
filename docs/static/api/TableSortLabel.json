@@ -1,5 +1,6 @@
 {
   "description": "A button based label for placing inside `TableCell` for column sorting.",
+  "displayName": "TableSortLabel",
   "methods": [],
   "props": {
     "active": {
@@ -26,8 +27,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "direction": {
@@ -104,7 +105,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLSpanElement",
-  "filename": "/packages/material-ui/src/TableSortLabel/TableSortLabel.js",
+  "filename": "\\packages\\material-ui\\src\\TableSortLabel\\TableSortLabel.js",
   "inheritance": {
     "component": "ButtonBase",
     "pathname": "/api/button-base"

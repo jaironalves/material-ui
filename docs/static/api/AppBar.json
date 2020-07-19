@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "AppBar",
   "methods": [],
   "props": {
     "children": {
@@ -15,7 +16,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
@@ -79,7 +80,7 @@
         ]
       },
       "required": false,
-      "description": "The positioning type. The behavior of the different options is described\n[in the MDN web docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning).\nNote: `sticky` is not universally supported and will fall back to `static` when unavailable.",
+      "description": "The positioning type. The behavior of the different options is described\r\n[in the MDN web docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning).\r\nNote: `sticky` is not universally supported and will fall back to `static` when unavailable.",
       "defaultValue": {
         "value": "'fixed'",
         "computed": false
@@ -132,7 +133,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLElement",
-  "filename": "/packages/material-ui/src/AppBar/AppBar.js",
+  "filename": "\\packages\\material-ui\\src\\AppBar\\AppBar.js",
   "inheritance": {
     "component": "Paper",
     "pathname": "/api/paper"

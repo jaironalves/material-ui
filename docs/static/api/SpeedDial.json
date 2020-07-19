@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "SpeedDial",
   "methods": [],
   "props": {
     "ariaLabel": {
@@ -7,7 +8,7 @@
         "name": "string"
       },
       "required": true,
-      "description": "The aria-label of the button element.\nAlso used to provide the `id` for the `SpeedDial` element and its children.",
+      "description": "The aria-label of the button element.\r\nAlso used to provide the `id` for the `SpeedDial` element and its children.",
       "tags": []
     },
     "children": {
@@ -23,7 +24,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "direction": {
@@ -85,7 +86,7 @@
         "name": "node"
       },
       "required": false,
-      "description": "The icon to display in the SpeedDial Fab. The `SpeedDialIcon` component\nprovides a default Icon with animation.",
+      "description": "The icon to display in the SpeedDial Fab. The `SpeedDialIcon` component\r\nprovides a default Icon with animation.",
       "tags": []
     },
     "onClose": {
@@ -163,7 +164,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the transition.\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
+      "description": "The component used for the transition.\r\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
       "defaultValue": {
         "value": "Zoom",
         "computed": true
@@ -197,9 +198,9 @@
         ]
       },
       "required": false,
-      "description": "The duration for the transition, in milliseconds.\nYou may specify a single timeout for all transitions, or individually with an object.",
+      "description": "The duration for the transition, in milliseconds.\r\nYou may specify a single timeout for all transitions, or individually with an object.",
       "defaultValue": {
-        "value": "{\n  enter: duration.enteringScreen,\n  exit: duration.leavingScreen,\n}",
+        "value": "{\r\n  enter: duration.enteringScreen,\r\n  exit: duration.leavingScreen,\r\n}",
         "computed": false
       },
       "tags": []
@@ -249,7 +250,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui-lab/src/SpeedDial/SpeedDial.js",
+  "filename": "\\packages\\material-ui-lab\\src\\SpeedDial\\SpeedDial.js",
   "inheritance": null,
   "usedInPages": [
     "/components/speed-dial"

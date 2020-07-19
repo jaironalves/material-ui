@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "BottomNavigation",
   "methods": [],
   "props": {
     "children": {
@@ -15,7 +16,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "component": {
@@ -23,7 +24,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'div'",
         "computed": false
@@ -39,7 +40,7 @@
       "tags": [
         {
           "title": "param",
-          "description": "The event source of the callback.",
+          "description": "The event source of the callback. **Warning**: This is a generic event not a change event.",
           "type": {
             "type": "NameExpression",
             "name": "object"
@@ -62,7 +63,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, all `BottomNavigationAction`s will show their labels.\nBy default, only the selected `BottomNavigationAction` will show its label.",
+      "description": "If `true`, all `BottomNavigationAction`s will show their labels.\r\nBy default, only the selected `BottomNavigationAction` will show its label.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -93,7 +94,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/BottomNavigation/BottomNavigation.js",
+  "filename": "\\packages\\material-ui\\src\\BottomNavigation\\BottomNavigation.js",
   "inheritance": null,
   "usedInPages": [
     "/components/bottom-navigation"

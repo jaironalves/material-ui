@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "AccordionSummary",
   "methods": [],
   "props": {
     "children": {
@@ -7,15 +8,15 @@
         "name": "node"
       },
       "required": false,
-      "description": "The content of the expansion panel summary.",
+      "description": "The content of the accordion summary.",
       "tags": []
     },
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "expandIcon": {
@@ -35,7 +36,7 @@
       "tags": []
     }
   },
-  "name": "ExpansionPanelSummary",
+  "name": "AccordionSummary",
   "styles": {
     "classes": [
       "root",
@@ -45,7 +46,7 @@
       "content",
       "expandIcon"
     ],
-    "name": "MuiExpansionPanelSummary",
+    "name": "MuiAccordionSummary",
     "descriptions": {
       "root": "Styles applied to the root element.",
       "expanded": "Pseudo-class applied to the root element, children wrapper element and `IconButton` component if `expanded={true}`.",
@@ -55,22 +56,22 @@
       "expandIcon": "Styles applied to the `IconButton` component when `expandIcon` is supplied."
     },
     "globalClasses": {
-      "root": "MuiExpansionPanelSummary-root",
+      "root": "MuiAccordionSummary-root",
       "expanded": "Mui-expanded",
       "focused": "Mui-focused",
       "disabled": "Mui-disabled",
-      "content": "MuiExpansionPanelSummary-content",
-      "expandIcon": "MuiExpansionPanelSummary-expandIcon"
+      "content": "MuiAccordionSummary-content",
+      "expandIcon": "MuiAccordionSummary-expandIcon"
     }
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/ExpansionPanelSummary/ExpansionPanelSummary.js",
+  "filename": "\\packages\\material-ui\\src\\AccordionSummary\\AccordionSummary.js",
   "inheritance": {
     "component": "ButtonBase",
     "pathname": "/api/button-base"
   },
   "usedInPages": [
-    "/components/expansion-panels"
+    "/components/accordion"
   ]
 }

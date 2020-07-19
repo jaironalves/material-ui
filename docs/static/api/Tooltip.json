@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Tooltip",
   "methods": [],
   "props": {
     "arrow": {
@@ -27,8 +28,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "disableFocusListener": {
@@ -72,7 +73,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "The number of milliseconds to wait before showing the tooltip.\nThis prop won't impact the enter touch delay (`enterTouchDelay`).",
+      "description": "The number of milliseconds to wait before showing the tooltip.\r\nThis prop won't impact the enter touch delay (`enterTouchDelay`).",
       "defaultValue": {
         "value": "100",
         "computed": false
@@ -108,7 +109,7 @@
         "name": "string"
       },
       "required": false,
-      "description": "This prop is used to help implement the accessibility logic.\nIf you don't provide this prop. It falls back to a randomly generated id.",
+      "description": "This prop is used to help implement the accessibility logic.\r\nIf you don't provide this prop. It falls back to a randomly generated id.",
       "tags": []
     },
     "interactive": {
@@ -116,7 +117,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "Makes a tooltip interactive, i.e. will not close when the user\nhovers over the tooltip before the `leaveDelay` is expired.",
+      "description": "Makes a tooltip interactive, i.e. will not close when the user\r\nhovers over the tooltip before the `leaveDelay` is expired.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -128,7 +129,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "The number of milliseconds to wait before hiding the tooltip.\nThis prop won't impact the leave touch delay (`leaveTouchDelay`).",
+      "description": "The number of milliseconds to wait before hiding the tooltip.\r\nThis prop won't impact the leave touch delay (`leaveTouchDelay`).",
       "defaultValue": {
         "value": "0",
         "computed": false
@@ -253,6 +254,18 @@
       },
       "tags": []
     },
+    "PopperComponent": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "The component used for the popper.",
+      "defaultValue": {
+        "value": "Popper",
+        "computed": true
+      },
+      "tags": []
+    },
     "PopperProps": {
       "type": {
         "name": "object"
@@ -274,7 +287,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the transition.\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
+      "description": "The component used for the transition.\r\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
       "defaultValue": {
         "value": "Grow",
         "computed": true
@@ -335,7 +348,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLButtonElement",
-  "filename": "/packages/material-ui/src/Tooltip/Tooltip.js",
+  "filename": "\\packages\\material-ui\\src\\Tooltip\\Tooltip.js",
   "inheritance": null,
   "usedInPages": [
     "/components/tooltips"

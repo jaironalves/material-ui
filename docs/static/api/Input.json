@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Input",
   "methods": [],
   "props": {
     "autoComplete": {
@@ -7,7 +8,7 @@
         "name": "string"
       },
       "required": false,
-      "description": "This prop helps users to fill forms faster, especially on mobile devices.\nThe name can be confusing, as it's more like an autofill.\nYou can learn more about it [following the specification](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).",
+      "description": "This prop helps users to fill forms faster, especially on mobile devices.\r\nThe name can be confusing, as it's more like an autofill.\r\nYou can learn more about it [following the specification](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).",
       "tags": []
     },
     "autoFocus": {
@@ -22,16 +23,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
-      "tags": []
-    },
-    "className": {
-      "type": {
-        "name": "string"
-      },
       "required": false,
-      "description": "The CSS class name of the wrapper element.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
@@ -89,7 +82,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the input will indicate an error. This is normally obtained via context from\nFormControl.",
+      "description": "If `true`, the input will indicate an error. This is normally obtained via context from\r\nFormControl.",
       "tags": []
     },
     "fullWidth": {
@@ -117,7 +110,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the native input.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the `input` element.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'input'",
         "computed": false
@@ -156,7 +149,7 @@
         ]
       },
       "required": false,
-      "description": "If `dense`, will adjust vertical spacing. This is normally obtained via context from\nFormControl.",
+      "description": "If `dense`, will adjust vertical spacing. This is normally obtained via context from\r\nFormControl.",
       "tags": []
     },
     "multiline": {
@@ -188,7 +181,7 @@
       "tags": [
         {
           "title": "param",
-          "description": "The event source of the callback.\nYou can pull out the new value by accessing `event.target.value` (string).",
+          "description": "The event source of the callback.\r\nYou can pull out the new value by accessing `event.target.value` (string).",
           "type": {
             "type": "NameExpression",
             "name": "object"
@@ -210,7 +203,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "It prevents the user from changing the value of the field\n(not from interacting with the field).",
+      "description": "It prevents the user from changing the value of the field\r\n(not from interacting with the field).",
       "tags": []
     },
     "required": {
@@ -226,10 +219,10 @@
         "name": "union",
         "value": [
           {
-            "name": "string"
+            "name": "number"
           },
           {
-            "name": "number"
+            "name": "string"
           }
         ]
       },
@@ -242,10 +235,10 @@
         "name": "union",
         "value": [
           {
-            "name": "string"
+            "name": "number"
           },
           {
-            "name": "number"
+            "name": "string"
           }
         ]
       },
@@ -336,7 +329,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Input/Input.js",
+  "filename": "\\packages\\material-ui\\src\\Input\\Input.js",
   "inheritance": {
     "component": "InputBase",
     "pathname": "/api/input-base"

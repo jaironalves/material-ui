@@ -1,5 +1,6 @@
 {
   "description": "An alternative to `<Select native />` with a much smaller bundle size footprint.",
+  "displayName": "NativeSelect",
   "methods": [],
   "props": {
     "children": {
@@ -7,15 +8,15 @@
         "name": "node"
       },
       "required": false,
-      "description": "The option elements to populate the select with.\nCan be some `<option>` elements.",
+      "description": "The option elements to populate the select with.\r\nCan be some `<option>` elements.",
       "tags": []
     },
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "IconComponent": {
@@ -59,7 +60,7 @@
       "tags": [
         {
           "title": "param",
-          "description": "The event source of the callback.\nYou can pull out the new value by accessing `event.target.value` (string).",
+          "description": "The event source of the callback.\r\nYou can pull out the new value by accessing `event.target.value` (string).",
           "type": {
             "type": "NameExpression",
             "name": "object"
@@ -81,7 +82,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'standard'",
+            "value": "'filled'",
             "computed": false
           },
           {
@@ -89,7 +90,7 @@
             "computed": false
           },
           {
-            "value": "'filled'",
+            "value": "'standard'",
             "computed": false
           }
         ]
@@ -111,7 +112,8 @@
       "icon",
       "iconOpen",
       "iconFilled",
-      "iconOutlined"
+      "iconOutlined",
+      "nativeInput"
     ],
     "name": "MuiNativeSelect",
     "descriptions": {
@@ -124,7 +126,8 @@
       "icon": "Styles applied to the icon component.",
       "iconOpen": "Styles applied to the icon component if the popup is open.",
       "iconFilled": "Styles applied to the icon component if `variant=\"filled\"`.",
-      "iconOutlined": "Styles applied to the icon component if `variant=\"outlined\"`."
+      "iconOutlined": "Styles applied to the icon component if `variant=\"outlined\"`.",
+      "nativeInput": "Styles applied to the underlying native input component."
     },
     "globalClasses": {
       "root": "MuiNativeSelect-root",
@@ -136,12 +139,13 @@
       "icon": "MuiNativeSelect-icon",
       "iconOpen": "MuiNativeSelect-iconOpen",
       "iconFilled": "MuiNativeSelect-iconFilled",
-      "iconOutlined": "MuiNativeSelect-iconOutlined"
+      "iconOutlined": "MuiNativeSelect-iconOutlined",
+      "nativeInput": "MuiNativeSelect-nativeInput"
     }
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/NativeSelect/NativeSelect.js",
+  "filename": "\\packages\\material-ui\\src\\NativeSelect\\NativeSelect.js",
   "inheritance": {
     "component": "Input",
     "pathname": "/api/input"

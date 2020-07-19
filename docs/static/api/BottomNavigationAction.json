@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "BottomNavigationAction",
   "methods": [],
   "props": {
     "children": {
@@ -8,15 +9,15 @@
         "raw": "unsupportedProp"
       },
       "required": false,
-      "description": "This prop isn't supported.\nUse the `component` prop if you need to change the children structure.",
+      "description": "This prop isn't supported.\r\nUse the `component` prop if you need to change the children structure.",
       "tags": []
     },
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "icon": {
@@ -40,7 +41,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the `BottomNavigationAction` will show its label.\nBy default, only the selected `BottomNavigationAction`\ninside `BottomNavigation` will show its label.",
+      "description": "If `true`, the `BottomNavigationAction` will show its label.\r\nBy default, only the selected `BottomNavigationAction`\r\ninside `BottomNavigation` will show its label.",
       "tags": []
     },
     "value": {
@@ -79,7 +80,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLButtonElement",
-  "filename": "/packages/material-ui/src/BottomNavigationAction/BottomNavigationAction.js",
+  "filename": "\\packages\\material-ui\\src\\BottomNavigationAction\\BottomNavigationAction.js",
   "inheritance": {
     "component": "ButtonBase",
     "pathname": "/api/button-base"

@@ -20,7 +20,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     }
   },
@@ -39,7 +39,7 @@
     }
   },
   "spread": false,
-  "filename": "/packages/material-ui/src/CssBaseline/CssBaseline.js",
+  "filename": "\\packages\\material-ui\\src\\CssBaseline\\CssBaseline.js",
   "inheritance": null,
   "usedInPages": [
     "/components/css-baseline"

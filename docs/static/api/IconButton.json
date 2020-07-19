@@ -1,14 +1,12 @@
 {
-  "description": "Refer to the [Icons](/components/icons/) section of the documentation\nregarding the available icon options.",
+  "description": "Refer to the [Icons](/components/icons/) section of the documentation\r\nregarding the available icon options.",
+  "displayName": "IconButton",
   "methods": [],
   "props": {
     "children": {
       "type": {
-        "name": "chained",
-        "raw": "chainPropTypes(PropTypes.node, props => {\n  const found = React.Children.toArray(props.children).some(\n    child => React.isValidElement(child) && child.props.onClick,\n  );\n\n  if (found) {\n    return new Error(\n      [\n        'Material-UI: you are providing an onClick event listener ' +\n          'to a child of a button element.',\n        'Firefox will never trigger the event.',\n        'You should move the onClick listener to the parent button element.',\n        'https://github.com/mui-org/material-ui/issues/13957',\n      ].join('\\n'),\n    );\n  }\n\n  return null;\n})",
-        "chained": {
-          "name": "node"
-        }
+        "name": "custom",
+        "raw": "chainPropTypes(PropTypes.node, (props) => {\r\n  const found = React.Children.toArray(props.children).some(\r\n    (child) => React.isValidElement(child) && child.props.onClick,\r\n  );\r\n\r\n  if (found) {\r\n    return new Error(\r\n      [\r\n        'Material-UI: You are providing an onClick event listener ' +\r\n          'to a child of a button element.',\r\n        'Firefox will never trigger the event.',\r\n        'You should move the onClick listener to the parent button element.',\r\n        'https://github.com/mui-org/material-ui/issues/13957',\r\n      ].join('\\n'),\r\n    );\r\n  }\r\n\r\n  return null;\r\n})"
       },
       "required": false,
       "description": "The icon element.",
@@ -18,8 +16,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
@@ -69,7 +67,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the  keyboard focus ripple will be disabled.\n`disableRipple` must also be true.",
+      "description": "If `true`, the  keyboard focus ripple will be disabled.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -81,7 +79,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the ripple effect will be disabled.",
+      "description": "If `true`, the ripple effect will be disabled.\r\n\r\n⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure\r\nto highlight the element by applying separate styles with the `focusVisibleClassName`.",
       "tags": []
     },
     "edge": {
@@ -89,11 +87,11 @@
         "name": "enum",
         "value": [
           {
-            "value": "'start'",
+            "value": "'end'",
             "computed": false
           },
           {
-            "value": "'end'",
+            "value": "'start'",
             "computed": false
           },
           {
@@ -103,7 +101,7 @@
         ]
       },
       "required": false,
-      "description": "If given, uses a negative margin to counteract the padding on one\nside (this is often helpful for aligning the left or right\nside of the icon with content above or below, without ruining the border\nsize and shape).",
+      "description": "If given, uses a negative margin to counteract the padding on one\r\nside (this is often helpful for aligning the left or right\r\nside of the icon with content above or below, without ruining the border\r\nsize and shape).",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -115,17 +113,17 @@
         "name": "enum",
         "value": [
           {
-            "value": "'small'",
+            "value": "'medium'",
             "computed": false
           },
           {
-            "value": "'medium'",
+            "value": "'small'",
             "computed": false
           }
         ]
       },
       "required": false,
-      "description": "The size of the button.\n`small` is equivalent to the dense button styling.",
+      "description": "The size of the button.\r\n`small` is equivalent to the dense button styling.",
       "defaultValue": {
         "value": "'medium'",
         "computed": false
@@ -172,7 +170,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLButtonElement",
-  "filename": "/packages/material-ui/src/IconButton/IconButton.js",
+  "filename": "\\packages\\material-ui\\src\\IconButton\\IconButton.js",
   "inheritance": {
     "component": "ButtonBase",
     "pathname": "/api/button-base"

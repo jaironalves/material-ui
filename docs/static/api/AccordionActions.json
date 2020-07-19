@@ -1,12 +1,13 @@
 {
   "description": "",
+  "displayName": "AccordionActions",
   "methods": [],
   "props": {
     "children": {
       "type": {
         "name": "node"
       },
-      "required": true,
+      "required": false,
       "description": "The content of the component.",
       "tags": []
     },
@@ -14,8 +15,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "disableSpacing": {
@@ -31,27 +32,27 @@
       "tags": []
     }
   },
-  "name": "ExpansionPanelActions",
+  "name": "AccordionActions",
   "styles": {
     "classes": [
       "root",
       "spacing"
     ],
-    "name": "MuiExpansionPanelActions",
+    "name": "MuiAccordionActions",
     "descriptions": {
       "root": "Styles applied to the root element.",
       "spacing": "Styles applied to the root element if `disableSpacing={false}`."
     },
     "globalClasses": {
-      "root": "MuiExpansionPanelActions-root",
-      "spacing": "MuiExpansionPanelActions-spacing"
+      "root": "MuiAccordionActions-root",
+      "spacing": "MuiAccordionActions-spacing"
     }
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/ExpansionPanelActions/ExpansionPanelActions.js",
+  "filename": "\\packages\\material-ui\\src\\AccordionActions\\AccordionActions.js",
   "inheritance": null,
   "usedInPages": [
-    "/components/expansion-panels"
+    "/components/accordion"
   ]
 }

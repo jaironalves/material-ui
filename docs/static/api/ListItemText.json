@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "ListItemText",
   "methods": [],
   "props": {
     "children": {
@@ -7,15 +8,15 @@
         "name": "node"
       },
       "required": false,
-      "description": "Alias for the `primary` property.",
+      "description": "Alias for the `primary` prop.",
       "tags": []
     },
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "disableTypography": {
@@ -23,7 +24,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the children won't be wrapped by a Typography component.\nThis can be useful to render an alternative Typography variant by wrapping\nthe `children` (or `primary`) text, and optional `secondary` text\nwith the Typography component.",
+      "description": "If `true`, the children won't be wrapped by a Typography component.\r\nThis can be useful to render an alternative Typography variant by wrapping\r\nthe `children` (or `primary`) text, and optional `secondary` text\r\nwith the Typography component.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -35,7 +36,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the children will be indented.\nThis should be used if there is no left avatar or left icon.",
+      "description": "If `true`, the children will be indented.\r\nThis should be used if there is no left avatar or left icon.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -55,7 +56,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "These props will be forwarded to the primary typography component\n(as long as disableTypography is not `true`).",
+      "description": "These props will be forwarded to the primary typography component\r\n(as long as disableTypography is not `true`).",
       "tags": []
     },
     "secondary": {
@@ -71,7 +72,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "These props will be forwarded to the secondary typography component\n(as long as disableTypography is not `true`).",
+      "description": "These props will be forwarded to the secondary typography component\r\n(as long as disableTypography is not `true`).",
       "tags": []
     }
   },
@@ -105,7 +106,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/ListItemText/ListItemText.js",
+  "filename": "\\packages\\material-ui\\src\\ListItemText\\ListItemText.js",
   "inheritance": null,
   "usedInPages": [
     "/components/lists"

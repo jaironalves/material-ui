@@ -1,7 +1,7 @@
+/* eslint-disable no-underscore-dangle */
 import 'docs/src/modules/components/bootstrap';
 // --- Post bootstrap -----
 import React from 'react';
-import find from 'lodash/find';
 import { Provider as ReduxProvider, useDispatch, useSelector } from 'react-redux';
 import { loadCSS } from 'fg-loadcss/src/loadCSS';
 import NextHead from 'next/head';
@@ -20,6 +20,7 @@ import loadScript from 'docs/src/modules/utils/loadScript';
 import { ThemeProvider } from 'docs/src/modules/components/ThemeContext';
 import { pathnameToLanguage, getCookie } from 'docs/src/modules/utils/helpers';
 import { ACTION_TYPES, CODE_VARIANTS } from 'docs/src/modules/constants';
+import { findActivePage } from 'docs/src/modules/utils/routing';
 
 // Configure JSS
 const jss = create({
@@ -36,12 +37,24 @@ function useFirstRender() {
   return firstRenderRef.current;
 }
 
-acceptLanguage.languages(['en', 'zh', 'pt', 'ru']);
+acceptLanguage.languages(['en', 'zh', 'pt']);
+
+function loadCrowdin() {
+  window._jipt = [];
+  window._jipt.push(['project', 'material-ui-docs']);
+  loadScript('https://cdn.crowdin.com/jipt/jipt.js', document.querySelector('head'));
+}
 
 function LanguageNegotiation() {
   const dispatch = useDispatch();
   const router = useRouter();
   const userLanguage = useSelector((state) => state.options.userLanguage);
+
+  React.useEffect(() => {
+    if (userLanguage === 'aa') {
+      loadCrowdin();
+    }
+  }, [userLanguage]);
 
   React.useEffect(() => {
     const { userLanguage: userLanguageUrl, canonical } = pathnameToLanguage(
@@ -254,31 +267,6 @@ Tip: you can access the documentation \`theme\` object directly in the console.
   );
 }
 
-function findActivePage(currentPages, pathname) {
-  const activePage = find(currentPages, (page) => {
-    if (page.children) {
-      if (pathname.indexOf(`${page.pathname}/`) === 0) {
-        // Check if one of the children matches (for /components)
-        return findActivePage(page.children, pathname);
-      }
-    }
-
-    // Should be an exact match if no children
-    return pathname === page.pathname;
-  });
-
-  if (!activePage) {
-    return null;
-  }
-
-  // We need to drill down
-  if (activePage.pathname !== pathname) {
-    return findActivePage(activePage.children, pathname);
-  }
-
-  return activePage;
-}
-
 function AppWrapper(props) {
   const { children, pageProps } = props;
 
@@ -298,18 +286,18 @@ function AppWrapper(props) {
     }
   }, []);
 
-  let pathname = router.pathname;
+  let { canonical: asPath } = pathnameToLanguage(rewriteUrlForNextExport(router.asPath));
   // Add support for leading / in development mode.
-  if (pathname !== '/') {
+  if (asPath !== '/') {
     // The leading / is only added to support static hosting (resolve /index.html).
     // We remove it to normalize the pathname.
     // See `rewriteUrlForNextExport` on Next.js side.
-    pathname = pathname.replace(/\/$/, '');
+    asPath = asPath.replace(/\/$/, '');
   }
-  const activePage = findActivePage(pages, pathname);
+  const activePage = findActivePage(pages, asPath);
 
   let fonts = ['https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap'];
-  if (pathname.match(/onepirate/)) {
+  if (asPath.match(/onepirate/)) {
     fonts = [
       'https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Work+Sans:300,400&display=swap',
     ];
@@ -370,20 +358,3 @@ MyApp.getInitialProps = async ({ ctx, Component }) => {
     },
   };
 };
-
-// Track fraction of actual events to prevent exceeding event quota.
-// Filter sessions instead of individual events so that we can track multiple metrics per device.
-const disableWebVitalsReporting = Math.random() > 0.0001;
-export function reportWebVitals({ id, name, label, value }) {
-  if (disableWebVitalsReporting) {
-    return;
-  }
-
-  window.ga('send', 'event', {
-    eventCategory: label === 'web-vital' ? 'Web Vitals' : 'Next.js custom metric',
-    eventAction: name,
-    eventValue: Math.round(name === 'CLS' ? value * 1000 : value), // values must be integers
-    eventLabel: id, // id unique to current page load
-    nonInteraction: true, // avoids affecting bounce rate.
-  });
-}

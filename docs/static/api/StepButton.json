@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "StepButton",
   "methods": [],
   "props": {
     "children": {
@@ -14,8 +15,16 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
+      "tags": []
+    },
+    "completed": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "For non-linear Steppers you need to manually set which steps are completed.\r\nOtherwise the Stepper determines if a step is completed.",
       "tags": []
     },
     "icon": {
@@ -59,7 +68,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLButtonElement",
-  "filename": "/packages/material-ui/src/StepButton/StepButton.js",
+  "filename": "\\packages\\material-ui\\src\\StepButton\\StepButton.js",
   "inheritance": {
     "component": "ButtonBase",
     "pathname": "/api/button-base"

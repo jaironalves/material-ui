@@ -1,5 +1,6 @@
 {
-  "description": "Modal is a lower-level construct that is leveraged by the following components:\n\n- [Dialog](/api/dialog/)\n- [Drawer](/api/drawer/)\n- [Menu](/api/menu/)\n- [Popover](/api/popover/)\n\nIf you are creating a modal dialog, you probably want to use the [Dialog](/api/dialog/) component\nrather than directly using Modal.\n\nThis component shares many concepts with [react-overlays](https://react-bootstrap.github.io/react-overlays/#modals).",
+  "description": "Modal is a lower-level construct that is leveraged by the following components:\r\n\r\n- [Dialog](/api/dialog/)\r\n- [Drawer](/api/drawer/)\r\n- [Menu](/api/menu/)\r\n- [Popover](/api/popover/)\r\n\r\nIf you are creating a modal dialog, you probably want to use the [Dialog](/api/dialog/) component\r\nrather than directly using Modal.\r\n\r\nThis component shares many concepts with [react-overlays](https://react-bootstrap.github.io/react-overlays/#modals).",
+  "displayName": "Modal",
   "methods": [],
   "props": {
     "BackdropComponent": {
@@ -48,7 +49,12 @@
         "name": "union",
         "value": [
           {
-            "name": "object"
+            "name": "custom",
+            "raw": "HTMLElementType"
+          },
+          {
+            "name": "instanceOf",
+            "value": "React.Component"
           },
           {
             "name": "func"
@@ -56,7 +62,7 @@
         ]
       },
       "required": false,
-      "description": "A node, component instance, or function that returns either.\nThe `container` will have the portal children appended to it.",
+      "description": "A HTML element, component instance, or function that returns either.\r\nThe `container` will have the portal children appended to it.\r\n\r\nBy default, it uses the body of the top-level document object,\r\nso it's simply `document.body` most of the time.",
       "tags": []
     },
     "disableAutoFocus": {
@@ -64,7 +70,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the modal will not automatically shift focus to itself when it opens, and\nreplace it to the last focused element when it closes.\nThis also works correctly with any modal children that have the `disableAutoFocus` prop.\n\nGenerally this should never be set to `true` as it makes the modal less\naccessible to assistive technologies, like screen readers.",
+      "description": "If `true`, the modal will not automatically shift focus to itself when it opens, and\r\nreplace it to the last focused element when it closes.\r\nThis also works correctly with any modal children that have the `disableAutoFocus` prop.\r\n\r\nGenerally this should never be set to `true` as it makes the modal less\r\naccessible to assistive technologies, like screen readers.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -76,7 +82,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, clicking the backdrop will not fire any callback.",
+      "description": "If `true`, clicking the backdrop will not fire `onClose`.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -88,7 +94,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the modal will not prevent focus from leaving the modal while open.\n\nGenerally this should never be set to `true` as it makes the modal less\naccessible to assistive technologies, like screen readers.",
+      "description": "If `true`, the modal will not prevent focus from leaving the modal while open.\r\n\r\nGenerally this should never be set to `true` as it makes the modal less\r\naccessible to assistive technologies, like screen readers.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -100,7 +106,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, hitting escape will not fire any callback.",
+      "description": "If `true`, hitting escape will not fire `onClose`.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -112,7 +118,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "Disable the portal behavior.\nThe children stay within it's parent DOM hierarchy.",
+      "description": "The `children` will be inside the DOM hierarchy of the parent component.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -124,7 +130,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the modal will not restore focus to previously focused element once\nmodal is hidden.",
+      "description": "If `true`, the modal will not restore focus to previously focused element once\r\nmodal is hidden.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -160,7 +166,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "Always keep the children in the DOM.\nThis prop can be useful in SEO situation or\nwhen you want to maximize the responsiveness of the Modal.",
+      "description": "Always keep the children in the DOM.\r\nThis prop can be useful in SEO situation or\r\nwhen you want to maximize the responsiveness of the Modal.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -180,7 +186,7 @@
         "name": "func"
       },
       "required": false,
-      "description": "Callback fired when the component requests to be closed.\nThe `reason` parameter can optionally be used to control the response to `onClose`.",
+      "description": "Callback fired when the component requests to be closed.\r\nThe `reason` parameter can optionally be used to control the response to `onClose`.",
       "tags": [
         {
           "title": "param",
@@ -207,7 +213,7 @@
         "name": "func"
       },
       "required": false,
-      "description": "Callback fired when the escape key is pressed,\n`disableEscapeKeyDown` is false and the modal is in focus.",
+      "description": "Callback fired when the escape key is pressed,\r\n`disableEscapeKeyDown` is false and the modal is in focus.",
       "tags": []
     },
     "onRendered": {
@@ -215,7 +221,7 @@
         "name": "func"
       },
       "required": false,
-      "description": "Callback fired once the children has been mounted into the `container`.\nIt signals that the `open={true}` prop took effect.\n\nThis prop will be deprecated and removed in v5, the ref can be used instead.",
+      "description": "Callback fired once the children has been mounted into the `container`.\r\nIt signals that the `open={true}` prop took effect.\r\n\r\nThis prop will be deprecated and removed in v5, the ref can be used instead.",
       "tags": []
     },
     "open": {
@@ -235,7 +241,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Modal/Modal.js",
+  "filename": "\\packages\\material-ui\\src\\Modal\\Modal.js",
   "inheritance": null,
   "usedInPages": [
     "/components/modal"

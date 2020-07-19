@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "SpeedDialIcon",
   "methods": [],
   "props": {
     "classes": {
@@ -7,7 +8,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "icon": {
@@ -42,7 +43,7 @@
       "root": "Styles applied to the root element.",
       "icon": "Styles applied to the icon component.",
       "iconOpen": "Styles applied to the icon component if `open={true}`.",
-      "iconWithOpenIconOpen": "Styles applied to the icon when and `openIcon` is provided and if `open={true}`.",
+      "iconWithOpenIconOpen": "Styles applied to the icon when an `openIcon` is provided and if `open={true}`.",
       "openIcon": "Styles applied to the `openIcon` if provided.",
       "openIconOpen": "Styles applied to the `openIcon` if provided and if `open={true}`."
     },
@@ -57,7 +58,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLSpanElement",
-  "filename": "/packages/material-ui-lab/src/SpeedDialIcon/SpeedDialIcon.js",
+  "filename": "\\packages\\material-ui-lab\\src\\SpeedDialIcon\\SpeedDialIcon.js",
   "inheritance": null,
   "usedInPages": [
     "/components/speed-dial"

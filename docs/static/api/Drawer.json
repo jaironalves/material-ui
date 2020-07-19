@@ -1,5 +1,6 @@
 {
-  "description": "The props of the [Modal](/api/modal/) component are available\nwhen `variant=\"temporary\"` is set.",
+  "description": "The props of the [Modal](/api/modal/) component are available\r\nwhen `variant=\"temporary\"` is set.",
+  "displayName": "Drawer",
   "methods": [],
   "props": {
     "anchor": {
@@ -7,11 +8,11 @@
         "name": "enum",
         "value": [
           {
-            "value": "'left'",
+            "value": "'bottom'",
             "computed": false
           },
           {
-            "value": "'top'",
+            "value": "'left'",
             "computed": false
           },
           {
@@ -19,7 +20,7 @@
             "computed": false
           },
           {
-            "value": "'bottom'",
+            "value": "'top'",
             "computed": false
           }
         ]
@@ -44,8 +45,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "elevation": {
@@ -132,6 +133,10 @@
           {
             "name": "shape",
             "value": {
+              "appear": {
+                "name": "number",
+                "required": false
+              },
               "enter": {
                 "name": "number",
                 "required": false
@@ -145,7 +150,7 @@
         ]
       },
       "required": false,
-      "description": "The duration for the transition, in milliseconds.\nYou may specify a single timeout for all transitions, or individually with an object.",
+      "description": "The duration for the transition, in milliseconds.\r\nYou may specify a single timeout for all transitions, or individually with an object.",
       "defaultValue": {
         "value": "{ enter: duration.enteringScreen, exit: duration.leavingScreen }",
         "computed": false
@@ -227,7 +232,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Drawer/Drawer.js",
+  "filename": "\\packages\\material-ui\\src\\Drawer\\Drawer.js",
   "inheritance": null,
   "usedInPages": [
     "/components/drawers"

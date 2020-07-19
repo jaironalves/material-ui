@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "StepIcon",
   "methods": [],
   "props": {
     "active": {
@@ -18,8 +19,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "completed": {
@@ -50,7 +51,7 @@
       "type": {
         "name": "node"
       },
-      "required": true,
+      "required": false,
       "description": "The label displayed in the step icon.",
       "tags": []
     }
@@ -82,7 +83,7 @@
   },
   "spread": true,
   "forwardsRefTo": "SVGSVGElement",
-  "filename": "/packages/material-ui/src/StepIcon/StepIcon.js",
+  "filename": "\\packages\\material-ui\\src\\StepIcon\\StepIcon.js",
   "inheritance": null,
   "usedInPages": [
     "/components/steppers"

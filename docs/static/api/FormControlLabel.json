@@ -1,5 +1,6 @@
 {
-  "description": "Drop in replacement of the `Radio`, `Switch` and `Checkbox` component.\nUse this component if you want to display an extra label.",
+  "description": "Drop in replacement of the `Radio`, `Switch` and `Checkbox` component.\r\nUse this component if you want to display an extra label.",
+  "displayName": "FormControlLabel",
   "methods": [],
   "props": {
     "checked": {
@@ -14,16 +15,16 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "control": {
       "type": {
         "name": "element"
       },
-      "required": false,
-      "description": "A control element. For instance, it can be be a `Radio`, a `Switch` or a `Checkbox`.",
+      "required": true,
+      "description": "A control element. For instance, it can be a `Radio`, a `Switch` or a `Checkbox`.",
       "tags": []
     },
     "disabled": {
@@ -56,6 +57,10 @@
         "name": "enum",
         "value": [
           {
+            "value": "'bottom'",
+            "computed": false
+          },
+          {
             "value": "'end'",
             "computed": false
           },
@@ -65,10 +70,6 @@
           },
           {
             "value": "'top'",
-            "computed": false
-          },
-          {
-            "value": "'bottom'",
             "computed": false
           }
         ]
@@ -81,14 +82,6 @@
       },
       "tags": []
     },
-    "name": {
-      "type": {
-        "name": "string"
-      },
-      "required": false,
-      "description": "",
-      "tags": []
-    },
     "onChange": {
       "type": {
         "name": "func"
@@ -98,7 +91,7 @@
       "tags": [
         {
           "title": "param",
-          "description": "The event source of the callback.\nYou can pull out the new checked state by accessing `event.target.checked` (boolean).",
+          "description": "The event source of the callback.\r\nYou can pull out the new checked state by accessing `event.target.checked` (boolean).",
           "type": {
             "type": "NameExpression",
             "name": "object"
@@ -146,7 +139,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLLabelElement",
-  "filename": "/packages/material-ui/src/FormControlLabel/FormControlLabel.js",
+  "filename": "\\packages\\material-ui\\src\\FormControlLabel\\FormControlLabel.js",
   "inheritance": null,
   "usedInPages": [
     "/components/checkboxes",

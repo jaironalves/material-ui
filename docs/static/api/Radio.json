@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Radio",
   "methods": [],
   "props": {
     "checked": {
@@ -22,8 +23,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
@@ -31,15 +32,15 @@
         "name": "enum",
         "value": [
           {
+            "value": "'default'",
+            "computed": false
+          },
+          {
             "value": "'primary'",
             "computed": false
           },
           {
             "value": "'secondary'",
-            "computed": false
-          },
-          {
-            "value": "'default'",
             "computed": false
           }
         ]
@@ -118,7 +119,7 @@
       "tags": [
         {
           "title": "param",
-          "description": "The event source of the callback.\nYou can pull out the new value by accessing `event.target.value` (string).\nYou can pull out the new checked state by accessing `event.target.checked` (boolean).",
+          "description": "The event source of the callback.\r\nYou can pull out the new value by accessing `event.target.value` (string).\r\nYou can pull out the new checked state by accessing `event.target.checked` (boolean).",
           "type": {
             "type": "NameExpression",
             "name": "object"
@@ -140,29 +141,21 @@
         "name": "enum",
         "value": [
           {
-            "value": "'small'",
+            "value": "'medium'",
             "computed": false
           },
           {
-            "value": "'medium'",
+            "value": "'small'",
             "computed": false
           }
         ]
       },
       "required": false,
-      "description": "The size of the radio.\n`small` is equivalent to the dense radio styling.",
+      "description": "The size of the radio.\r\n`small` is equivalent to the dense radio styling.",
       "defaultValue": {
         "value": "'medium'",
         "computed": false
       },
-      "tags": []
-    },
-    "type": {
-      "type": {
-        "name": "string"
-      },
-      "required": false,
-      "description": "The input component prop `type`.",
       "tags": []
     },
     "value": {
@@ -201,7 +194,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLSpanElement",
-  "filename": "/packages/material-ui/src/Radio/Radio.js",
+  "filename": "\\packages\\material-ui\\src\\Radio\\Radio.js",
   "inheritance": {
     "component": "IconButton",
     "pathname": "/api/icon-button"

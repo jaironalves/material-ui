@@ -1,5 +1,6 @@
 {
   "description": "Uses an additional container component if `ListItemSecondaryAction` is the last child.",
+  "displayName": "ListItem",
   "methods": [],
   "props": {
     "alignItems": {
@@ -7,11 +8,11 @@
         "name": "enum",
         "value": [
           {
-            "value": "'flex-start'",
+            "value": "'center'",
             "computed": false
           },
           {
-            "value": "'center'",
+            "value": "'flex-start'",
             "computed": false
           }
         ]
@@ -29,7 +30,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the list item will be focused during the first mount.\nFocus will also be triggered if the value changes from false to true.",
+      "description": "If `true`, the list item will be focused during the first mount.\r\nFocus will also be triggered if the value changes from false to true.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -41,7 +42,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the list item will be a button (using `ButtonBase`). Props intended\nfor `ButtonBase` can then be applied to `ListItem`.",
+      "description": "If `true`, the list item will be a button (using `ButtonBase`). Props intended\r\nfor `ButtonBase` can then be applied to `ListItem`.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -50,22 +51,19 @@
     },
     "children": {
       "type": {
-        "name": "chained",
-        "raw": "chainPropTypes(PropTypes.node, props => {\n  const children = React.Children.toArray(props.children);\n\n  // React.Children.toArray(props.children).findLastIndex(isListItemSecondaryAction)\n  let secondaryActionIndex = -1;\n  for (let i = children.length - 1; i >= 0; i -= 1) {\n    const child = children[i];\n    if (isMuiElement(child, ['ListItemSecondaryAction'])) {\n      secondaryActionIndex = i;\n      break;\n    }\n  }\n\n  //  is ListItemSecondaryAction the last child of ListItem\n  if (secondaryActionIndex !== -1 && secondaryActionIndex !== children.length - 1) {\n    return new Error(\n      'Material-UI: you used an element after ListItemSecondaryAction. ' +\n        'For ListItem to detect that it has a secondary action ' +\n        'you must pass it as the last child to ListItem.',\n    );\n  }\n\n  return null;\n})",
-        "chained": {
-          "name": "node"
-        }
+        "name": "custom",
+        "raw": "chainPropTypes(PropTypes.node, (props) => {\r\n  const children = React.Children.toArray(props.children);\r\n\r\n  // React.Children.toArray(props.children).findLastIndex(isListItemSecondaryAction)\r\n  let secondaryActionIndex = -1;\r\n  for (let i = children.length - 1; i >= 0; i -= 1) {\r\n    const child = children[i];\r\n    if (isMuiElement(child, ['ListItemSecondaryAction'])) {\r\n      secondaryActionIndex = i;\r\n      break;\r\n    }\r\n  }\r\n\r\n  //  is ListItemSecondaryAction the last child of ListItem\r\n  if (secondaryActionIndex !== -1 && secondaryActionIndex !== children.length - 1) {\r\n    return new Error(\r\n      'Material-UI: You used an element after ListItemSecondaryAction. ' +\r\n        'For ListItem to detect that it has a secondary action ' +\r\n        'you must pass it as the last child to ListItem.',\r\n    );\r\n  }\r\n\r\n  return null;\r\n})"
       },
       "required": false,
-      "description": "The content of the component. If a `ListItemSecondaryAction` is used it must\nbe the last child.",
+      "description": "The content of the component. If a `ListItemSecondaryAction` is used it must\r\nbe the last child.",
       "tags": []
     },
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "component": {
@@ -73,7 +71,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.\nBy default, it's a `li` when `button` is `false` and a `div` when `button` is `true`.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "tags": []
     },
     "ContainerComponent": {
@@ -206,7 +204,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLLIElement",
-  "filename": "/packages/material-ui/src/ListItem/ListItem.js",
+  "filename": "\\packages\\material-ui\\src\\ListItem\\ListItem.js",
   "inheritance": null,
   "usedInPages": [
     "/components/lists",

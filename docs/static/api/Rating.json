@@ -1,13 +1,14 @@
 {
   "description": "",
+  "displayName": "Rating",
   "methods": [],
   "props": {
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "defaultValue": {
@@ -59,9 +60,9 @@
         "name": "func"
       },
       "required": false,
-      "description": "Accepts a function which returns a string value that provides a user-friendly name for the current value of the rating.\n\nFor localization purposes, you can use the provided [translations](/guides/localization/).",
+      "description": "Accepts a function which returns a string value that provides a user-friendly name for the current value of the rating.\r\n\r\nFor localization purposes, you can use the provided [translations](/guides/localization/).",
       "defaultValue": {
-        "value": "function defaultLabelText(value) {\n  return `${value} Star${value !== 1 ? 's' : ''}`;\n}",
+        "value": "function defaultLabelText(value) {\r\n  return `${value} Star${value !== 1 ? 's' : ''}`;\r\n}",
         "computed": false
       },
       "tags": [
@@ -103,7 +104,7 @@
       "required": false,
       "description": "The component containing the icon.",
       "defaultValue": {
-        "value": "function IconContainer(props) {\n  const { value, ...other } = props;\n  return <span {...other} />;\n}",
+        "value": "function IconContainer(props) {\r\n  const { value, ...other } = props;\r\n  return <span {...other} />;\r\n}",
         "computed": false
       },
       "tags": []
@@ -122,14 +123,11 @@
     },
     "name": {
       "type": {
-        "name": "chained",
-        "raw": "chainPropTypes(PropTypes.string, props => {\n  if (!props.readOnly && !props.name) {\n    return new Error(\n      [\n        'Material-UI: the prop `name` is required (when `readOnly` is false).',\n        'Additionally, the input name should be unique within the parent form.',\n      ].join('\\n'),\n    );\n  }\n  return null;\n})",
-        "chained": {
-          "name": "string"
-        }
+        "name": "custom",
+        "raw": "chainPropTypes(PropTypes.string, (props) => {\r\n  if (!props.readOnly && !props.name) {\r\n    return new Error(\r\n      [\r\n        'Material-UI: The prop `name` is required (when `readOnly` is false).',\r\n        'Additionally, the input name should be unique within the parent form.',\r\n      ].join('\\n'),\r\n    );\r\n  }\r\n  return null;\r\n})"
       },
       "required": false,
-      "description": "The name attribute of the radio `input` elements.\nIf `readOnly` is false, the prop is required,\nthis input name`should be unique within the parent form.",
+      "description": "The name attribute of the radio `input` elements.\r\nIf `readOnly` is false, the prop is required,\r\nthis input name`should be unique within the parent form.",
       "tags": []
     },
     "onChange": {
@@ -188,7 +186,8 @@
     },
     "precision": {
       "type": {
-        "name": "number"
+        "name": "custom",
+        "raw": "chainPropTypes(PropTypes.number, (props) => {\r\n  if (props.precision < 0.1) {\r\n    return new Error(\r\n      [\r\n        'Material-UI: The prop `precision` should be above 0.1.',\r\n        'A value below this limit has an imperceptible impact.',\r\n      ].join('\\n'),\r\n    );\r\n  }\r\n  return null;\r\n})"
       },
       "required": false,
       "description": "The minimum increment value change allowed.",
@@ -215,7 +214,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'small'",
+            "value": "'large'",
             "computed": false
           },
           {
@@ -223,7 +222,7 @@
             "computed": false
           },
           {
-            "value": "'large'",
+            "value": "'small'",
             "computed": false
           }
         ]
@@ -254,7 +253,7 @@
       "readOnly",
       "disabled",
       "focusVisible",
-      "visuallyhidden",
+      "visuallyHidden",
       "pristine",
       "label",
       "icon",
@@ -273,7 +272,7 @@
       "readOnly": "Styles applied to the root element if `readOnly={true}`.",
       "disabled": "Pseudo-class applied to the root element if `disabled={true}`.",
       "focusVisible": "Pseudo-class applied to the root element if keyboard focused.",
-      "visuallyhidden": "Visually hide an element.",
+      "visuallyHidden": "Visually hide an element.",
       "pristine": "Styles applied to the pristine label.",
       "label": "Styles applied to the label elements.",
       "icon": "Styles applied to the icon wrapping elements.",
@@ -291,7 +290,7 @@
       "readOnly": "MuiRating-readOnly",
       "disabled": "Mui-disabled",
       "focusVisible": "Mui-focusVisible",
-      "visuallyhidden": "MuiRating-visuallyhidden",
+      "visuallyHidden": "MuiRating-visuallyHidden",
       "pristine": "MuiRating-pristine",
       "label": "MuiRating-label",
       "icon": "MuiRating-icon",
@@ -305,7 +304,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLSpanElement",
-  "filename": "/packages/material-ui-lab/src/Rating/Rating.js",
+  "filename": "\\packages\\material-ui-lab\\src\\Rating\\Rating.js",
   "inheritance": null,
   "usedInPages": [
     "/components/rating"

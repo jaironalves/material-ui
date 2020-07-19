@@ -16,17 +16,17 @@
         "name": "enum",
         "value": [
           {
-            "value": "'js'",
+            "value": "'css'",
             "computed": false
           },
           {
-            "value": "'css'",
+            "value": "'js'",
             "computed": false
           }
         ]
       },
       "required": false,
-      "description": "Specify which implementation to use.  'js' is the default, 'css' works better for\nserver-side rendering.",
+      "description": "Specify which implementation to use.  'js' is the default, 'css' works better for\r\nserver-side rendering.",
       "defaultValue": {
         "value": "'js'",
         "computed": false
@@ -60,7 +60,7 @@
         ]
       },
       "required": false,
-      "description": "You can use this prop when choosing the `js` implementation with server-side rendering.\n\nAs `window.innerWidth` is unavailable on the server,\nwe default to rendering an empty component during the first mount.\nYou might want to use an heuristic to approximate\nthe screen width of the client browser screen width.\n\nFor instance, you could be using the user-agent or the client-hints.\nhttps://caniuse.com/#search=client%20hint",
+      "description": "You can use this prop when choosing the `js` implementation with server-side rendering.\r\n\r\nAs `window.innerWidth` is unavailable on the server,\r\nwe default to rendering an empty component during the first mount.\r\nYou might want to use a heuristic to approximate\r\nthe screen width of the client browser screen width.\r\n\r\nFor instance, you could be using the user-agent or the client-hints.\r\nhttps://caniuse.com/#search=client%20hint",
       "tags": []
     },
     "lgDown": {
@@ -254,7 +254,7 @@
     "descriptions": {}
   },
   "spread": true,
-  "filename": "/packages/material-ui/src/Hidden/Hidden.js",
+  "filename": "\\packages\\material-ui\\src\\Hidden\\Hidden.js",
   "inheritance": null,
   "usedInPages": [
     "/components/hidden"

@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Stepper",
   "methods": [],
   "props": {
     "activeStep": {
@@ -7,7 +8,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "Set the active step (zero based index).\nSet to -1 to disable all the steps.",
+      "description": "Set the active step (zero based index).\r\nSet to -1 to disable all the steps.",
       "defaultValue": {
         "value": "0",
         "computed": false
@@ -19,7 +20,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If set to 'true' and orientation is horizontal,\nthen the step label will be positioned under the icon.",
+      "description": "If set to 'true' and orientation is horizontal,\r\nthen the step label will be positioned under the icon.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -30,7 +31,7 @@
       "type": {
         "name": "node"
       },
-      "required": true,
+      "required": false,
       "description": "Two or more `<Step />` components.",
       "tags": []
     },
@@ -38,8 +39,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "connector": {
@@ -113,7 +114,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Stepper/Stepper.js",
+  "filename": "\\packages\\material-ui\\src\\Stepper\\Stepper.js",
   "inheritance": {
     "component": "Paper",
     "pathname": "/api/paper"

@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "AvatarGroup",
   "methods": [],
   "props": {
     "children": {
@@ -15,7 +16,20 @@
         "name": "object"
       },
       "required": false,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
+      "tags": []
+    },
+    "max": {
+      "type": {
+        "name": "custom",
+        "raw": "chainPropTypes(PropTypes.number, (props) => {\r\n  if (props.max < 2) {\r\n    throw new Error(\r\n      [\r\n        'Material-UI: The prop `max` should be equal to 2 or above.',\r\n        'A value below is clamped to 2.',\r\n      ].join('\\n'),\r\n    );\r\n  }\r\n})"
+      },
+      "required": false,
+      "description": "Max avatars to show before +x.",
+      "defaultValue": {
+        "value": "5",
+        "computed": false
+      },
       "tags": []
     },
     "spacing": {
@@ -67,7 +81,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui-lab/src/AvatarGroup/AvatarGroup.js",
+  "filename": "\\packages\\material-ui-lab\\src\\AvatarGroup\\AvatarGroup.js",
   "inheritance": null,
   "usedInPages": [
     "/components/avatars"

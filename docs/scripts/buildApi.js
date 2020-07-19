@@ -202,7 +202,9 @@ async function run() {
 
   const componentApis = {};
   await Promise.all(
-    components.map(async component => {
+    components
+      // .filter(cp => cp.filename.includes('Popper'))
+      .map(async component => {
       try {
         const componentApi = await buildComponentApi(component);
         if (componentApi !== null) {

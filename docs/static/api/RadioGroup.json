@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "RadioGroup",
   "methods": [],
   "props": {
     "children": {
@@ -12,7 +13,21 @@
     },
     "defaultValue": {
       "type": {
-        "name": "any"
+        "name": "union",
+        "value": [
+          {
+            "name": "arrayOf",
+            "value": {
+              "name": "string"
+            }
+          },
+          {
+            "name": "number"
+          },
+          {
+            "name": "string"
+          }
+        ]
       },
       "required": false,
       "description": "The default `input` element value. Use when the component is not controlled.",
@@ -23,7 +38,7 @@
         "name": "string"
       },
       "required": false,
-      "description": "The name used to reference the value of the control.\nIf you don't provide this prop, it falls back to a randomly generated name.",
+      "description": "The name used to reference the value of the control.\r\nIf you don't provide this prop, it falls back to a randomly generated name.",
       "tags": []
     },
     "onChange": {
@@ -35,7 +50,7 @@
       "tags": [
         {
           "title": "param",
-          "description": "The event source of the callback.\nYou can pull out the new value by accessing `event.target.value` (string).",
+          "description": "The event source of the callback.\r\nYou can pull out the new value by accessing `event.target.value` (string).",
           "type": {
             "type": "NameExpression",
             "name": "object"
@@ -61,7 +76,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/RadioGroup/RadioGroup.js",
+  "filename": "\\packages\\material-ui\\src\\RadioGroup\\RadioGroup.js",
   "inheritance": {
     "component": "FormGroup",
     "pathname": "/api/form-group"

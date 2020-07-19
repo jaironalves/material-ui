@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "GridListTileBar",
   "methods": [],
   "props": {
     "actionIcon": {
@@ -7,7 +8,7 @@
         "name": "node"
       },
       "required": false,
-      "description": "An IconButton element to be used as secondary action target\n(primary action target is the tile itself).",
+      "description": "An IconButton element to be used as secondary action target\r\n(primary action target is the tile itself).",
       "tags": []
     },
     "actionPosition": {
@@ -36,8 +37,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "subtitle": {
@@ -61,11 +62,11 @@
         "name": "enum",
         "value": [
           {
-            "value": "'top'",
+            "value": "'bottom'",
             "computed": false
           },
           {
-            "value": "'bottom'",
+            "value": "'top'",
             "computed": false
           }
         ]
@@ -124,7 +125,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/GridListTileBar/GridListTileBar.js",
+  "filename": "\\packages\\material-ui\\src\\GridListTileBar\\GridListTileBar.js",
   "inheritance": null,
   "usedInPages": [
     "/components/grid-list"

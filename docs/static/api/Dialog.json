@@ -1,5 +1,6 @@
 {
   "description": "Dialogs are overlaid modal paper based components with a backdrop.",
+  "displayName": "Dialog",
   "methods": [],
   "props": {
     "aria-describedby": {
@@ -22,7 +23,7 @@
       "type": {
         "name": "node"
       },
-      "required": true,
+      "required": false,
       "description": "Dialog children, usually the included sub-components.",
       "tags": []
     },
@@ -30,8 +31,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "disableBackdropClick": {
@@ -75,7 +76,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the dialog stretches to `maxWidth`.\n\nNotice that the dialog width grow is limited by the default margin.",
+      "description": "If `true`, the dialog stretches to `maxWidth`.\r\n\r\nNotice that the dialog width grow is limited by the default margin.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -87,11 +88,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'xs'",
-            "computed": false
-          },
-          {
-            "value": "'sm'",
+            "value": "'lg'",
             "computed": false
           },
           {
@@ -99,11 +96,15 @@
             "computed": false
           },
           {
-            "value": "'lg'",
+            "value": "'sm'",
             "computed": false
           },
           {
             "value": "'xl'",
+            "computed": false
+          },
+          {
+            "value": "'xs'",
             "computed": false
           },
           {
@@ -113,7 +114,7 @@
         ]
       },
       "required": false,
-      "description": "Determine the max-width of the dialog.\nThe dialog width grows with the size of the screen.\nSet to `false` to disable `maxWidth`.",
+      "description": "Determine the max-width of the dialog.\r\nThe dialog width grows with the size of the screen.\r\nSet to `false` to disable `maxWidth`.",
       "defaultValue": {
         "value": "'sm'",
         "computed": false
@@ -184,7 +185,7 @@
         "name": "func"
       },
       "required": false,
-      "description": "Callback fired when the escape key is pressed,\n`disableKeyboard` is false and the modal is in focus.",
+      "description": "Callback fired when the escape key is pressed,\r\n`disableKeyboard` is false and the modal is in focus.",
       "tags": []
     },
     "onExit": {
@@ -270,7 +271,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the transition.\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
+      "description": "The component used for the transition.\r\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
       "defaultValue": {
         "value": "Fade",
         "computed": true
@@ -287,6 +288,10 @@
           {
             "name": "shape",
             "value": {
+              "appear": {
+                "name": "number",
+                "required": false
+              },
               "enter": {
                 "name": "number",
                 "required": false
@@ -300,7 +305,7 @@
         ]
       },
       "required": false,
-      "description": "The duration for the transition, in milliseconds.\nYou may specify a single timeout for all transitions, or individually with an object.",
+      "description": "The duration for the transition, in milliseconds.\r\nYou may specify a single timeout for all transitions, or individually with an object.",
       "defaultValue": {
         "value": "{ enter: duration.enteringScreen, exit: duration.leavingScreen }",
         "computed": false
@@ -373,7 +378,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Dialog/Dialog.js",
+  "filename": "\\packages\\material-ui\\src\\Dialog\\Dialog.js",
   "inheritance": {
     "component": "Modal",
     "pathname": "/api/modal"

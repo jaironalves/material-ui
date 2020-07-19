@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "InputAdornment",
   "methods": [],
   "props": {
     "children": {
@@ -14,8 +15,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "component": {
@@ -23,7 +24,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'div'",
         "computed": false
@@ -35,7 +36,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "Disable pointer events on the root.\nThis allows for the content of the adornment to focus the input on click.",
+      "description": "Disable pointer events on the root.\r\nThis allows for the content of the adornment to focus the input on click.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -59,11 +60,11 @@
         "name": "enum",
         "value": [
           {
-            "value": "'start'",
+            "value": "'end'",
             "computed": false
           },
           {
-            "value": "'end'",
+            "value": "'start'",
             "computed": false
           }
         ]
@@ -77,7 +78,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'standard'",
+            "value": "'filled'",
             "computed": false
           },
           {
@@ -85,13 +86,13 @@
             "computed": false
           },
           {
-            "value": "'filled'",
+            "value": "'standard'",
             "computed": false
           }
         ]
       },
       "required": false,
-      "description": "The variant to use.\nNote: If you are using the `TextField` component or the `FormControl` component\nyou do not have to set this manually.",
+      "description": "The variant to use.\r\nNote: If you are using the `TextField` component or the `FormControl` component\r\nyou do not have to set this manually.",
       "tags": []
     }
   },
@@ -128,7 +129,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/InputAdornment/InputAdornment.js",
+  "filename": "\\packages\\material-ui\\src\\InputAdornment\\InputAdornment.js",
   "inheritance": null,
   "usedInPages": [
     "/components/text-fields"

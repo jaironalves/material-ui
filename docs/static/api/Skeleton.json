@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Skeleton",
   "methods": [],
   "props": {
     "animation": {
@@ -21,19 +22,27 @@
         ]
       },
       "required": false,
-      "description": "The animation.\nIf `false` the animation effect is disabled.",
+      "description": "The animation.\r\nIf `false` the animation effect is disabled.",
       "defaultValue": {
         "value": "'pulse'",
         "computed": false
       },
       "tags": []
     },
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "Optional children to infer width and height from.",
+      "tags": []
+    },
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "component": {
@@ -41,7 +50,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'span'",
         "computed": false
@@ -61,7 +70,7 @@
         ]
       },
       "required": false,
-      "description": "Height of the skeleton.\nUseful when you don't want to adapt the skeleton to a text element but for instance a card.",
+      "description": "Height of the skeleton.\r\nUseful when you don't want to adapt the skeleton to a text element but for instance a card.",
       "tags": []
     },
     "variant": {
@@ -69,7 +78,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'text'",
+            "value": "'circle'",
             "computed": false
           },
           {
@@ -77,7 +86,7 @@
             "computed": false
           },
           {
-            "value": "'circle'",
+            "value": "'text'",
             "computed": false
           }
         ]
@@ -103,7 +112,7 @@
         ]
       },
       "required": false,
-      "description": "Width of the skeleton.\nUseful when the skeleton is inside an inline element with no width of its own.",
+      "description": "Width of the skeleton.\r\nUseful when the skeleton is inside an inline element with no width of its own.",
       "tags": []
     }
   },
@@ -115,7 +124,10 @@
       "rect",
       "circle",
       "pulse",
-      "wave"
+      "wave",
+      "withChildren",
+      "fitContent",
+      "heightAuto"
     ],
     "name": "MuiSkeleton",
     "descriptions": {
@@ -124,7 +136,10 @@
       "rect": "Styles applied to the root element if `variant=\"rect\"`.",
       "circle": "Styles applied to the root element if `variant=\"circle\"`.",
       "pulse": "Styles applied to the root element if `animation=\"pulse\"`.",
-      "wave": "Styles applied to the root element if `animation=\"wave\"`."
+      "wave": "Styles applied to the root element if `animation=\"wave\"`.",
+      "withChildren": "Styles applied when the component is passed children.",
+      "fitContent": "Styles applied when the component is passed children and no width.",
+      "heightAuto": "Styles applied when the component is passed children and no height."
     },
     "globalClasses": {
       "root": "MuiSkeleton-root",
@@ -132,12 +147,15 @@
       "rect": "MuiSkeleton-rect",
       "circle": "MuiSkeleton-circle",
       "pulse": "MuiSkeleton-pulse",
-      "wave": "MuiSkeleton-wave"
+      "wave": "MuiSkeleton-wave",
+      "withChildren": "MuiSkeleton-withChildren",
+      "fitContent": "MuiSkeleton-fitContent",
+      "heightAuto": "MuiSkeleton-heightAuto"
     }
   },
   "spread": true,
   "forwardsRefTo": "HTMLSpanElement",
-  "filename": "/packages/material-ui-lab/src/Skeleton/Skeleton.js",
+  "filename": "\\packages\\material-ui-lab\\src\\Skeleton\\Skeleton.js",
   "inheritance": null,
   "usedInPages": [
     "/components/skeleton"

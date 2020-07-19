@@ -1,5 +1,6 @@
 {
-  "description": "Portals provide a first-class way to render children into a DOM node\nthat exists outside the DOM hierarchy of the parent component.",
+  "description": "Portals provide a first-class way to render children into a DOM node\r\nthat exists outside the DOM hierarchy of the parent component.",
+  "displayName": "Portal",
   "methods": [],
   "props": {
     "children": {
@@ -15,20 +16,20 @@
         "name": "union",
         "value": [
           {
-            "name": "func"
+            "name": "custom",
+            "raw": "HTMLElementType"
           },
           {
             "name": "instanceOf",
             "value": "React.Component"
           },
           {
-            "name": "instanceOf",
-            "value": "typeof Element === 'undefined' ? Object : Element"
+            "name": "func"
           }
         ]
       },
       "required": false,
-      "description": "A node, component instance, or function that returns either.\nThe `container` will have the portal children appended to it.\nBy default, it uses the body of the top-level document object,\nso it's simply `document.body` most of the time.",
+      "description": "A HTML element, component instance, or function that returns either.\r\nThe `container` will have the portal children appended to it.\r\n\r\nBy default, it uses the body of the top-level document object,\r\nso it's simply `document.body` most of the time.",
       "tags": []
     },
     "disablePortal": {
@@ -36,7 +37,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "Disable the portal behavior.\nThe children stay within it's parent DOM hierarchy.",
+      "description": "The `children` will be inside the DOM hierarchy of the parent component.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -48,7 +49,7 @@
         "name": "func"
       },
       "required": false,
-      "description": "Callback fired once the children has been mounted into the `container`.\n\nThis prop will be deprecated and removed in v5, the ref can be used instead.",
+      "description": "Callback fired once the children has been mounted into the `container`.\r\n\r\nThis prop will be deprecated and removed in v5, the ref can be used instead.",
       "tags": []
     }
   },
@@ -59,7 +60,7 @@
     "descriptions": {}
   },
   "spread": false,
-  "filename": "/packages/material-ui/src/Portal/Portal.js",
+  "filename": "\\packages\\material-ui\\src\\Portal\\Portal.js",
   "inheritance": null,
   "usedInPages": [
     "/components/portal"

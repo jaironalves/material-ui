@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Typography",
   "methods": [],
   "props": {
     "align": {
@@ -7,7 +8,15 @@
         "name": "enum",
         "value": [
           {
+            "value": "'center'",
+            "computed": false
+          },
+          {
             "value": "'inherit'",
+            "computed": false
+          },
+          {
+            "value": "'justify'",
             "computed": false
           },
           {
@@ -15,15 +24,7 @@
             "computed": false
           },
           {
-            "value": "'center'",
-            "computed": false
-          },
-          {
             "value": "'right'",
-            "computed": false
-          },
-          {
-            "value": "'justify'",
             "computed": false
           }
         ]
@@ -48,8 +49,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
@@ -57,11 +58,15 @@
         "name": "enum",
         "value": [
           {
-            "value": "'initial'",
+            "value": "'error'",
             "computed": false
           },
           {
             "value": "'inherit'",
+            "computed": false
+          },
+          {
+            "value": "'initial'",
             "computed": false
           },
           {
@@ -79,10 +84,6 @@
           {
             "value": "'textSecondary'",
             "computed": false
-          },
-          {
-            "value": "'error'",
-            "computed": false
           }
         ]
       },
@@ -99,7 +100,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.\nOverrides the behavior of the `variantMapping` prop.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "tags": []
     },
     "display": {
@@ -107,11 +108,11 @@
         "name": "enum",
         "value": [
           {
-            "value": "'initial'",
+            "value": "'block'",
             "computed": false
           },
           {
-            "value": "'block'",
+            "value": "'initial'",
             "computed": false
           },
           {
@@ -145,7 +146,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.\n\nNote that text overflow can only happen with block or inline-block level elements\n(the element needs to have a width in order to overflow).",
+      "description": "If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.\r\n\r\nNote that text overflow can only happen with block or inline-block level elements\r\n(the element needs to have a width in order to overflow).",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -168,6 +169,22 @@
       "type": {
         "name": "enum",
         "value": [
+          {
+            "value": "'body1'",
+            "computed": false
+          },
+          {
+            "value": "'body2'",
+            "computed": false
+          },
+          {
+            "value": "'button'",
+            "computed": false
+          },
+          {
+            "value": "'caption'",
+            "computed": false
+          },
           {
             "value": "'h1'",
             "computed": false
@@ -193,27 +210,7 @@
             "computed": false
           },
           {
-            "value": "'subtitle1'",
-            "computed": false
-          },
-          {
-            "value": "'subtitle2'",
-            "computed": false
-          },
-          {
-            "value": "'body1'",
-            "computed": false
-          },
-          {
-            "value": "'body2'",
-            "computed": false
-          },
-          {
-            "value": "'caption'",
-            "computed": false
-          },
-          {
-            "value": "'button'",
+            "value": "'inherit'",
             "computed": false
           },
           {
@@ -221,11 +218,11 @@
             "computed": false
           },
           {
-            "value": "'srOnly'",
+            "value": "'subtitle1'",
             "computed": false
           },
           {
-            "value": "'inherit'",
+            "value": "'subtitle2'",
             "computed": false
           }
         ]
@@ -240,12 +237,66 @@
     },
     "variantMapping": {
       "type": {
-        "name": "object"
+        "name": "shape",
+        "value": {
+          "body1": {
+            "name": "string",
+            "required": false
+          },
+          "body2": {
+            "name": "string",
+            "required": false
+          },
+          "button": {
+            "name": "string",
+            "required": false
+          },
+          "caption": {
+            "name": "string",
+            "required": false
+          },
+          "h1": {
+            "name": "string",
+            "required": false
+          },
+          "h2": {
+            "name": "string",
+            "required": false
+          },
+          "h3": {
+            "name": "string",
+            "required": false
+          },
+          "h4": {
+            "name": "string",
+            "required": false
+          },
+          "h5": {
+            "name": "string",
+            "required": false
+          },
+          "h6": {
+            "name": "string",
+            "required": false
+          },
+          "overline": {
+            "name": "string",
+            "required": false
+          },
+          "subtitle1": {
+            "name": "string",
+            "required": false
+          },
+          "subtitle2": {
+            "name": "string",
+            "required": false
+          }
+        }
       },
       "required": false,
-      "description": "The component maps the variant prop to a range of different DOM element types.\nFor instance, subtitle1 to `<h6>`.\nIf you wish to change that mapping, you can provide your own.\nAlternatively, you can use the `component` prop.",
+      "description": "The component maps the variant prop to a range of different HTML element types.\r\nFor instance, subtitle1 to `<h6>`.\r\nIf you wish to change that mapping, you can provide your own.\r\nAlternatively, you can use the `component` prop.",
       "defaultValue": {
-        "value": "{\n  h1: 'h1',\n  h2: 'h2',\n  h3: 'h3',\n  h4: 'h4',\n  h5: 'h5',\n  h6: 'h6',\n  subtitle1: 'h6',\n  subtitle2: 'h6',\n  body1: 'p',\n  body2: 'p',\n}",
+        "value": "{\r\n  h1: 'h1',\r\n  h2: 'h2',\r\n  h3: 'h3',\r\n  h4: 'h4',\r\n  h5: 'h5',\r\n  h6: 'h6',\r\n  subtitle1: 'h6',\r\n  subtitle2: 'h6',\r\n  body1: 'p',\r\n  body2: 'p',\r\n}",
         "computed": false
       },
       "tags": []
@@ -268,7 +319,6 @@
       "subtitle1",
       "subtitle2",
       "overline",
-      "srOnly",
       "alignLeft",
       "alignCenter",
       "alignRight",
@@ -301,7 +351,6 @@
       "subtitle1": "Styles applied to the root element if `variant=\"subtitle1\"`.",
       "subtitle2": "Styles applied to the root element if `variant=\"subtitle2\"`.",
       "overline": "Styles applied to the root element if `variant=\"overline\"`.",
-      "srOnly": "Styles applied to the root element if `variant=\"srOnly\"`. Only accessible to screen readers.",
       "alignLeft": "Styles applied to the root element if `align=\"left\"`.",
       "alignCenter": "Styles applied to the root element if `align=\"center\"`.",
       "alignRight": "Styles applied to the root element if `align=\"right\"`.",
@@ -333,7 +382,6 @@
       "subtitle1": "MuiTypography-subtitle1",
       "subtitle2": "MuiTypography-subtitle2",
       "overline": "MuiTypography-overline",
-      "srOnly": "MuiTypography-srOnly",
       "alignLeft": "MuiTypography-alignLeft",
       "alignCenter": "MuiTypography-alignCenter",
       "alignRight": "MuiTypography-alignRight",
@@ -353,7 +401,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLParagraphElement",
-  "filename": "/packages/material-ui/src/Typography/Typography.js",
+  "filename": "\\packages\\material-ui\\src\\Typography\\Typography.js",
   "inheritance": null,
   "usedInPages": [
     "/components/breadcrumbs",

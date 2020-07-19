@@ -1,21 +1,30 @@
 {
   "description": "",
+  "displayName": "PaginationItem",
   "methods": [],
   "props": {
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
+      "tags": []
+    },
     "color": {
       "type": {
         "name": "enum",
         "value": [
-          {
-            "value": "'standard'",
-            "computed": false
-          },
           {
             "value": "'primary'",
             "computed": false
           },
           {
             "value": "'secondary'",
+            "computed": false
+          },
+          {
+            "value": "'standard'",
             "computed": false
           }
         ]
@@ -33,7 +42,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "tags": []
     },
     "disabled": {
@@ -95,7 +104,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'small'",
+            "value": "'large'",
             "computed": false
           },
           {
@@ -103,7 +112,7 @@
             "computed": false
           },
           {
-            "value": "'large'",
+            "value": "'small'",
             "computed": false
           }
         ]
@@ -121,7 +130,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'page'",
+            "value": "'end-ellipsis'",
             "computed": false
           },
           {
@@ -137,15 +146,15 @@
             "computed": false
           },
           {
+            "value": "'page'",
+            "computed": false
+          },
+          {
             "value": "'previous'",
             "computed": false
           },
           {
             "value": "'start-ellipsis'",
-            "computed": false
-          },
-          {
-            "value": "'end-ellipsis'",
             "computed": false
           }
         ]
@@ -163,11 +172,11 @@
         "name": "enum",
         "value": [
           {
-            "value": "'text'",
+            "value": "'outlined'",
             "computed": false
           },
           {
-            "value": "'outlined'",
+            "value": "'text'",
             "computed": false
           }
         ]
@@ -238,7 +247,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLButtonElement",
-  "filename": "/packages/material-ui-lab/src/PaginationItem/PaginationItem.js",
+  "filename": "\\packages\\material-ui-lab\\src\\PaginationItem\\PaginationItem.js",
   "inheritance": null,
   "usedInPages": [
     "/components/pagination"

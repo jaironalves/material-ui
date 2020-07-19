@@ -17,7 +17,7 @@ import Link from 'docs/src/modules/components/Link';
 import { exactProp } from '@material-ui/utils';
 import { SOURCE_CODE_ROOT_URL } from 'docs/src/modules/constants';
 import Demo from 'docs/src/modules/components/Demo';
-import AppTableOfContents from 'docs/src/modules/components/AppTableOfContents';
+import MarkdownTableOfContents from 'docs/src/modules/components/MarkdownTableOfContents';
 import MarkdownElement from 'docs/src/modules/components/MarkdownElement';
 import Ad from 'docs/src/modules/components/Ad';
 import AdManager from 'docs/src/modules/components/AdManager';
@@ -215,7 +215,7 @@ function MarkdownDocs(props) {
             </footer>
           </AppContainer>
         </div>
-        {disableToc ? null : <AppTableOfContents items={toc} />}
+        {disableToc ? null : <MarkdownTableOfContents contents={markdownDocs.contents} />}
       </AdManager>
     </AppFrame>
   );

@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Popover",
   "methods": [],
   "props": {
     "action": {
@@ -14,12 +15,12 @@
     "anchorEl": {
       "type": {
         "name": "chained",
-        "raw": "chainPropTypes(PropTypes.oneOfType([PropTypes.object, PropTypes.func]), props => {\n  if (props.open && (!props.anchorReference || props.anchorReference === 'anchorEl')) {\n    const resolvedAnchorEl = getAnchorEl(props.anchorEl);\n    const containerWindow = ownerWindow(resolvedAnchorEl);\n\n    if (resolvedAnchorEl instanceof containerWindow.Element) {\n      const box = resolvedAnchorEl.getBoundingClientRect();\n\n      if (\n        process.env.NODE_ENV !== 'test' &&\n        box.top === 0 &&\n        box.left === 0 &&\n        box.right === 0 &&\n        box.bottom === 0\n      ) {\n        return new Error(\n          [\n            'Material-UI: the `anchorEl` prop provided to the component is invalid.',\n            'The anchor element should be part of the document layout.',\n            \"Make sure the element is present in the document or that it's not display none.\",\n          ].join('\\n'),\n        );\n      }\n    } else {\n      return new Error(\n        [\n          'Material-UI: the `anchorEl` prop provided to the component is invalid.',\n          `It should be an Element instance but it's \\`${resolvedAnchorEl}\\` instead.`,\n        ].join('\\n'),\n      );\n    }\n  }\n\n  return null;\n})",
+        "raw": "chainPropTypes/* @chainedAs [\"HTMLElementType\", \"func\"] */(HTMLElementType, PropTypes.func, (props) => {\n  if (props.open && (!props.anchorReference || props.anchorReference === 'anchorEl')) {\n    const resolvedAnchorEl = getAnchorEl(props.anchorEl);\n\n    if (resolvedAnchorEl && resolvedAnchorEl.nodeType === 1) {\n      const box = resolvedAnchorEl.getBoundingClientRect();\n\n      if (\n        process.env.NODE_ENV !== 'test' &&\n        box.top === 0 &&\n        box.left === 0 &&\n        box.right === 0 &&\n        box.bottom === 0\n      ) {\n        return new Error(\n          [\n            'Material-UI: The `anchorEl` prop provided to the component is invalid.',\n            'The anchor element should be part of the document layout.',\n            \"Make sure the element is present in the document or that it's not display none.\",\n          ].join('\\n'),\n        );\n      }\n    } else {\n      return new Error(\n        [\n          'Material-UI: The `anchorEl` prop provided to the component is invalid.',\n          `It should be an Element instance but it's \\`${resolvedAnchorEl}\\` instead.`,\n        ].join('\\n'),\n      );\n    }\n  }\n\n  return null;\n})",
         "chained": {
           "name": "union",
           "value": [
             {
-              "name": "object"
+              "name": "HTMLElementType"
             },
             {
               "name": "func"
@@ -28,7 +29,7 @@
         }
       },
       "required": false,
-      "description": "This is the DOM element, or a function that returns the DOM element,\nthat may be used to set the position of the popover.",
+      "description": "A HTML element, or a function that returns it.\nIt's used to set the position of the popover.",
       "tags": []
     },
     "anchorOrigin": {
@@ -39,17 +40,14 @@
             "name": "union",
             "value": [
               {
-                "name": "number"
-              },
-              {
                 "name": "enum",
                 "value": [
                   {
-                    "value": "'left'",
+                    "value": "'center'",
                     "computed": false
                   },
                   {
-                    "value": "'center'",
+                    "value": "'left'",
                     "computed": false
                   },
                   {
@@ -57,6 +55,9 @@
                     "computed": false
                   }
                 ]
+              },
+              {
+                "name": "number"
               }
             ],
             "required": true
@@ -65,13 +66,10 @@
             "name": "union",
             "value": [
               {
-                "name": "number"
-              },
-              {
                 "name": "enum",
                 "value": [
                   {
-                    "value": "'top'",
+                    "value": "'bottom'",
                     "computed": false
                   },
                   {
@@ -79,10 +77,13 @@
                     "computed": false
                   },
                   {
-                    "value": "'bottom'",
+                    "value": "'top'",
                     "computed": false
                   }
                 ]
+              },
+              {
+                "name": "number"
               }
             ],
             "required": true
@@ -134,7 +135,7 @@
         ]
       },
       "required": false,
-      "description": "",
+      "description": "This determines which anchor prop to refer to to set\nthe position of the popover.",
       "defaultValue": {
         "value": "'anchorEl'",
         "computed": false
@@ -153,7 +154,7 @@
       "type": {
         "name": "object"
       },
-      "required": true,
+      "required": false,
       "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
@@ -162,7 +163,12 @@
         "name": "union",
         "value": [
           {
-            "name": "object"
+            "name": "custom",
+            "raw": "HTMLElementType"
+          },
+          {
+            "name": "instanceOf",
+            "value": "React.Component"
           },
           {
             "name": "func"
@@ -170,7 +176,7 @@
         ]
       },
       "required": false,
-      "description": "A node, component instance, or function that returns either.\nThe `container` will passed to the Modal component.\nBy default, it uses the body of the anchorEl's top-level document object,\nso it's simply `document.body` most of the time.",
+      "description": "A HTML element, component instance, or function that returns either.\nThe `container` will passed to the Modal component.\n\nBy default, it uses the body of the anchorEl's top-level document object,\nso it's simply `document.body` most of the time.",
       "tags": []
     },
     "elevation": {
@@ -210,27 +216,8 @@
         "name": "func"
       },
       "required": false,
-      "description": "Callback fired when the component requests to be closed.",
-      "tags": [
-        {
-          "title": "param",
-          "description": "The event source of the callback.",
-          "type": {
-            "type": "NameExpression",
-            "name": "object"
-          },
-          "name": "event"
-        },
-        {
-          "title": "param",
-          "description": "Can be: `\"escapeKeyDown\"`, `\"backdropClick\"`.",
-          "type": {
-            "type": "NameExpression",
-            "name": "string"
-          },
-          "name": "reason"
-        }
-      ]
+      "description": "Callback fired when the component requests to be closed.\nThe `reason` parameter can optionally be used to control the response to `onClose`.",
+      "tags": []
     },
     "onEnter": {
       "type": {
@@ -315,17 +302,14 @@
             "name": "union",
             "value": [
               {
-                "name": "number"
-              },
-              {
                 "name": "enum",
                 "value": [
                   {
-                    "value": "'left'",
+                    "value": "'center'",
                     "computed": false
                   },
                   {
-                    "value": "'center'",
+                    "value": "'left'",
                     "computed": false
                   },
                   {
@@ -333,6 +317,9 @@
                     "computed": false
                   }
                 ]
+              },
+              {
+                "name": "number"
               }
             ],
             "required": true
@@ -341,13 +328,10 @@
             "name": "union",
             "value": [
               {
-                "name": "number"
-              },
-              {
                 "name": "enum",
                 "value": [
                   {
-                    "value": "'top'",
+                    "value": "'bottom'",
                     "computed": false
                   },
                   {
@@ -355,10 +339,13 @@
                     "computed": false
                   },
                   {
-                    "value": "'bottom'",
+                    "value": "'top'",
                     "computed": false
                   }
                 ]
+              },
+              {
+                "name": "number"
               }
             ],
             "required": true
@@ -390,11 +377,24 @@
         "name": "union",
         "value": [
           {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'auto'",
+                "computed": false
+              }
+            ]
+          },
+          {
             "name": "number"
           },
           {
             "name": "shape",
             "value": {
+              "appear": {
+                "name": "number",
+                "required": false
+              },
               "enter": {
                 "name": "number",
                 "required": false
@@ -404,15 +404,6 @@
                 "required": false
               }
             }
-          },
-          {
-            "name": "enum",
-            "value": [
-              {
-                "value": "'auto'",
-                "computed": false
-              }
-            ]
           }
         ]
       },
@@ -445,7 +436,7 @@
     ],
     "name": "MuiPopover",
     "descriptions": {
-      "root": "Styles applied to the root element",
+      "root": "Styles applied to the root element.",
       "paper": "Styles applied to the `Paper` component."
     },
     "globalClasses": {
@@ -455,7 +446,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Popover/Popover.js",
+  "filename": "\\packages\\material-ui\\src\\Popover\\Popover.js",
   "inheritance": {
     "component": "Modal",
     "pathname": "/api/modal"

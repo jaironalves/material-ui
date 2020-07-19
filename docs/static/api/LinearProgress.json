@@ -1,13 +1,14 @@
 {
-  "description": "## ARIA\n\nIf the progress bar is describing the loading progress of a particular region of a page,\nyou should use `aria-describedby` to point to the progress bar, and set the `aria-busy`\nattribute to `true` on that region until it has finished loading.",
+  "description": "## ARIA\r\n\r\nIf the progress bar is describing the loading progress of a particular region of a page,\r\nyou should use `aria-describedby` to point to the progress bar, and set the `aria-busy`\r\nattribute to `true` on that region until it has finished loading.",
+  "displayName": "LinearProgress",
   "methods": [],
   "props": {
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
@@ -37,7 +38,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "The value of the progress indicator for the determinate and buffer variants.\nValue between 0 and 100.",
+      "description": "The value of the progress indicator for the determinate and buffer variants.\r\nValue between 0 and 100.",
       "tags": []
     },
     "valueBuffer": {
@@ -45,13 +46,17 @@
         "name": "number"
       },
       "required": false,
-      "description": "The value for the buffer variant.\nValue between 0 and 100.",
+      "description": "The value for the buffer variant.\r\nValue between 0 and 100.",
       "tags": []
     },
     "variant": {
       "type": {
         "name": "enum",
         "value": [
+          {
+            "value": "'buffer'",
+            "computed": false
+          },
           {
             "value": "'determinate'",
             "computed": false
@@ -61,17 +66,13 @@
             "computed": false
           },
           {
-            "value": "'buffer'",
-            "computed": false
-          },
-          {
             "value": "'query'",
             "computed": false
           }
         ]
       },
       "required": false,
-      "description": "The variant to use.\nUse indeterminate or query when there is no progress value.",
+      "description": "The variant to use.\r\nUse indeterminate or query when there is no progress value.",
       "defaultValue": {
         "value": "'indeterminate'",
         "computed": false
@@ -145,7 +146,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/LinearProgress/LinearProgress.js",
+  "filename": "\\packages\\material-ui\\src\\LinearProgress\\LinearProgress.js",
   "inheritance": null,
   "usedInPages": [
     "/components/progress"

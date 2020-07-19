@@ -1,13 +1,14 @@
 {
-  "description": "## ARIA\n\nIf the progress bar is describing the loading progress of a particular region of a page,\nyou should use `aria-describedby` to point to the progress bar, and set the `aria-busy`\nattribute to `true` on that region until it has finished loading.",
+  "description": "## ARIA\r\n\r\nIf the progress bar is describing the loading progress of a particular region of a page,\r\nyou should use `aria-describedby` to point to the progress bar, and set the `aria-busy`\r\nattribute to `true` on that region until it has finished loading.",
+  "displayName": "CircularProgress",
   "methods": [],
   "props": {
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
@@ -15,15 +16,15 @@
         "name": "enum",
         "value": [
           {
+            "value": "'inherit'",
+            "computed": false
+          },
+          {
             "value": "'primary'",
             "computed": false
           },
           {
             "value": "'secondary'",
-            "computed": false
-          },
-          {
-            "value": "'inherit'",
             "computed": false
           }
         ]
@@ -38,14 +39,11 @@
     },
     "disableShrink": {
       "type": {
-        "name": "chained",
-        "raw": "chainPropTypes(PropTypes.bool, props => {\n  if (props.disableShrink && props.variant && props.variant !== 'indeterminate') {\n    return new Error(\n      'Material-UI: you have provided the `disableShrink` prop ' +\n        'with a variant other than `indeterminate`. This will have no effect.',\n    );\n  }\n\n  return null;\n})",
-        "chained": {
-          "name": "bool"
-        }
+        "name": "custom",
+        "raw": "chainPropTypes(PropTypes.bool, (props) => {\r\n  if (props.disableShrink && props.variant && props.variant !== 'indeterminate') {\r\n    return new Error(\r\n      'Material-UI: You have provided the `disableShrink` prop ' +\r\n        'with a variant other than `indeterminate`. This will have no effect.',\r\n    );\r\n  }\r\n\r\n  return null;\r\n})"
       },
       "required": false,
-      "description": "If `true`, the shrink animation is disabled.\nThis only works if variant is `indeterminate`.",
+      "description": "If `true`, the shrink animation is disabled.\r\nThis only works if variant is `indeterminate`.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -65,7 +63,7 @@
         ]
       },
       "required": false,
-      "description": "The size of the circle.\nIf using a number, the pixel unit is assumed.\nIf using a string, you need to provide the CSS unit, e.g '3rem'.",
+      "description": "The size of the circle.\r\nIf using a number, the pixel unit is assumed.\r\nIf using a string, you need to provide the CSS unit, e.g '3rem'.",
       "defaultValue": {
         "value": "40",
         "computed": false
@@ -89,7 +87,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "The value of the progress indicator for the determinate and static variants.\nValue between 0 and 100.",
+      "description": "The value of the progress indicator for the determinate and static variants.\r\nValue between 0 and 100.",
       "defaultValue": {
         "value": "0",
         "computed": false
@@ -115,7 +113,7 @@
         ]
       },
       "required": false,
-      "description": "The variant to use.\nUse indeterminate when there is no progress value.",
+      "description": "The variant to use.\r\nUse indeterminate when there is no progress value.",
       "defaultValue": {
         "value": "'indeterminate'",
         "computed": false
@@ -165,7 +163,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/CircularProgress/CircularProgress.js",
+  "filename": "\\packages\\material-ui\\src\\CircularProgress\\CircularProgress.js",
   "inheritance": null,
   "usedInPages": [
     "/components/progress"

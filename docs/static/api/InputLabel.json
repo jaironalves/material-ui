@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "InputLabel",
   "methods": [],
   "props": {
     "children": {
@@ -14,8 +15,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
@@ -83,7 +84,7 @@
         ]
       },
       "required": false,
-      "description": "If `dense`, will adjust vertical spacing. This is normally obtained via context from\nFormControl.",
+      "description": "If `dense`, will adjust vertical spacing. This is normally obtained via context from\r\nFormControl.",
       "tags": []
     },
     "required": {
@@ -107,7 +108,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'standard'",
+            "value": "'filled'",
             "computed": false
           },
           {
@@ -115,7 +116,7 @@
             "computed": false
           },
           {
-            "value": "'filled'",
+            "value": "'standard'",
             "computed": false
           }
         ]
@@ -173,7 +174,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLLabelElement",
-  "filename": "/packages/material-ui/src/InputLabel/InputLabel.js",
+  "filename": "\\packages\\material-ui\\src\\InputLabel\\InputLabel.js",
   "inheritance": {
     "component": "FormLabel",
     "pathname": "/api/form-label"

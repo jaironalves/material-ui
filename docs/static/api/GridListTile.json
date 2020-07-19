@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "GridListTile",
   "methods": [],
   "props": {
     "children": {
@@ -7,15 +8,15 @@
         "name": "node"
       },
       "required": false,
-      "description": "Theoretically you can pass any node as children, but the main use case is to pass an img,\nin which case GridListTile takes care of making the image \"cover\" available space\n(similar to `background-size: cover` or to `object-fit: cover`).",
+      "description": "Theoretically you can pass any node as children, but the main use case is to pass an img,\r\nin which case GridListTile takes care of making the image \"cover\" available space\r\n(similar to `background-size: cover` or to `object-fit: cover`).",
       "tags": []
     },
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "cols": {
@@ -35,7 +36,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'li'",
         "computed": false
@@ -79,7 +80,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLLIElement",
-  "filename": "/packages/material-ui/src/GridListTile/GridListTile.js",
+  "filename": "\\packages\\material-ui\\src\\GridListTile\\GridListTile.js",
   "inheritance": null,
   "usedInPages": [
     "/components/grid-list"

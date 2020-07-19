@@ -1,5 +1,6 @@
 {
   "description": "Chips represent complex entities in small blocks, such as a contact.",
+  "displayName": "Chip",
   "methods": [],
   "props": {
     "avatar": {
@@ -16,15 +17,15 @@
         "raw": "unsupportedProp"
       },
       "required": false,
-      "description": "This prop isn't supported.\nUse the `component` prop if you need to change the children structure.",
+      "description": "This prop isn't supported.\r\nUse the `component` prop if you need to change the children structure.",
       "tags": []
     },
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "clickable": {
@@ -32,7 +33,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the chip will appear clickable, and will raise when pressed,\neven if the onClick prop is not defined.\nIf false, the chip will not be clickable, even if onClick prop is defined.\nThis can be used, for example,\nalong with the component prop to indicate an anchor Chip is clickable.",
+      "description": "If `true`, the chip will appear clickable, and will raise when pressed,\r\neven if the onClick prop is not defined.\r\nIf false, the chip will not be clickable, even if onClick prop is defined.\r\nThis can be used, for example,\r\nalong with the component prop to indicate an anchor Chip is clickable.",
       "tags": []
     },
     "color": {
@@ -66,7 +67,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "tags": []
     },
     "deleteIcon": {
@@ -110,7 +111,7 @@
         "name": "func"
       },
       "required": false,
-      "description": "Callback function fired when the delete icon is clicked.\nIf set, the delete icon will be shown.",
+      "description": "Callback function fired when the delete icon is clicked.\r\nIf set, the delete icon will be shown.",
       "tags": []
     },
     "size": {
@@ -118,11 +119,11 @@
         "name": "enum",
         "value": [
           {
-            "value": "'small'",
+            "value": "'medium'",
             "computed": false
           },
           {
-            "value": "'medium'",
+            "value": "'small'",
             "computed": false
           }
         ]
@@ -260,7 +261,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Chip/Chip.js",
+  "filename": "\\packages\\material-ui\\src\\Chip\\Chip.js",
   "inheritance": null,
   "usedInPages": [
     "/components/chips"

@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "AlertTitle",
   "methods": [],
   "props": {
     "children": {
@@ -15,7 +16,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     }
   },
@@ -34,7 +35,9 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui-lab/src/AlertTitle/AlertTitle.js",
+  "filename": "\\packages\\material-ui-lab\\src\\AlertTitle\\AlertTitle.js",
   "inheritance": null,
-  "usedInPages": []
+  "usedInPages": [
+    "/components/alert"
+  ]
 }

@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Switch",
   "methods": [],
   "props": {
     "checked": {
@@ -22,8 +23,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
@@ -31,15 +32,15 @@
         "name": "enum",
         "value": [
           {
+            "value": "'default'",
+            "computed": false
+          },
+          {
             "value": "'primary'",
             "computed": false
           },
           {
             "value": "'secondary'",
-            "computed": false
-          },
-          {
-            "value": "'default'",
             "computed": false
           }
         ]
@@ -73,11 +74,11 @@
         "name": "enum",
         "value": [
           {
-            "value": "'start'",
+            "value": "'end'",
             "computed": false
           },
           {
-            "value": "'end'",
+            "value": "'start'",
             "computed": false
           },
           {
@@ -87,7 +88,7 @@
         ]
       },
       "required": false,
-      "description": "If given, uses a negative margin to counteract the padding on one\nside (this is often helpful for aligning the left or right\nside of the icon with content above or below, without ruining the border\nsize and shape).",
+      "description": "If given, uses a negative margin to counteract the padding on one\r\nside (this is often helpful for aligning the left or right\r\nside of the icon with content above or below, without ruining the border\r\nsize and shape).",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -136,7 +137,7 @@
       "tags": [
         {
           "title": "param",
-          "description": "The event source of the callback.\nYou can pull out the new checked state by accessing `event.target.checked` (boolean).",
+          "description": "The event source of the callback.\r\nYou can pull out the new value by accessing `event.target.value` (string).\r\nYou can pull out the new checked state by accessing `event.target.checked` (boolean).",
           "type": {
             "type": "NameExpression",
             "name": "object"
@@ -158,29 +159,21 @@
         "name": "enum",
         "value": [
           {
-            "value": "'small'",
+            "value": "'medium'",
             "computed": false
           },
           {
-            "value": "'medium'",
+            "value": "'small'",
             "computed": false
           }
         ]
       },
       "required": false,
-      "description": "The size of the switch.\n`small` is equivalent to the dense switch styling.",
+      "description": "The size of the switch.\r\n`small` is equivalent to the dense switch styling.",
       "defaultValue": {
         "value": "'medium'",
         "computed": false
       },
-      "tags": []
-    },
-    "type": {
-      "type": {
-        "name": "string"
-      },
-      "required": false,
-      "description": "The input component prop `type`.",
       "tags": []
     },
     "value": {
@@ -188,7 +181,7 @@
         "name": "any"
       },
       "required": false,
-      "description": "The value of the component. The DOM API casts this to a string.",
+      "description": "The value of the component. The DOM API casts this to a string.\r\nThe browser uses \"on\" as the default value.",
       "tags": []
     }
   },
@@ -240,7 +233,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLSpanElement",
-  "filename": "/packages/material-ui/src/Switch/Switch.js",
+  "filename": "\\packages\\material-ui\\src\\Switch\\Switch.js",
   "inheritance": {
     "component": "IconButton",
     "pathname": "/api/icon-button"

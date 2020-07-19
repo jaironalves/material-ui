@@ -1,0 +1,49 @@
+{
+  "description": "",
+  "displayName": "TimelineOppositeContent",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the component.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
+      "tags": []
+    }
+  },
+  "name": "TimelineOppositeContent",
+  "styles": {
+    "classes": [
+      "root",
+      "alignRight"
+    ],
+    "name": "MuiTimelineOppositeContent",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "alignRight": "Styles applied to the root element if `align=\"right\"`."
+    },
+    "globalClasses": {
+      "root": "MuiTimelineOppositeContent-root",
+      "alignRight": "MuiTimelineOppositeContent-alignRight"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui-lab\\src\\TimelineOppositeContent\\TimelineOppositeContent.js",
+  "inheritance": {
+    "component": "Typography",
+    "pathname": "/api/typography"
+  },
+  "usedInPages": [
+    "/components/timeline"
+  ]
+}

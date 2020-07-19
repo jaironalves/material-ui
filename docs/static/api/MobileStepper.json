@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "MobileStepper",
   "methods": [],
   "props": {
     "activeStep": {
@@ -7,7 +8,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "Set the active step (zero based index).\nDefines which dot is highlighted when the variant is 'dots'.",
+      "description": "Set the active step (zero based index).\r\nDefines which dot is highlighted when the variant is 'dots'.",
       "defaultValue": {
         "value": "0",
         "computed": false
@@ -26,8 +27,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "LinearProgressProps": {
@@ -55,11 +56,11 @@
             "computed": false
           },
           {
-            "value": "'top'",
+            "value": "'static'",
             "computed": false
           },
           {
-            "value": "'static'",
+            "value": "'top'",
             "computed": false
           }
         ]
@@ -85,15 +86,15 @@
         "name": "enum",
         "value": [
           {
-            "value": "'text'",
-            "computed": false
-          },
-          {
             "value": "'dots'",
             "computed": false
           },
           {
             "value": "'progress'",
+            "computed": false
+          },
+          {
+            "value": "'text'",
             "computed": false
           }
         ]
@@ -143,7 +144,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/MobileStepper/MobileStepper.js",
+  "filename": "\\packages\\material-ui\\src\\MobileStepper\\MobileStepper.js",
   "inheritance": {
     "component": "Paper",
     "pathname": "/api/paper"

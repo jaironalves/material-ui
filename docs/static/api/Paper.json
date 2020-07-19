@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Paper",
   "methods": [],
   "props": {
     "children": {
@@ -14,8 +15,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "component": {
@@ -23,7 +24,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'div'",
         "computed": false
@@ -32,10 +33,11 @@
     },
     "elevation": {
       "type": {
-        "name": "number"
+        "name": "custom",
+        "raw": "chainPropTypes(PropTypes.number, (props) => {\r\n  const { classes, elevation } = props;\r\n  // in case `withStyles` fails to inject we don't need this warning\r\n  if (classes === undefined) {\r\n    return null;\r\n  }\r\n  if (elevation != null && classes[`elevation${elevation}`] === undefined) {\r\n    return new Error(`Material-UI: This elevation \\`${elevation}\\` is not implemented.`);\r\n  }\r\n  return null;\r\n})"
       },
       "required": false,
-      "description": "Shadow depth, corresponds to `dp` in the spec.\nIt accepts values between 0 and 24 inclusive.",
+      "description": "Shadow depth, corresponds to `dp` in the spec.\r\nIt accepts values between 0 and 24 inclusive.",
       "defaultValue": {
         "value": "1",
         "computed": false
@@ -113,7 +115,7 @@
     "descriptions": {
       "root": "Styles applied to the root element.",
       "rounded": "Styles applied to the root element if `square={false}`.",
-      "outlined": "Styles applied to the root element if `variant=\"outlined\"`"
+      "outlined": "Styles applied to the root element if `variant=\"outlined\"`."
     },
     "globalClasses": {
       "root": "MuiPaper-root",
@@ -148,7 +150,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Paper/Paper.js",
+  "filename": "\\packages\\material-ui\\src\\Paper\\Paper.js",
   "inheritance": null,
   "usedInPages": [
     "/components/cards",

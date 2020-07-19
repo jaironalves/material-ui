@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Icon",
   "methods": [],
   "props": {
     "children": {
@@ -14,14 +15,26 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
       "type": {
         "name": "enum",
         "value": [
+          {
+            "value": "'action'",
+            "computed": false
+          },
+          {
+            "value": "'disabled'",
+            "computed": false
+          },
+          {
+            "value": "'error'",
+            "computed": false
+          },
           {
             "value": "'inherit'",
             "computed": false
@@ -32,18 +45,6 @@
           },
           {
             "value": "'secondary'",
-            "computed": false
-          },
-          {
-            "value": "'action'",
-            "computed": false
-          },
-          {
-            "value": "'error'",
-            "computed": false
-          },
-          {
-            "value": "'disabled'",
             "computed": false
           }
         ]
@@ -61,7 +62,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'span'",
         "computed": false
@@ -73,19 +74,19 @@
         "name": "enum",
         "value": [
           {
-            "value": "'inherit'",
-            "computed": false
-          },
-          {
             "value": "'default'",
             "computed": false
           },
           {
-            "value": "'small'",
+            "value": "'inherit'",
             "computed": false
           },
           {
             "value": "'large'",
+            "computed": false
+          },
+          {
+            "value": "'small'",
             "computed": false
           }
         ]
@@ -138,7 +139,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLSpanElement",
-  "filename": "/packages/material-ui/src/Icon/Icon.js",
+  "filename": "\\packages\\material-ui\\src\\Icon\\Icon.js",
   "inheritance": null,
   "usedInPages": [
     "/components/icons",

@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Menu",
   "methods": [],
   "props": {
     "anchorEl": {
@@ -7,7 +8,8 @@
         "name": "union",
         "value": [
           {
-            "name": "object"
+            "name": "custom",
+            "raw": "HTMLElementType"
           },
           {
             "name": "func"
@@ -15,7 +17,7 @@
         ]
       },
       "required": false,
-      "description": "The DOM element used to set the position of the menu.",
+      "description": "A HTML element, or a function that returns it.\r\nIt's used to set the position of the menu.",
       "tags": []
     },
     "autoFocus": {
@@ -23,7 +25,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true` (Default) will focus the `[role=\"menu\"]` if no focusable child is found. Disabled\nchildren are not focusable. If you set this prop to `false` focus will be placed\non the parent modal container. This has severe accessibility implications\nand should only be considered if you manage focus otherwise.",
+      "description": "If `true` (Default) will focus the `[role=\"menu\"]` if no focusable child is found. Disabled\r\nchildren are not focusable. If you set this prop to `false` focus will be placed\r\non the parent modal container. This has severe accessibility implications\r\nand should only be considered if you manage focus otherwise.",
       "defaultValue": {
         "value": "true",
         "computed": false
@@ -42,8 +44,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "disableAutoFocusItem": {
@@ -51,7 +53,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "When opening the menu will not focus the active item but the `[role=\"menu\"]`\nunless `autoFocus` is also set to `false`. Not using the default means not\nfollowing WAI-ARIA authoring practices. Please be considerate about possible\naccessibility implications.",
+      "description": "When opening the menu will not focus the active item but the `[role=\"menu\"]`\r\nunless `autoFocus` is also set to `false`. Not using the default means not\r\nfollowing WAI-ARIA authoring practices. Please be considerate about possible\r\naccessibility implications.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -166,11 +168,24 @@
         "name": "union",
         "value": [
           {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'auto'",
+                "computed": false
+              }
+            ]
+          },
+          {
             "name": "number"
           },
           {
             "name": "shape",
             "value": {
+              "appear": {
+                "name": "number",
+                "required": false
+              },
               "enter": {
                 "name": "number",
                 "required": false
@@ -180,15 +195,6 @@
                 "required": false
               }
             }
-          },
-          {
-            "name": "enum",
-            "value": [
-              {
-                "value": "'auto'",
-                "computed": false
-              }
-            ]
           }
         ]
       },
@@ -215,7 +221,7 @@
         ]
       },
       "required": false,
-      "description": "The variant to use. Use `menu` to prevent selected items from impacting the initial focus\nand the vertical alignment relative to the anchor element.",
+      "description": "The variant to use. Use `menu` to prevent selected items from impacting the initial focus\r\nand the vertical alignment relative to the anchor element.",
       "defaultValue": {
         "value": "'selectedMenu'",
         "computed": false
@@ -241,7 +247,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Menu/Menu.js",
+  "filename": "\\packages\\material-ui\\src\\Menu\\Menu.js",
   "inheritance": {
     "component": "Popover",
     "pathname": "/api/popover"

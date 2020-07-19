@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Alert",
   "methods": [],
   "props": {
     "action": {
@@ -23,7 +24,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "closeText": {
@@ -31,7 +32,7 @@
         "name": "string"
       },
       "required": false,
-      "description": "Override the default label for the *close popup* icon button.\n\nFor localization purposes, you can use the provided [translations](/guides/localization/).",
+      "description": "Override the default label for the *close popup* icon button.\r\n\r\nFor localization purposes, you can use the provided [translations](/guides/localization/).",
       "defaultValue": {
         "value": "'Close'",
         "computed": false
@@ -69,7 +70,7 @@
         "name": "node"
       },
       "required": false,
-      "description": "Override the icon displayed before the children.\nUnless provided, the icon is mapped to the value of the `severity` prop.",
+      "description": "Override the icon displayed before the children.\r\nUnless provided, the icon is mapped to the value of the `severity` prop.",
       "tags": []
     },
     "iconMapping": {
@@ -95,9 +96,9 @@
         }
       },
       "required": false,
-      "description": "The component maps the `severity` prop to a range of different icons,\nfor instance success to `<SuccessOutlined>`.\nIf you wish to change this mapping, you can provide your own.\nAlternatively, you can use the `icon` prop to override the icon displayed.",
+      "description": "The component maps the `severity` prop to a range of different icons,\r\nfor instance success to `<SuccessOutlined>`.\r\nIf you wish to change this mapping, you can provide your own.\r\nAlternatively, you can use the `icon` prop to override the icon displayed.",
       "defaultValue": {
-        "value": "{\n  success: <SuccessOutlinedIcon fontSize=\"inherit\" />,\n  warning: <ReportProblemOutlinedIcon fontSize=\"inherit\" />,\n  error: <ErrorOutlineIcon fontSize=\"inherit\" />,\n  info: <InfoOutlinedIcon fontSize=\"inherit\" />,\n}",
+        "value": "{\r\n  success: <SuccessOutlinedIcon fontSize=\"inherit\" />,\r\n  warning: <ReportProblemOutlinedIcon fontSize=\"inherit\" />,\r\n  error: <ErrorOutlineIcon fontSize=\"inherit\" />,\r\n  info: <InfoOutlinedIcon fontSize=\"inherit\" />,\r\n}",
         "computed": false
       },
       "tags": []
@@ -107,7 +108,7 @@
         "name": "func"
       },
       "required": false,
-      "description": "Callback fired when the component requests to be closed.\nWhen provided and no `action` prop is set, a close icon button is displayed that triggers the callback when clicked.",
+      "description": "Callback fired when the component requests to be closed.\r\nWhen provided and no `action` prop is set, a close icon button is displayed that triggers the callback when clicked.",
       "tags": [
         {
           "title": "param",
@@ -249,7 +250,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui-lab/src/Alert/Alert.js",
+  "filename": "\\packages\\material-ui-lab\\src\\Alert\\Alert.js",
   "inheritance": {
     "component": "Paper",
     "pathname": "/api/paper"

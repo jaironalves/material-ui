@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "FormHelperText",
   "methods": [],
   "props": {
     "children": {
@@ -7,15 +8,15 @@
         "name": "node"
       },
       "required": false,
-      "description": "The content of the component.\n\nIf `' '` is provided, the component reserves one line height for displaying a future message.",
+      "description": "The content of the component.\r\n\r\nIf `' '` is provided, the component reserves one line height for displaying a future message.",
       "tags": []
     },
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "component": {
@@ -23,7 +24,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'p'",
         "computed": false
@@ -73,7 +74,7 @@
         ]
       },
       "required": false,
-      "description": "If `dense`, will adjust vertical spacing. This is normally obtained via context from\nFormControl.",
+      "description": "If `dense`, will adjust vertical spacing. This is normally obtained via context from\r\nFormControl.",
       "tags": []
     },
     "required": {
@@ -89,7 +90,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'standard'",
+            "value": "'filled'",
             "computed": false
           },
           {
@@ -97,7 +98,7 @@
             "computed": false
           },
           {
-            "value": "'filled'",
+            "value": "'standard'",
             "computed": false
           }
         ]
@@ -143,7 +144,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLParagraphElement",
-  "filename": "/packages/material-ui/src/FormHelperText/FormHelperText.js",
+  "filename": "\\packages\\material-ui\\src\\FormHelperText\\FormHelperText.js",
   "inheritance": null,
   "usedInPages": [
     "/components/text-fields"

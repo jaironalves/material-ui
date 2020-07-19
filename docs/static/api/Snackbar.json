@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Snackbar",
   "methods": [],
   "props": {
     "action": {
@@ -18,11 +19,11 @@
             "name": "enum",
             "value": [
               {
-                "value": "'left'",
+                "value": "'center'",
                 "computed": false
               },
               {
-                "value": "'center'",
+                "value": "'left'",
                 "computed": false
               },
               {
@@ -36,11 +37,11 @@
             "name": "enum",
             "value": [
               {
-                "value": "'top'",
+                "value": "'bottom'",
                 "computed": false
               },
               {
-                "value": "'bottom'",
+                "value": "'top'",
                 "computed": false
               }
             ],
@@ -61,7 +62,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "The number of milliseconds to wait before automatically calling the\n`onClose` function. `onClose` should then set the state of the `open`\nprop to hide the Snackbar. This behavior is disabled by default with\nthe `null` value.",
+      "description": "The number of milliseconds to wait before automatically calling the\r\n`onClose` function. `onClose` should then set the state of the `open`\r\nprop to hide the Snackbar. This behavior is disabled by default with\r\nthe `null` value.",
       "defaultValue": {
         "value": "null",
         "computed": false
@@ -80,8 +81,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "ClickAwayListenerProps": {
@@ -117,7 +118,7 @@
         "name": "any"
       },
       "required": false,
-      "description": "When displaying multiple consecutive Snackbars from a parent rendering a single\n<Snackbar/>, add the key prop to ensure independent treatment of each message.\ne.g. <Snackbar key={message} />, otherwise, the message may update-in-place and\nfeatures such as autoHideDuration may be canceled.",
+      "description": "When displaying multiple consecutive Snackbars from a parent rendering a single\r\n<Snackbar/>, add the key prop to ensure independent treatment of each message.\r\ne.g. <Snackbar key={message} />, otherwise, the message may update-in-place and\r\nfeatures such as autoHideDuration may be canceled.",
       "tags": []
     },
     "message": {
@@ -133,7 +134,7 @@
         "name": "func"
       },
       "required": false,
-      "description": "Callback fired when the component requests to be closed.\nTypically `onClose` is used to set state in the parent component,\nwhich is used to control the `Snackbar` `open` prop.\nThe `reason` parameter can optionally be used to control the response to `onClose`,\nfor example ignoring `clickaway`.",
+      "description": "Callback fired when the component requests to be closed.\r\nTypically `onClose` is used to set state in the parent component,\r\nwhich is used to control the `Snackbar` `open` prop.\r\nThe `reason` parameter can optionally be used to control the response to `onClose`,\r\nfor example ignoring `clickaway`.",
       "tags": [
         {
           "title": "param",
@@ -216,7 +217,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "The number of milliseconds to wait before dismissing after user interaction.\nIf `autoHideDuration` prop isn't specified, it does nothing.\nIf `autoHideDuration` prop is specified but `resumeHideDuration` isn't,\nwe default to `autoHideDuration / 2` ms.",
+      "description": "The number of milliseconds to wait before dismissing after user interaction.\r\nIf `autoHideDuration` prop isn't specified, it does nothing.\r\nIf `autoHideDuration` prop is specified but `resumeHideDuration` isn't,\r\nwe default to `autoHideDuration / 2` ms.",
       "tags": []
     },
     "TransitionComponent": {
@@ -224,7 +225,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the transition.\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
+      "description": "The component used for the transition.\r\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
       "defaultValue": {
         "value": "Grow",
         "computed": true
@@ -241,6 +242,10 @@
           {
             "name": "shape",
             "value": {
+              "appear": {
+                "name": "number",
+                "required": false
+              },
               "enter": {
                 "name": "number",
                 "required": false
@@ -254,9 +259,9 @@
         ]
       },
       "required": false,
-      "description": "The duration for the transition, in milliseconds.\nYou may specify a single timeout for all transitions, or individually with an object.",
+      "description": "The duration for the transition, in milliseconds.\r\nYou may specify a single timeout for all transitions, or individually with an object.",
       "defaultValue": {
-        "value": "{\n  enter: duration.enteringScreen,\n  exit: duration.leavingScreen,\n}",
+        "value": "{\r\n  enter: duration.enteringScreen,\r\n  exit: duration.leavingScreen,\r\n}",
         "computed": false
       },
       "tags": []
@@ -303,7 +308,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Snackbar/Snackbar.js",
+  "filename": "\\packages\\material-ui\\src\\Snackbar\\Snackbar.js",
   "inheritance": null,
   "usedInPages": [
     "/components/snackbars"

@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "ListSubheader",
   "methods": [],
   "props": {
     "children": {
@@ -14,8 +15,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
@@ -27,11 +28,11 @@
             "computed": false
           },
           {
-            "value": "'primary'",
+            "value": "'inherit'",
             "computed": false
           },
           {
-            "value": "'inherit'",
+            "value": "'primary'",
             "computed": false
           }
         ]
@@ -49,7 +50,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'li'",
         "computed": false
@@ -123,7 +124,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLLIElement",
-  "filename": "/packages/material-ui/src/ListSubheader/ListSubheader.js",
+  "filename": "\\packages\\material-ui\\src\\ListSubheader\\ListSubheader.js",
   "inheritance": null,
   "usedInPages": [
     "/components/grid-list",

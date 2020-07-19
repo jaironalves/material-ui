@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "TreeView",
   "methods": [],
   "props": {
     "children": {
@@ -15,7 +16,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "defaultCollapseIcon": {
@@ -31,7 +32,7 @@
         "name": "node"
       },
       "required": false,
-      "description": "The default icon displayed next to a end node. This is applied to all\ntree nodes and can be overridden by the TreeItem `icon` prop.",
+      "description": "The default icon displayed next to a end node. This is applied to all\r\ntree nodes and can be overridden by the TreeItem `icon` prop.",
       "tags": []
     },
     "defaultExpanded": {
@@ -62,7 +63,7 @@
         "name": "node"
       },
       "required": false,
-      "description": "The default icon displayed next to a parent node. This is applied to all\nparent nodes and can be overridden by the TreeItem `icon` prop.",
+      "description": "The default icon displayed next to a parent node. This is applied to all\r\nparent nodes and can be overridden by the TreeItem `icon` prop.",
       "tags": []
     },
     "defaultSelected": {
@@ -81,7 +82,7 @@
         ]
       },
       "required": false,
-      "description": "Selected node ids. (Uncontrolled)\nWhen `multiSelect` is true this takes an array of strings; when false (default) a string.",
+      "description": "Selected node ids. (Uncontrolled)\r\nWhen `multiSelect` is true this takes an array of strings; when false (default) a string.",
       "defaultValue": {
         "value": "[]",
         "computed": false
@@ -141,7 +142,7 @@
         },
         {
           "title": "param",
-          "description": "of the selected nodes. When `multiSelect` is true\nthis is an array of strings; when false (default) a string.",
+          "description": "of the selected nodes. When `multiSelect` is true\r\nthis is an array of strings; when false (default) a string.",
           "type": {
             "type": "UnionType",
             "elements": [
@@ -202,7 +203,7 @@
         ]
       },
       "required": false,
-      "description": "Selected node ids. (Controlled)\nWhen `multiSelect` is true this takes an array of strings; when false (default) a string.",
+      "description": "Selected node ids. (Controlled)\r\nWhen `multiSelect` is true this takes an array of strings; when false (default) a string.",
       "tags": []
     }
   },
@@ -221,7 +222,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLUListElement",
-  "filename": "/packages/material-ui-lab/src/TreeView/TreeView.js",
+  "filename": "\\packages\\material-ui-lab\\src\\TreeView\\TreeView.js",
   "inheritance": null,
   "usedInPages": [
     "/components/tree-view"

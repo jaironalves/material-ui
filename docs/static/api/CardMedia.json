@@ -1,14 +1,12 @@
 {
   "description": "",
+  "displayName": "CardMedia",
   "methods": [],
   "props": {
     "children": {
       "type": {
-        "name": "chained",
-        "raw": "chainPropTypes(PropTypes.node, props => {\n  if (!props.children && !props.image && !props.src && !props.component) {\n    return new Error(\n      'Material-UI: either `children`, `image`, `src` or `component` prop must be specified.',\n    );\n  }\n  return null;\n})",
-        "chained": {
-          "name": "node"
-        }
+        "name": "custom",
+        "raw": "chainPropTypes(PropTypes.node, (props) => {\r\n  if (!props.children && !props.image && !props.src && !props.component) {\r\n    return new Error(\r\n      'Material-UI: Either `children`, `image`, `src` or `component` prop must be specified.',\r\n    );\r\n  }\r\n  return null;\r\n})"
       },
       "required": false,
       "description": "The content of the component.",
@@ -18,8 +16,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "component": {
@@ -27,7 +25,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "Component for rendering image.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'div'",
         "computed": false
@@ -39,7 +37,7 @@
         "name": "string"
       },
       "required": false,
-      "description": "Image to be displayed as a background image.\nEither `image` or `src` prop must be specified.\nNote that caller must specify height otherwise the image will not be visible.",
+      "description": "Image to be displayed as a background image.\r\nEither `image` or `src` prop must be specified.\r\nNote that caller must specify height otherwise the image will not be visible.",
       "tags": []
     },
     "src": {
@@ -47,7 +45,7 @@
         "name": "string"
       },
       "required": false,
-      "description": "An alias for `image` property.\nAvailable only with media components.\nMedia components: `video`, `audio`, `picture`, `iframe`, `img`.",
+      "description": "An alias for `image` property.\r\nAvailable only with media components.\r\nMedia components: `video`, `audio`, `picture`, `iframe`, `img`.",
       "tags": []
     }
   },
@@ -72,7 +70,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/CardMedia/CardMedia.js",
+  "filename": "\\packages\\material-ui\\src\\CardMedia\\CardMedia.js",
   "inheritance": null,
   "usedInPages": [
     "/components/cards"

@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Grid",
   "methods": [],
   "props": {
     "alignContent": {
@@ -7,15 +8,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'stretch'",
-            "computed": false
-          },
-          {
             "value": "'center'",
-            "computed": false
-          },
-          {
-            "value": "'flex-start'",
             "computed": false
           },
           {
@@ -23,17 +16,25 @@
             "computed": false
           },
           {
-            "value": "'space-between'",
+            "value": "'flex-start'",
             "computed": false
           },
           {
             "value": "'space-around'",
             "computed": false
+          },
+          {
+            "value": "'space-between'",
+            "computed": false
+          },
+          {
+            "value": "'stretch'",
+            "computed": false
           }
         ]
       },
       "required": false,
-      "description": "Defines the `align-content` style property.\nIt's applied for all screen sizes.",
+      "description": "Defines the `align-content` style property.\r\nIt's applied for all screen sizes.",
       "defaultValue": {
         "value": "'stretch'",
         "computed": false
@@ -45,7 +46,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'flex-start'",
+            "value": "'baseline'",
             "computed": false
           },
           {
@@ -57,17 +58,17 @@
             "computed": false
           },
           {
-            "value": "'stretch'",
+            "value": "'flex-start'",
             "computed": false
           },
           {
-            "value": "'baseline'",
+            "value": "'stretch'",
             "computed": false
           }
         ]
       },
       "required": false,
-      "description": "Defines the `align-items` style property.\nIt's applied for all screen sizes.",
+      "description": "Defines the `align-items` style property.\r\nIt's applied for all screen sizes.",
       "defaultValue": {
         "value": "'stretch'",
         "computed": false
@@ -86,8 +87,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "component": {
@@ -95,7 +96,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'div'",
         "computed": false
@@ -107,7 +108,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the component will have the flex *container* behavior.\nYou should be wrapping *items* with a *container*.",
+      "description": "If `true`, the component will have the flex *container* behavior.\r\nYou should be wrapping *items* with a *container*.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -119,11 +120,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'row'",
-            "computed": false
-          },
-          {
-            "value": "'row-reverse'",
+            "value": "'column-reverse'",
             "computed": false
           },
           {
@@ -131,13 +128,17 @@
             "computed": false
           },
           {
-            "value": "'column-reverse'",
+            "value": "'row-reverse'",
+            "computed": false
+          },
+          {
+            "value": "'row'",
             "computed": false
           }
         ]
       },
       "required": false,
-      "description": "Defines the `flex-direction` style property.\nIt is applied for all screen sizes.",
+      "description": "Defines the `flex-direction` style property.\r\nIt is applied for all screen sizes.",
       "defaultValue": {
         "value": "'row'",
         "computed": false
@@ -149,7 +150,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the component will have the flex *item* behavior.\nYou should be wrapping *items* with a *container*.",
+      "description": "If `true`, the component will have the flex *item* behavior.\r\nYou should be wrapping *items* with a *container*.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -161,10 +162,6 @@
         "name": "enum",
         "value": [
           {
-            "value": "'flex-start'",
-            "computed": false
-          },
-          {
             "value": "'center'",
             "computed": false
           },
@@ -173,11 +170,15 @@
             "computed": false
           },
           {
-            "value": "'space-between'",
+            "value": "'flex-start'",
             "computed": false
           },
           {
             "value": "'space-around'",
+            "computed": false
+          },
+          {
+            "value": "'space-between'",
             "computed": false
           },
           {
@@ -187,7 +188,7 @@
         ]
       },
       "required": false,
-      "description": "Defines the `justify-content` style property.\nIt is applied for all screen sizes.",
+      "description": "Defines the `justify-content` style property.\r\nIt is applied for all screen sizes.",
       "defaultValue": {
         "value": "'flex-start'",
         "computed": false
@@ -196,72 +197,72 @@
     },
     "lg": {
       "type": {
-        "name": "enum",
+        "name": "union",
         "value": [
           {
-            "value": "false",
-            "computed": false
+            "name": "enum",
+            "value": [
+              {
+                "value": "'auto'",
+                "computed": false
+              },
+              {
+                "value": "1",
+                "computed": false
+              },
+              {
+                "value": "2",
+                "computed": false
+              },
+              {
+                "value": "3",
+                "computed": false
+              },
+              {
+                "value": "4",
+                "computed": false
+              },
+              {
+                "value": "5",
+                "computed": false
+              },
+              {
+                "value": "6",
+                "computed": false
+              },
+              {
+                "value": "7",
+                "computed": false
+              },
+              {
+                "value": "8",
+                "computed": false
+              },
+              {
+                "value": "9",
+                "computed": false
+              },
+              {
+                "value": "10",
+                "computed": false
+              },
+              {
+                "value": "11",
+                "computed": false
+              },
+              {
+                "value": "12",
+                "computed": false
+              }
+            ]
           },
           {
-            "value": "'auto'",
-            "computed": false
-          },
-          {
-            "value": "true",
-            "computed": false
-          },
-          {
-            "value": "1",
-            "computed": false
-          },
-          {
-            "value": "2",
-            "computed": false
-          },
-          {
-            "value": "3",
-            "computed": false
-          },
-          {
-            "value": "4",
-            "computed": false
-          },
-          {
-            "value": "5",
-            "computed": false
-          },
-          {
-            "value": "6",
-            "computed": false
-          },
-          {
-            "value": "7",
-            "computed": false
-          },
-          {
-            "value": "8",
-            "computed": false
-          },
-          {
-            "value": "9",
-            "computed": false
-          },
-          {
-            "value": "10",
-            "computed": false
-          },
-          {
-            "value": "11",
-            "computed": false
-          },
-          {
-            "value": "12",
-            "computed": false
+            "name": "bool"
           }
         ]
       },
       "required": false,
-      "description": "Defines the number of grids the component is going to use.\nIt's applied for the `lg` breakpoint and wider screens if not overridden.",
+      "description": "Defines the number of grids the component is going to use.\r\nIt's applied for the `lg` breakpoint and wider screens if not overridden.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -270,72 +271,72 @@
     },
     "md": {
       "type": {
-        "name": "enum",
+        "name": "union",
         "value": [
           {
-            "value": "false",
-            "computed": false
+            "name": "enum",
+            "value": [
+              {
+                "value": "'auto'",
+                "computed": false
+              },
+              {
+                "value": "1",
+                "computed": false
+              },
+              {
+                "value": "2",
+                "computed": false
+              },
+              {
+                "value": "3",
+                "computed": false
+              },
+              {
+                "value": "4",
+                "computed": false
+              },
+              {
+                "value": "5",
+                "computed": false
+              },
+              {
+                "value": "6",
+                "computed": false
+              },
+              {
+                "value": "7",
+                "computed": false
+              },
+              {
+                "value": "8",
+                "computed": false
+              },
+              {
+                "value": "9",
+                "computed": false
+              },
+              {
+                "value": "10",
+                "computed": false
+              },
+              {
+                "value": "11",
+                "computed": false
+              },
+              {
+                "value": "12",
+                "computed": false
+              }
+            ]
           },
           {
-            "value": "'auto'",
-            "computed": false
-          },
-          {
-            "value": "true",
-            "computed": false
-          },
-          {
-            "value": "1",
-            "computed": false
-          },
-          {
-            "value": "2",
-            "computed": false
-          },
-          {
-            "value": "3",
-            "computed": false
-          },
-          {
-            "value": "4",
-            "computed": false
-          },
-          {
-            "value": "5",
-            "computed": false
-          },
-          {
-            "value": "6",
-            "computed": false
-          },
-          {
-            "value": "7",
-            "computed": false
-          },
-          {
-            "value": "8",
-            "computed": false
-          },
-          {
-            "value": "9",
-            "computed": false
-          },
-          {
-            "value": "10",
-            "computed": false
-          },
-          {
-            "value": "11",
-            "computed": false
-          },
-          {
-            "value": "12",
-            "computed": false
+            "name": "bool"
           }
         ]
       },
       "required": false,
-      "description": "Defines the number of grids the component is going to use.\nIt's applied for the `md` breakpoint and wider screens if not overridden.",
+      "description": "Defines the number of grids the component is going to use.\r\nIt's applied for the `md` breakpoint and wider screens if not overridden.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -344,72 +345,72 @@
     },
     "sm": {
       "type": {
-        "name": "enum",
+        "name": "union",
         "value": [
           {
-            "value": "false",
-            "computed": false
+            "name": "enum",
+            "value": [
+              {
+                "value": "'auto'",
+                "computed": false
+              },
+              {
+                "value": "1",
+                "computed": false
+              },
+              {
+                "value": "2",
+                "computed": false
+              },
+              {
+                "value": "3",
+                "computed": false
+              },
+              {
+                "value": "4",
+                "computed": false
+              },
+              {
+                "value": "5",
+                "computed": false
+              },
+              {
+                "value": "6",
+                "computed": false
+              },
+              {
+                "value": "7",
+                "computed": false
+              },
+              {
+                "value": "8",
+                "computed": false
+              },
+              {
+                "value": "9",
+                "computed": false
+              },
+              {
+                "value": "10",
+                "computed": false
+              },
+              {
+                "value": "11",
+                "computed": false
+              },
+              {
+                "value": "12",
+                "computed": false
+              }
+            ]
           },
           {
-            "value": "'auto'",
-            "computed": false
-          },
-          {
-            "value": "true",
-            "computed": false
-          },
-          {
-            "value": "1",
-            "computed": false
-          },
-          {
-            "value": "2",
-            "computed": false
-          },
-          {
-            "value": "3",
-            "computed": false
-          },
-          {
-            "value": "4",
-            "computed": false
-          },
-          {
-            "value": "5",
-            "computed": false
-          },
-          {
-            "value": "6",
-            "computed": false
-          },
-          {
-            "value": "7",
-            "computed": false
-          },
-          {
-            "value": "8",
-            "computed": false
-          },
-          {
-            "value": "9",
-            "computed": false
-          },
-          {
-            "value": "10",
-            "computed": false
-          },
-          {
-            "value": "11",
-            "computed": false
-          },
-          {
-            "value": "12",
-            "computed": false
+            "name": "bool"
           }
         ]
       },
       "required": false,
-      "description": "Defines the number of grids the component is going to use.\nIt's applied for the `sm` breakpoint and wider screens if not overridden.",
+      "description": "Defines the number of grids the component is going to use.\r\nIt's applied for the `sm` breakpoint and wider screens if not overridden.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -467,7 +468,7 @@
         ]
       },
       "required": false,
-      "description": "Defines the space between the type `item` component.\nIt can only be used on a type `container` component.",
+      "description": "Defines the space between the type `item` component.\r\nIt can only be used on a type `container` component.",
       "defaultValue": {
         "value": "0",
         "computed": false
@@ -483,17 +484,17 @@
             "computed": false
           },
           {
-            "value": "'wrap'",
+            "value": "'wrap-reverse'",
             "computed": false
           },
           {
-            "value": "'wrap-reverse'",
+            "value": "'wrap'",
             "computed": false
           }
         ]
       },
       "required": false,
-      "description": "Defines the `flex-wrap` style property.\nIt's applied for all screen sizes.",
+      "description": "Defines the `flex-wrap` style property.\r\nIt's applied for all screen sizes.",
       "defaultValue": {
         "value": "'wrap'",
         "computed": false
@@ -502,72 +503,72 @@
     },
     "xl": {
       "type": {
-        "name": "enum",
+        "name": "union",
         "value": [
           {
-            "value": "false",
-            "computed": false
+            "name": "enum",
+            "value": [
+              {
+                "value": "'auto'",
+                "computed": false
+              },
+              {
+                "value": "1",
+                "computed": false
+              },
+              {
+                "value": "2",
+                "computed": false
+              },
+              {
+                "value": "3",
+                "computed": false
+              },
+              {
+                "value": "4",
+                "computed": false
+              },
+              {
+                "value": "5",
+                "computed": false
+              },
+              {
+                "value": "6",
+                "computed": false
+              },
+              {
+                "value": "7",
+                "computed": false
+              },
+              {
+                "value": "8",
+                "computed": false
+              },
+              {
+                "value": "9",
+                "computed": false
+              },
+              {
+                "value": "10",
+                "computed": false
+              },
+              {
+                "value": "11",
+                "computed": false
+              },
+              {
+                "value": "12",
+                "computed": false
+              }
+            ]
           },
           {
-            "value": "'auto'",
-            "computed": false
-          },
-          {
-            "value": "true",
-            "computed": false
-          },
-          {
-            "value": "1",
-            "computed": false
-          },
-          {
-            "value": "2",
-            "computed": false
-          },
-          {
-            "value": "3",
-            "computed": false
-          },
-          {
-            "value": "4",
-            "computed": false
-          },
-          {
-            "value": "5",
-            "computed": false
-          },
-          {
-            "value": "6",
-            "computed": false
-          },
-          {
-            "value": "7",
-            "computed": false
-          },
-          {
-            "value": "8",
-            "computed": false
-          },
-          {
-            "value": "9",
-            "computed": false
-          },
-          {
-            "value": "10",
-            "computed": false
-          },
-          {
-            "value": "11",
-            "computed": false
-          },
-          {
-            "value": "12",
-            "computed": false
+            "name": "bool"
           }
         ]
       },
       "required": false,
-      "description": "Defines the number of grids the component is going to use.\nIt's applied for the `xl` breakpoint and wider screens.",
+      "description": "Defines the number of grids the component is going to use.\r\nIt's applied for the `xl` breakpoint and wider screens.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -576,72 +577,72 @@
     },
     "xs": {
       "type": {
-        "name": "enum",
+        "name": "union",
         "value": [
           {
-            "value": "false",
-            "computed": false
+            "name": "enum",
+            "value": [
+              {
+                "value": "'auto'",
+                "computed": false
+              },
+              {
+                "value": "1",
+                "computed": false
+              },
+              {
+                "value": "2",
+                "computed": false
+              },
+              {
+                "value": "3",
+                "computed": false
+              },
+              {
+                "value": "4",
+                "computed": false
+              },
+              {
+                "value": "5",
+                "computed": false
+              },
+              {
+                "value": "6",
+                "computed": false
+              },
+              {
+                "value": "7",
+                "computed": false
+              },
+              {
+                "value": "8",
+                "computed": false
+              },
+              {
+                "value": "9",
+                "computed": false
+              },
+              {
+                "value": "10",
+                "computed": false
+              },
+              {
+                "value": "11",
+                "computed": false
+              },
+              {
+                "value": "12",
+                "computed": false
+              }
+            ]
           },
           {
-            "value": "'auto'",
-            "computed": false
-          },
-          {
-            "value": "true",
-            "computed": false
-          },
-          {
-            "value": "1",
-            "computed": false
-          },
-          {
-            "value": "2",
-            "computed": false
-          },
-          {
-            "value": "3",
-            "computed": false
-          },
-          {
-            "value": "4",
-            "computed": false
-          },
-          {
-            "value": "5",
-            "computed": false
-          },
-          {
-            "value": "6",
-            "computed": false
-          },
-          {
-            "value": "7",
-            "computed": false
-          },
-          {
-            "value": "8",
-            "computed": false
-          },
-          {
-            "value": "9",
-            "computed": false
-          },
-          {
-            "value": "10",
-            "computed": false
-          },
-          {
-            "value": "11",
-            "computed": false
-          },
-          {
-            "value": "12",
-            "computed": false
+            "name": "bool"
           }
         ]
       },
       "required": false,
-      "description": "Defines the number of grids the component is going to use.\nIt's applied for all the screen sizes with the lowest priority.",
+      "description": "Defines the number of grids the component is going to use.\r\nIt's applied for all the screen sizes with the lowest priority.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -653,7 +654,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, it sets `min-width: 0` on the item.\nRefer to the limitations section of the documentation to better understand the use case.",
+      "description": "If `true`, it sets `min-width: 0` on the item.\r\nRefer to the limitations section of the documentation to better understand the use case.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -714,7 +715,7 @@
     ],
     "name": "MuiGrid",
     "descriptions": {
-      "root": "Styles applied to the root element",
+      "root": "Styles applied to the root element.",
       "container": "Styles applied to the root element if `container={true}`.",
       "item": "Styles applied to the root element if `item={true}`.",
       "zeroMinWidth": "Styles applied to the root element if `zeroMinWidth={true}`.",
@@ -772,7 +773,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Grid/Grid.js",
+  "filename": "\\packages\\material-ui\\src\\Grid\\Grid.js",
   "inheritance": null,
   "usedInPages": [
     "/components/grid"

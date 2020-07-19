@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Step",
   "methods": [],
   "props": {
     "active": {
@@ -26,8 +27,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "completed": {
@@ -47,7 +48,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "Mark the step as disabled, will also disable the button if\n`StepButton` is a child of `Step`. Is passed to child components.",
+      "description": "Mark the step as disabled, will also disable the button if\r\n`StepButton` is a child of `Step`. Is passed to child components.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -94,7 +95,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Step/Step.js",
+  "filename": "\\packages\\material-ui\\src\\Step\\Step.js",
   "inheritance": null,
   "usedInPages": [
     "/components/steppers"

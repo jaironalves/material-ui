@@ -1,5 +1,6 @@
 {
-  "description": "Listen for click events that occur somewhere in the document, outside of the element itself.\nFor instance, if you need to hide a menu when people click anywhere else on your page.",
+  "description": "Listen for click events that occur somewhere in the document, outside of the element itself.\r\nFor instance, if you need to hide a menu when people click anywhere else on your page.",
+  "displayName": "ClickAwayListener",
   "methods": [],
   "props": {
     "children": {
@@ -9,6 +10,18 @@
       },
       "required": false,
       "description": "The wrapped element.",
+      "tags": []
+    },
+    "disableReactTree": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the React tree is ignored and only the DOM tree is considered.\r\nThis prop changes how portaled elements are handled.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
       "tags": []
     },
     "mouseEvent": {
@@ -54,11 +67,11 @@
         "name": "enum",
         "value": [
           {
-            "value": "'onTouchStart'",
+            "value": "'onTouchEnd'",
             "computed": false
           },
           {
-            "value": "'onTouchEnd'",
+            "value": "'onTouchStart'",
             "computed": false
           },
           {
@@ -83,7 +96,7 @@
     "descriptions": {}
   },
   "spread": false,
-  "filename": "/packages/material-ui/src/ClickAwayListener/ClickAwayListener.js",
+  "filename": "\\packages\\material-ui\\src\\ClickAwayListener\\ClickAwayListener.js",
   "inheritance": null,
   "usedInPages": [
     "/components/click-away-listener",

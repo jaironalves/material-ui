@@ -1,5 +1,6 @@
 {
-  "description": "The Collapse transition is used by the\n[Vertical Stepper](/components/steppers/#vertical-stepper) StepContent component.\nIt uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.",
+  "description": "The Collapse transition is used by the\r\n[Vertical Stepper](/components/steppers/#vertical-stepper) StepContent component.\r\nIt uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.",
+  "displayName": "Collapse",
   "methods": [],
   "props": {
     "children": {
@@ -14,24 +15,24 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
-    "collapsedHeight": {
+    "collapsedSize": {
       "type": {
         "name": "union",
         "value": [
           {
-            "name": "string"
+            "name": "number"
           },
           {
-            "name": "number"
+            "name": "string"
           }
         ]
       },
       "required": false,
-      "description": "The height of the container when collapsed.",
+      "description": "The width (horizontal) or height (vertical) of the container when collapsed.",
       "defaultValue": {
         "value": "'0px'",
         "computed": false
@@ -43,9 +44,21 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'div'",
+        "computed": false
+      },
+      "tags": []
+    },
+    "disableStrictModeCompat": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Enable this prop if you encounter 'Function components cannot be given refs',\r\nuse `unstable_createStrictModeTheme`,\r\nand can't forward the ref in the passed `Component`.",
+      "defaultValue": {
+        "value": "false",
         "computed": false
       },
       "tags": []
@@ -58,16 +71,51 @@
       "description": "If `true`, the component will transition in.",
       "tags": []
     },
+    "orientation": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'horizontal'",
+            "computed": false
+          },
+          {
+            "value": "'vertical'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The collapse transition orientation.",
+      "defaultValue": {
+        "value": "'vertical'",
+        "computed": false
+      },
+      "tags": []
+    },
     "timeout": {
       "type": {
         "name": "union",
         "value": [
+          {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'auto'",
+                "computed": false
+              }
+            ]
+          },
           {
             "name": "number"
           },
           {
             "name": "shape",
             "value": {
+              "appear": {
+                "name": "number",
+                "required": false
+              },
               "enter": {
                 "name": "number",
                 "required": false
@@ -77,20 +125,11 @@
                 "required": false
               }
             }
-          },
-          {
-            "name": "enum",
-            "value": [
-              {
-                "value": "'auto'",
-                "computed": false
-              }
-            ]
           }
         ]
       },
       "required": false,
-      "description": "The duration for the transition, in milliseconds.\nYou may specify a single timeout for all transitions, or individually with an object.\n\nSet to 'auto' to automatically calculate transition time based on height.",
+      "description": "The duration for the transition, in milliseconds.\r\nYou may specify a single timeout for all transitions, or individually with an object.\r\n\r\nSet to 'auto' to automatically calculate transition time based on height.",
       "defaultValue": {
         "value": "duration.standard",
         "computed": true
@@ -102,6 +141,7 @@
   "styles": {
     "classes": [
       "container",
+      "horizontal",
       "entered",
       "hidden",
       "wrapper",
@@ -110,13 +150,15 @@
     "name": "MuiCollapse",
     "descriptions": {
       "container": "Styles applied to the container element.",
+      "horizontal": "Pseudo-class applied to the root element if `orientation=\"horizontal\"`.",
       "entered": "Styles applied to the container element when the transition has entered.",
-      "hidden": "Styles applied to the container element when the transition has exited and `collapsedHeight` != 0px.",
+      "hidden": "Styles applied to the container element when the transition has exited and `collapsedSize` != 0px.",
       "wrapper": "Styles applied to the outer wrapper element.",
       "wrapperInner": "Styles applied to the inner wrapper element."
     },
     "globalClasses": {
       "container": "MuiCollapse-container",
+      "horizontal": "MuiCollapse-horizontal",
       "entered": "MuiCollapse-entered",
       "hidden": "MuiCollapse-hidden",
       "wrapper": "MuiCollapse-wrapper",
@@ -125,7 +167,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Collapse/Collapse.js",
+  "filename": "\\packages\\material-ui\\src\\Collapse\\Collapse.js",
   "inheritance": {
     "component": "Transition",
     "pathname": "https://reactcommunity.org/react-transition-group/transition#Transition-props"

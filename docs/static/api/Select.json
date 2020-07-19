@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Select",
   "methods": [],
   "props": {
     "autoWidth": {
@@ -7,7 +8,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the width of the popover will automatically be set according to the items inside the\nmenu, otherwise it will be at least the width of the select input.",
+      "description": "If `true`, the width of the popover will automatically be set according to the items inside the\r\nmenu, otherwise it will be at least the width of the select input.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -19,15 +20,15 @@
         "name": "node"
       },
       "required": false,
-      "description": "The option elements to populate the select with.\nCan be some `MenuItem` when `native` is false and `option` when `native` is true.\n\n⚠️The `MenuItem` elements **must** be direct descendants when `native` is false.",
+      "description": "The option elements to populate the select with.\r\nCan be some `MenuItem` when `native` is false and `option` when `native` is true.\r\n\r\n⚠️The `MenuItem` elements **must** be direct descendants when `native` is false.",
       "tags": []
     },
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "defaultValue": {
@@ -43,7 +44,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, a value is displayed even if no items are selected.\n\nIn order to display a meaningful value, a function should be passed to the `renderValue` prop which returns the value to be displayed when no items are selected.\nYou can only use it when the `native` prop is `false` (default).",
+      "description": "If `true`, a value is displayed even if no items are selected.\r\n\r\nIn order to display a meaningful value, a function should be passed to the `renderValue` prop which returns the value to be displayed when no items are selected.\r\nYou can only use it when the `native` prop is `false` (default).",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -62,6 +63,14 @@
       },
       "tags": []
     },
+    "id": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "The `id` of the wrapper element or the `select` element when `native`.",
+      "tags": []
+    },
     "input": {
       "type": {
         "name": "element"
@@ -75,7 +84,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "[Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.\nWhen `native` is `true`, the attributes are applied on the `select` element.",
+      "description": "[Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.\r\nWhen `native` is `true`, the attributes are applied on the `select` element.",
       "tags": []
     },
     "label": {
@@ -83,7 +92,7 @@
         "name": "node"
       },
       "required": false,
-      "description": "See [OutlinedLabel#label](/api/outlined-input/#props)",
+      "description": "See [OutlinedInput#label](/api/outlined-input/#props)",
       "tags": []
     },
     "labelId": {
@@ -91,7 +100,7 @@
         "name": "string"
       },
       "required": false,
-      "description": "The ID of an element that acts as an additional label. The Select will\nbe labelled by the additional label and the selected value.",
+      "description": "The ID of an element that acts as an additional label. The Select will\r\nbe labelled by the additional label and the selected value.",
       "tags": []
     },
     "labelWidth": {
@@ -99,7 +108,7 @@
         "name": "number"
       },
       "required": false,
-      "description": "See OutlinedLabel#label",
+      "description": "See [OutlinedInput#label](/api/outlined-input/#props)",
       "defaultValue": {
         "value": "0",
         "computed": false
@@ -147,7 +156,7 @@
       "tags": [
         {
           "title": "param",
-          "description": "The event source of the callback.\nYou can pull out the new value by accessing `event.target.value` (any).",
+          "description": "The event source of the callback.\r\nYou can pull out the new value by accessing `event.target.value` (any).",
           "type": {
             "type": "NameExpression",
             "name": "object"
@@ -173,7 +182,7 @@
         "name": "func"
       },
       "required": false,
-      "description": "Callback fired when the component requests to be closed.\nUse in controlled mode (see open).",
+      "description": "Callback fired when the component requests to be closed.\r\nUse in controlled mode (see open).",
       "tags": [
         {
           "title": "param",
@@ -191,7 +200,7 @@
         "name": "func"
       },
       "required": false,
-      "description": "Callback fired when the component requests to be opened.\nUse in controlled mode (see open).",
+      "description": "Callback fired when the component requests to be opened.\r\nUse in controlled mode (see open).",
       "tags": [
         {
           "title": "param",
@@ -209,7 +218,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "Control `select` open state.\nYou can only use it when the `native` prop is `false` (default).",
+      "description": "Control `select` open state.\r\nYou can only use it when the `native` prop is `false` (default).",
       "tags": []
     },
     "renderValue": {
@@ -217,7 +226,7 @@
         "name": "func"
       },
       "required": false,
-      "description": "Render the selected value.\nYou can only use it when the `native` prop is `false` (default).",
+      "description": "Render the selected value.\r\nYou can only use it when the `native` prop is `false` (default).",
       "tags": [
         {
           "title": "param",
@@ -251,7 +260,7 @@
         "name": "any"
       },
       "required": false,
-      "description": "The input value. Providing an empty string will select no options.\nThis prop is required when the `native` prop is `false` (default).\nSet to an empty string `''` if you don't want any of the available options to be selected.\n\nIf the value is an object it must have reference equality with the option in order to be selected.\nIf the value is not an object, the string representation must match with the string representation of the option in order to be selected.",
+      "description": "The input value. Providing an empty string will select no options.\r\nThis prop is required when the `native` prop is `false` (default).\r\nSet to an empty string `''` if you don't want any of the available options to be selected.\r\n\r\nIf the value is an object it must have reference equality with the option in order to be selected.\r\nIf the value is not an object, the string representation must match with the string representation of the option in order to be selected.",
       "tags": []
     },
     "variant": {
@@ -259,7 +268,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'standard'",
+            "value": "'filled'",
             "computed": false
           },
           {
@@ -267,7 +276,7 @@
             "computed": false
           },
           {
-            "value": "'filled'",
+            "value": "'standard'",
             "computed": false
           }
         ]
@@ -293,7 +302,8 @@
       "icon",
       "iconOpen",
       "iconFilled",
-      "iconOutlined"
+      "iconOutlined",
+      "nativeInput"
     ],
     "name": "MuiSelect",
     "descriptions": {
@@ -306,7 +316,8 @@
       "icon": "Styles applied to the icon component.",
       "iconOpen": "Styles applied to the icon component if the popup is open.",
       "iconFilled": "Styles applied to the icon component if `variant=\"filled\"`.",
-      "iconOutlined": "Styles applied to the icon component if `variant=\"outlined\"`."
+      "iconOutlined": "Styles applied to the icon component if `variant=\"outlined\"`.",
+      "nativeInput": "Styles applied to the underlying native input component."
     },
     "globalClasses": {
       "root": "MuiSelect-root",
@@ -318,12 +329,13 @@
       "icon": "MuiSelect-icon",
       "iconOpen": "MuiSelect-iconOpen",
       "iconFilled": "MuiSelect-iconFilled",
-      "iconOutlined": "MuiSelect-iconOutlined"
+      "iconOutlined": "MuiSelect-iconOutlined",
+      "nativeInput": "MuiSelect-nativeInput"
     }
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Select/Select.js",
+  "filename": "\\packages\\material-ui\\src\\Select\\Select.js",
   "inheritance": {
     "component": "Input",
     "pathname": "/api/input"

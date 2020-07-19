@@ -1,12 +1,13 @@
 {
   "description": "",
+  "displayName": "ButtonGroup",
   "methods": [],
   "props": {
     "children": {
       "type": {
         "name": "node"
       },
-      "required": true,
+      "required": false,
       "description": "The content of the button group.",
       "tags": []
     },
@@ -14,18 +15,14 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
       "type": {
         "name": "enum",
         "value": [
-          {
-            "value": "'default'",
-            "computed": false
-          },
           {
             "value": "'inherit'",
             "computed": false
@@ -43,7 +40,7 @@
       "required": false,
       "description": "The color of the component. It supports those theme colors that make sense for this component.",
       "defaultValue": {
-        "value": "'default'",
+        "value": "'primary'",
         "computed": false
       },
       "tags": []
@@ -53,7 +50,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'div'",
         "computed": false
@@ -72,12 +69,24 @@
       },
       "tags": []
     },
+    "disableElevation": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, no elevation is used.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
     "disableFocusRipple": {
       "type": {
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the button keyboard focus ripple will be disabled.\n`disableRipple` must also be true.",
+      "description": "If `true`, the button keyboard focus ripple will be disabled.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -113,17 +122,17 @@
         "name": "enum",
         "value": [
           {
-            "value": "'vertical'",
+            "value": "'horizontal'",
             "computed": false
           },
           {
-            "value": "'horizontal'",
+            "value": "'vertical'",
             "computed": false
           }
         ]
       },
       "required": false,
-      "description": "The group orientation.",
+      "description": "The group orientation (layout flow direction).",
       "defaultValue": {
         "value": "'horizontal'",
         "computed": false
@@ -135,7 +144,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'small'",
+            "value": "'large'",
             "computed": false
           },
           {
@@ -143,13 +152,13 @@
             "computed": false
           },
           {
-            "value": "'large'",
+            "value": "'small'",
             "computed": false
           }
         ]
       },
       "required": false,
-      "description": "The size of the button.\n`small` is equivalent to the dense button styling.",
+      "description": "The size of the button.\r\n`small` is equivalent to the dense button styling.",
       "defaultValue": {
         "value": "'medium'",
         "computed": false
@@ -161,7 +170,7 @@
         "name": "enum",
         "value": [
           {
-            "value": "'text'",
+            "value": "'contained'",
             "computed": false
           },
           {
@@ -169,7 +178,7 @@
             "computed": false
           },
           {
-            "value": "'contained'",
+            "value": "'text'",
             "computed": false
           }
         ]
@@ -188,6 +197,7 @@
     "classes": [
       "root",
       "contained",
+      "disableElevation",
       "disabled",
       "fullWidth",
       "vertical",
@@ -214,6 +224,7 @@
     "descriptions": {
       "root": "Styles applied to the root element.",
       "contained": "Styles applied to the root element if `variant=\"contained\"`.",
+      "disableElevation": "Styles applied to the root element if `disableElevation={true}`.",
       "disabled": "Pseudo-class applied to child elements if `disabled={true}`.",
       "fullWidth": "Styles applied to the root element if `fullWidth={true}`.",
       "vertical": "Styles applied to the root element if `orientation=\"vertical\"`.",
@@ -239,6 +250,7 @@
     "globalClasses": {
       "root": "MuiButtonGroup-root",
       "contained": "MuiButtonGroup-contained",
+      "disableElevation": "MuiButtonGroup-disableElevation",
       "disabled": "Mui-disabled",
       "fullWidth": "MuiButtonGroup-fullWidth",
       "vertical": "MuiButtonGroup-vertical",
@@ -264,7 +276,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/ButtonGroup/ButtonGroup.js",
+  "filename": "\\packages\\material-ui\\src\\ButtonGroup\\ButtonGroup.js",
   "inheritance": null,
   "usedInPages": [
     "/components/button-group"

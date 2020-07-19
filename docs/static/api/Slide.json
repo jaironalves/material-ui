@@ -1,5 +1,6 @@
 {
-  "description": "The Slide transition is used by the [Drawer](/components/drawers/) component.\nIt uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.",
+  "description": "The Slide transition is used by the [Drawer](/components/drawers/) component.\r\nIt uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.",
+  "displayName": "Slide",
   "methods": [],
   "props": {
     "children": {
@@ -16,6 +17,10 @@
         "name": "enum",
         "value": [
           {
+            "value": "'down'",
+            "computed": false
+          },
+          {
             "value": "'left'",
             "computed": false
           },
@@ -25,10 +30,6 @@
           },
           {
             "value": "'up'",
-            "computed": false
-          },
-          {
-            "value": "'down'",
             "computed": false
           }
         ]
@@ -59,6 +60,10 @@
           {
             "name": "shape",
             "value": {
+              "appear": {
+                "name": "number",
+                "required": false
+              },
               "enter": {
                 "name": "number",
                 "required": false
@@ -72,9 +77,9 @@
         ]
       },
       "required": false,
-      "description": "The duration for the transition, in milliseconds.\nYou may specify a single timeout for all transitions, or individually with an object.",
+      "description": "The duration for the transition, in milliseconds.\r\nYou may specify a single timeout for all transitions, or individually with an object.",
       "defaultValue": {
-        "value": "{\n  enter: duration.enteringScreen,\n  exit: duration.leavingScreen,\n}",
+        "value": "{\r\n  enter: duration.enteringScreen,\r\n  exit: duration.leavingScreen,\r\n}",
         "computed": false
       },
       "tags": []
@@ -88,7 +93,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Slide/Slide.js",
+  "filename": "\\packages\\material-ui\\src\\Slide\\Slide.js",
   "inheritance": {
     "component": "Transition",
     "pathname": "https://reactcommunity.org/react-transition-group/transition#Transition-props"

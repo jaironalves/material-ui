@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "FormLabel",
   "methods": [],
   "props": {
     "children": {
@@ -14,8 +15,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "color": {
@@ -41,7 +42,7 @@
         "name": "elementType"
       },
       "required": false,
-      "description": "The component used for the root node.\nEither a string to use a DOM element or a component.",
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
       "defaultValue": {
         "value": "'label'",
         "computed": false
@@ -125,7 +126,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLLabelElement",
-  "filename": "/packages/material-ui/src/FormLabel/FormLabel.js",
+  "filename": "\\packages\\material-ui\\src\\FormLabel\\FormLabel.js",
   "inheritance": null,
   "usedInPages": [
     "/components/checkboxes",

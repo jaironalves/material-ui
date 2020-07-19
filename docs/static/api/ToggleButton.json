@@ -1,12 +1,13 @@
 {
   "description": "",
+  "displayName": "ToggleButton",
   "methods": [],
   "props": {
     "children": {
       "type": {
         "name": "node"
       },
-      "required": true,
+      "required": false,
       "description": "The content of the button.",
       "tags": []
     },
@@ -14,8 +15,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "disabled": {
@@ -35,7 +36,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the  keyboard focus ripple will be disabled.\n`disableRipple` must also be true.",
+      "description": "If `true`, the  keyboard focus ripple will be disabled.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -47,11 +48,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the ripple effect will be disabled.",
-      "defaultValue": {
-        "value": "false",
-        "computed": false
-      },
+      "description": "If `true`, the ripple effect will be disabled.\r\n\r\n⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure\r\nto highlight the element by applying separate styles with the `focusVisibleClassName`.",
       "tags": []
     },
     "selected": {
@@ -67,7 +64,7 @@
         "name": "any"
       },
       "required": true,
-      "description": "The value to associate with the button when selected in a\nToggleButtonGroup.",
+      "description": "The value to associate with the button when selected in a\r\nToggleButtonGroup.",
       "tags": []
     }
   },
@@ -101,7 +98,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLButtonElement",
-  "filename": "/packages/material-ui-lab/src/ToggleButton/ToggleButton.js",
+  "filename": "\\packages\\material-ui-lab\\src\\ToggleButton\\ToggleButton.js",
   "inheritance": {
     "component": "ButtonBase",
     "pathname": "/api/button-base"

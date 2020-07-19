@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "SnackbarContent",
   "methods": [],
   "props": {
     "action": {
@@ -14,8 +15,8 @@
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "message": {
@@ -60,7 +61,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/SnackbarContent/SnackbarContent.js",
+  "filename": "\\packages\\material-ui\\src\\SnackbarContent\\SnackbarContent.js",
   "inheritance": {
     "component": "Paper",
     "pathname": "/api/paper"

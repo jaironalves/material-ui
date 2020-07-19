@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Tab",
   "methods": [],
   "props": {
     "children": {
@@ -8,15 +9,15 @@
         "raw": "unsupportedProp"
       },
       "required": false,
-      "description": "This prop isn't supported.\nUse the `component` prop if you need to change the children structure.",
+      "description": "This prop isn't supported.\r\nUse the `component` prop if you need to change the children structure.",
       "tags": []
     },
     "classes": {
       "type": {
         "name": "object"
       },
-      "required": true,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "disabled": {
@@ -36,7 +37,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the  keyboard focus ripple will be disabled.\n`disableRipple` must also be true.",
+      "description": "If `true`, the  keyboard focus ripple will be disabled.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -48,12 +49,20 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the ripple effect will be disabled.",
+      "description": "If `true`, the ripple effect will be disabled.\r\n\r\n⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure\r\nto highlight the element by applying separate styles with the `focusVisibleClassName`.",
       "tags": []
     },
     "icon": {
       "type": {
-        "name": "node"
+        "name": "union",
+        "value": [
+          {
+            "name": "element"
+          },
+          {
+            "name": "string"
+          }
+        ]
       },
       "required": false,
       "description": "The icon element.",
@@ -80,7 +89,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "Tab labels appear in a single row.\nThey can use a second line if needed.",
+      "description": "Tab labels appear in a single row.\r\nThey can use a second line if needed.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -130,7 +139,7 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLButtonElement",
-  "filename": "/packages/material-ui/src/Tab/Tab.js",
+  "filename": "\\packages\\material-ui\\src\\Tab\\Tab.js",
   "inheritance": {
     "component": "ButtonBase",
     "pathname": "/api/button-base"

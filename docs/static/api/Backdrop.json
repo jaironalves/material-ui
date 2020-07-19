@@ -1,5 +1,6 @@
 {
   "description": "",
+  "displayName": "Backdrop",
   "methods": [],
   "props": {
     "children": {
@@ -15,7 +16,7 @@
         "name": "object"
       },
       "required": false,
-      "description": "Override or extend the styles applied to the component.\nSee [CSS API](#css) below for more details.",
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
       "tags": []
     },
     "invisible": {
@@ -23,7 +24,7 @@
         "name": "bool"
       },
       "required": false,
-      "description": "If `true`, the backdrop is invisible.\nIt can be used when rendering a popover or a custom select component.",
+      "description": "If `true`, the backdrop is invisible.\r\nIt can be used when rendering a popover or a custom select component.",
       "defaultValue": {
         "value": "false",
         "computed": false
@@ -65,7 +66,7 @@
         ]
       },
       "required": false,
-      "description": "The duration for the transition, in milliseconds.\nYou may specify a single timeout for all transitions, or individually with an object.",
+      "description": "The duration for the transition, in milliseconds.\r\nYou may specify a single timeout for all transitions, or individually with an object.",
       "tags": []
     }
   },
@@ -87,8 +88,11 @@
   },
   "spread": true,
   "forwardsRefTo": "HTMLDivElement",
-  "filename": "/packages/material-ui/src/Backdrop/Backdrop.js",
-  "inheritance": null,
+  "filename": "\\packages\\material-ui\\src\\Backdrop\\Backdrop.js",
+  "inheritance": {
+    "component": "Fade",
+    "pathname": "/api/fade"
+  },
   "usedInPages": [
     "/components/backdrop"
   ]
