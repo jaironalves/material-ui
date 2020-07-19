@@ -345,16 +345,39 @@ MyApp.propTypes = {
 };
 
 MyApp.getInitialProps = async ({ ctx, Component }) => {
+  // let pageProps = {};
+
+  // if (Component.getInitialProps) {
+  //   pageProps = await Component.getInitialProps(ctx);
+  // }
+
+  // return {
+  //   pageProps: {
+  //     userLanguage: ctx.query.userLanguage || 'en',
+  //     ...pageProps,
+  //   },
+  // };
   let pageProps = {};
 
   if (typeof Component.getInitialProps === 'function') {
     pageProps = await Component.getInitialProps(ctx);
   }
 
-  return {
-    pageProps: {
-      userLanguage: ctx.query.userLanguage || 'en',
+  if (!process.browser) {
+    const redux = initRedux({
+      options: {
+        userLanguage: ctx.query.userLanguage,
+      },
+    });
+    pageProps = {
       ...pageProps,
-    },
+      // No need to include other initial Redux state because when it
+      // initialises on the client-side it'll create it again anyway
+      reduxServerState: redux.getState(),
+    };
+  }
+
+  return {
+    pageProps,
   };
 };

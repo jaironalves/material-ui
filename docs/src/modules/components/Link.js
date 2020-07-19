@@ -31,30 +31,31 @@ function Link(props) {
     activeClassName = 'active',
     as: asProp,
     className: classNameProps,
-    href: hrefRouter,
+    href,
     innerRef,
     naked,
     role: roleProp,
     ...other
   } = props;
-  const pathname =
+  const hrefPath =
     // eslint-disable-next-line no-nested-ternary
-    typeof hrefRouter === 'string'
-      ? hrefRouter
-      : hrefRouter != null
+    typeof href === 'string'
+      ? href
+      : href != null
       ? // href object for next/link: { pathname: string, query?: string }
-      hrefRouter.pathname
+      href.pathname
       : undefined;
 
-  let asPath = rewriteUrlForNextExport(asProp || hrefRouter);
+      /* eslint-disable-next-line */
+  let asPath = rewriteUrlForNextExport(asProp || href);
 
   const userLanguage = useSelector((state) => state.options.userLanguage);
-  if (userLanguage !== 'en' && pathname.indexOf('/') === 0 && pathname.indexOf('/blog') !== 0) {
+  if (userLanguage !== 'en' && hrefPath.indexOf('/') === 0 && hrefPath.indexOf('/blog') !== 0) {
     asPath = `/${userLanguage}${asPath}`;
   }
 
   // apply nextjs rewrites
-  const href = asPath.replace(/\/api-docs\/(.*)/, '/api/$1');
+  // const href = asPath.replace(/\/api-docs\/(.*)/, '/api/$1');
 
   const router = useRouter();
   const isActivePage = router.asPath === asPath;
@@ -65,10 +66,14 @@ function Link(props) {
   // catch role passed from ButtonBase. This is definitely a link
   const role = roleProp === 'button' ? undefined : roleProp;
 
-  const isExternal = 1 === 2;// href.indexOf('https:') === 0 || href.indexOf('mailto:') === 0;
+  // console.log('href Link');
+ // console.log(href);
+  const isExternal = hrefPath.indexOf('https:') === 0 || hrefPath.indexOf('mailto:') === 0;
+
+  // console.log(isExternal);
 
   if (isExternal) {
-    return <MuiLink className={className} href={href} ref={innerRef} role={role} {...other} />;
+    return <MuiLink className={className} href={hrefPath} ref={innerRef} role={role} {...other} />;
   }
 
   if (naked) {

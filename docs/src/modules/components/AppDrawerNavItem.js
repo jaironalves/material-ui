@@ -107,7 +107,7 @@ export default function AppDrawerNavItem(props) {
 AppDrawerNavItem.propTypes = {
   children: PropTypes.node,
   depth: PropTypes.number.isRequired,
-  href: PropTypes.string,
+  href: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   linkProps: PropTypes.object,
   onClick: PropTypes.func,
   openImmediately: PropTypes.bool,

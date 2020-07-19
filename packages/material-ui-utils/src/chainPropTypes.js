@@ -16,7 +16,7 @@ export default function chainPropTypes(...types) {
   return function validate(...args) {
     const errors = types.map((type) => type(...args));
 
-    const someError = errors.some((element) => element !== null);
+    const someError = errors.find((element) => element !== null);
     // no errors? cool!
     if (!someError) return null;
     return someError;

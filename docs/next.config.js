@@ -142,7 +142,7 @@ module.exports = {
 
       pages2.forEach((page) => {
         if (!page.children) {
-          map[`${prefix}${page.pathname.replace(/^\/api-docs\/(.*)/, '/api/$1')}`] = {
+          map[`${prefix}${page.pathname}`] = {
             page: page.pathname,
             ...page,
             query: {
