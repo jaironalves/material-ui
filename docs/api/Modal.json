@@ -1,0 +1,249 @@
+{
+  "description": "Modal is a lower-level construct that is leveraged by the following components:\r\n\r\n- [Dialog](/api/dialog/)\r\n- [Drawer](/api/drawer/)\r\n- [Menu](/api/menu/)\r\n- [Popover](/api/popover/)\r\n\r\nIf you are creating a modal dialog, you probably want to use the [Dialog](/api/dialog/) component\r\nrather than directly using Modal.\r\n\r\nThis component shares many concepts with [react-overlays](https://react-bootstrap.github.io/react-overlays/#modals).",
+  "displayName": "Modal",
+  "methods": [],
+  "props": {
+    "BackdropComponent": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "A backdrop component. This prop enables custom backdrop rendering.",
+      "defaultValue": {
+        "value": "SimpleBackdrop",
+        "computed": true
+      },
+      "tags": []
+    },
+    "BackdropProps": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Props applied to the [`Backdrop`](/api/backdrop/) element.",
+      "tags": []
+    },
+    "children": {
+      "type": {
+        "name": "custom",
+        "raw": "elementAcceptingRef.isRequired"
+      },
+      "required": false,
+      "description": "A single child content element.",
+      "tags": []
+    },
+    "closeAfterTransition": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "When set to true the Modal waits until a nested Transition is completed before closing.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
+    "container": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "custom",
+            "raw": "HTMLElementType"
+          },
+          {
+            "name": "instanceOf",
+            "value": "React.Component"
+          },
+          {
+            "name": "func"
+          }
+        ]
+      },
+      "required": false,
+      "description": "A HTML element, component instance, or function that returns either.\r\nThe `container` will have the portal children appended to it.\r\n\r\nBy default, it uses the body of the top-level document object,\r\nso it's simply `document.body` most of the time.",
+      "tags": []
+    },
+    "disableAutoFocus": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the modal will not automatically shift focus to itself when it opens, and\r\nreplace it to the last focused element when it closes.\r\nThis also works correctly with any modal children that have the `disableAutoFocus` prop.\r\n\r\nGenerally this should never be set to `true` as it makes the modal less\r\naccessible to assistive technologies, like screen readers.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
+    "disableBackdropClick": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, clicking the backdrop will not fire `onClose`.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
+    "disableEnforceFocus": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the modal will not prevent focus from leaving the modal while open.\r\n\r\nGenerally this should never be set to `true` as it makes the modal less\r\naccessible to assistive technologies, like screen readers.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
+    "disableEscapeKeyDown": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, hitting escape will not fire `onClose`.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
+    "disablePortal": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "The `children` will be inside the DOM hierarchy of the parent component.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
+    "disableRestoreFocus": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the modal will not restore focus to previously focused element once\r\nmodal is hidden.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
+    "disableScrollLock": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Disable the scroll lock behavior.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
+    "hideBackdrop": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the backdrop is not rendered.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
+    "keepMounted": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Always keep the children in the DOM.\r\nThis prop can be useful in SEO situation or\r\nwhen you want to maximize the responsiveness of the Modal.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
+    "onBackdropClick": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "Callback fired when the backdrop is clicked.",
+      "tags": []
+    },
+    "onClose": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "Callback fired when the component requests to be closed.\r\nThe `reason` parameter can optionally be used to control the response to `onClose`.",
+      "tags": [
+        {
+          "title": "param",
+          "description": "The event source of the callback.",
+          "type": {
+            "type": "NameExpression",
+            "name": "object"
+          },
+          "name": "event"
+        },
+        {
+          "title": "param",
+          "description": "Can be: `\"escapeKeyDown\"`, `\"backdropClick\"`.",
+          "type": {
+            "type": "NameExpression",
+            "name": "string"
+          },
+          "name": "reason"
+        }
+      ]
+    },
+    "onEscapeKeyDown": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "Callback fired when the escape key is pressed,\r\n`disableEscapeKeyDown` is false and the modal is in focus.",
+      "tags": []
+    },
+    "onRendered": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "Callback fired once the children has been mounted into the `container`.\r\nIt signals that the `open={true}` prop took effect.\r\n\r\nThis prop will be deprecated and removed in v5, the ref can be used instead.",
+      "tags": []
+    },
+    "open": {
+      "type": {
+        "name": "bool"
+      },
+      "required": true,
+      "description": "If `true`, the modal is open.",
+      "tags": []
+    }
+  },
+  "name": "Modal",
+  "styles": {
+    "classes": [],
+    "name": null,
+    "descriptions": {}
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\Modal\\Modal.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/modal"
+  ]
+}

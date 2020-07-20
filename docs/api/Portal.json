@@ -1,0 +1,68 @@
+{
+  "description": "Portals provide a first-class way to render children into a DOM node\r\nthat exists outside the DOM hierarchy of the parent component.",
+  "displayName": "Portal",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The children to render into the `container`.",
+      "tags": []
+    },
+    "container": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "custom",
+            "raw": "HTMLElementType"
+          },
+          {
+            "name": "instanceOf",
+            "value": "React.Component"
+          },
+          {
+            "name": "func"
+          }
+        ]
+      },
+      "required": false,
+      "description": "A HTML element, component instance, or function that returns either.\r\nThe `container` will have the portal children appended to it.\r\n\r\nBy default, it uses the body of the top-level document object,\r\nso it's simply `document.body` most of the time.",
+      "tags": []
+    },
+    "disablePortal": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "The `children` will be inside the DOM hierarchy of the parent component.",
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": []
+    },
+    "onRendered": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "Callback fired once the children has been mounted into the `container`.\r\n\r\nThis prop will be deprecated and removed in v5, the ref can be used instead.",
+      "tags": []
+    }
+  },
+  "name": "Portal",
+  "styles": {
+    "classes": [],
+    "name": null,
+    "descriptions": {}
+  },
+  "spread": false,
+  "filename": "\\packages\\material-ui\\src\\Portal\\Portal.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/portal"
+  ]
+}

@@ -307,7 +307,7 @@ The \`${reactAPI.styles.name}\` name can be used for providing [default props](/
  * @param prop
  * @param propName
  */
-function createDescribeableProp(
+export function createDescribeableProp(
   prop: PropDescriptor,
   propName: string,
 ): DescribeablePropDescriptor | null {

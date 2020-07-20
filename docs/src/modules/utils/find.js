@@ -1,5 +1,7 @@
 const fs = require('fs');
+const glob = require('glob');
 const path = require('path');
+const lodash = require('lodash');
 
 const markdownRegex = /\.md$/;
 
@@ -79,6 +81,30 @@ function findComponents(directory, components = []) {
 const jsRegex = /\.js$/;
 const blackList = ['/.eslintrc', '/_document', '/_app'];
 
+function findComponentApiPages() {
+  const apiDir = path.resolve(__dirname, '../../../api');
+  const components = glob
+    .sync(path.resolve(__dirname, path.join(apiDir, '*.json')))
+    .map(filename => path.basename(filename, '.json'))
+    .sort((a, b) => a.localeCompare(b));
+
+  const pathname = `/api-docs`;
+  const page = `/api-docs/component-api`;  
+
+  const children = components.map(componentName => {
+    return {
+      pathname: `/api-docs/${lodash.kebabCase(componentName)}`,
+      query: { component: componentName },
+    };
+  });
+
+  return {
+    pathname,
+    page,
+    children
+  }
+}
+
 // Returns the Next.js pages available in a nested format.
 // The output is in the next.js format.
 // Each pathname is a route you can navigate to.
@@ -98,13 +124,11 @@ function findPages(
 
     if (pathname.indexOf('.eslintrc') !== -1) {
       return;
-    }
+    }  
 
-    if (
-      options.front &&
-      pathname.indexOf('/components') === -1 &&
-      pathname.indexOf('/api-docs') === -1
-    ) {
+    if (pathname.indexOf('/api-docs') === 0) {      
+      const componentApiPages = findComponentApiPages()      
+      pages.push(componentApiPages);
       return;
     }
 

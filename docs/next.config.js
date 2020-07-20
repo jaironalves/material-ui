@@ -159,12 +159,27 @@ module.exports = {
     function traverse(pages2, userLanguage) {
       const prefix = userLanguage === 'en' ? '' : `/${userLanguage}`;
 
-      pages2.forEach((page) => {
+      pages2.forEach(page => {
+        if (page.pathname === '/api-docs') {
+          const pagepath = `${page.page}`;
+          page.children.forEach(pageChildren => {
+            const pageChildrenPathName = `${prefix}${pageChildren.pathname.replace(/^\/api-docs\/(.*)/, '/api/$1')}`;
+            map[pageChildrenPathName] = {
+              page: pagepath,
+              query: {
+                userLanguage,
+                ...pageChildren.query,
+              },
+            };
+          })
+          return;
+        }
+        
         if (!page.children) {
-          map[`${prefix}${page.pathname.replace(/^\/api-docs\/(.*)/, '/api/$1')}`] = {
-            page: page.pathname,
+          map[`${prefix}${page.pathname}`] = {
+            page: page.pathname,            
             query: {
-              userLanguage,
+              userLanguage
             },
           };
           return;
@@ -200,4 +215,5 @@ module.exports = {
       { source: '/api/:rest*', destination: '/api-docs/:rest*' },
     ];
   },
+  
 };

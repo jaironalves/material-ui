@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 
-const styles = (theme) => ({
+export const styles = (theme) => ({
   root: {
     ...theme.typography.body1,
     color: theme.palette.text.primary,

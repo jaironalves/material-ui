@@ -168,7 +168,7 @@ const pages = [
     title: 'Component API',
     pathname: '/api-docs',
     children: [
-      ...findPages[0].children,
+      ...findPages[1].children,
       ...[{ pathname: '/api-docs/data-grid' }, { pathname: '/api-docs/x-grid' }],
     ].sort((a, b) =>
       a.pathname.replace('/api-docs/', '').localeCompare(b.pathname.replace('/api-docs/', '')),

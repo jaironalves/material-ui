@@ -314,7 +314,13 @@ function AppWrapper(props) {
     }
   }, []);
 
-  const activePage = findActivePage(pages, router.pathname);
+  let pathnameFind = router.pathname;
+  if ((pathnameFind.indexOf('/api-docs') === 0) && (router.query.component))
+  {
+    pathnameFind = pathnameFind.replace('/component-api', `/${router.query.component.toLowerCase()}`)
+  }
+
+  const activePage = findActivePage(pages, pathnameFind);
 
   let fonts = [
     'https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700&display=swap',
