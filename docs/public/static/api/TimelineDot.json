@@ -1,0 +1,113 @@
+{
+  "description": "",
+  "displayName": "TimelineDot",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the component.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.\r\nSee [CSS API](#css) below for more details.",
+      "tags": []
+    },
+    "color": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'grey'",
+            "computed": false
+          },
+          {
+            "value": "'inherit'",
+            "computed": false
+          },
+          {
+            "value": "'primary'",
+            "computed": false
+          },
+          {
+            "value": "'secondary'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The dot can have a different colors.",
+      "defaultValue": {
+        "value": "'grey'",
+        "computed": false
+      },
+      "tags": []
+    },
+    "variant": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'filled'",
+            "computed": false
+          },
+          {
+            "value": "'outlined'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The dot can appear filled or outlined.",
+      "defaultValue": {
+        "value": "'filled'",
+        "computed": false
+      },
+      "tags": []
+    }
+  },
+  "name": "TimelineDot",
+  "styles": {
+    "classes": [
+      "root",
+      "filledGrey",
+      "outlinedGrey",
+      "filledPrimary",
+      "outlinedPrimary",
+      "filledSecondary",
+      "outlinedSecondary"
+    ],
+    "name": "MuiTimelineDot",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "filledGrey": "Styles applied to the root element if `color=\"grey\"` and `variant=\"filled\"`.",
+      "outlinedGrey": "Styles applied to the root element if `color=\"grey\"` and `variant=\"outlined\"`.",
+      "filledPrimary": "Styles applied to the root element if `color=\"primary\"` and `variant=\"filled\"`.",
+      "outlinedPrimary": "Styles applied to the root element if `color=\"primary\"` and `variant=\"outlined\"`.",
+      "filledSecondary": "Styles applied to the root element if `color=\"secondary\"` and `variant=\"filled\"`.",
+      "outlinedSecondary": "Styles applied to the root element if `color=\"secondary\"` and `variant=\"outlined\"`."
+    },
+    "globalClasses": {
+      "root": "MuiTimelineDot-root",
+      "filledGrey": "MuiTimelineDot-filledGrey",
+      "outlinedGrey": "MuiTimelineDot-outlinedGrey",
+      "filledPrimary": "MuiTimelineDot-filledPrimary",
+      "outlinedPrimary": "MuiTimelineDot-outlinedPrimary",
+      "filledSecondary": "MuiTimelineDot-filledSecondary",
+      "outlinedSecondary": "MuiTimelineDot-outlinedSecondary"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLSpanElement",
+  "filename": "\\packages\\material-ui-lab\\src\\TimelineDot\\TimelineDot.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/timeline"
+  ]
+}

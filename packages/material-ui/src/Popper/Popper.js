@@ -231,7 +231,7 @@ Popper.propTypes = {
    * It's used to set the position of the popper.
    * The return value will passed as the reference object of the Popper instance.
    */
-  anchorEl: chainPropTypes(
+  anchorEl: chainPropTypes/* @chainedAs ["HTMLElementType", "object", "func"] */(
     PropTypes.oneOfType([HTMLElementType, PropTypes.object, PropTypes.func]),
     (props) => {
       if (props.open) {

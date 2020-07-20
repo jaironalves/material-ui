@@ -1,39 +1,25 @@
-/* eslint-disable no-console */
-import * as babel from '@babel/core';
-import traverse from '@babel/traverse';
-import { mkdirSync, readFileSync, writeFileSync } from 'fs';
-import { rewriteUrlForNextExport } from 'next/dist/next-server/lib/router/rewrite-url-for-export';
+import { readFileSync } from 'fs';
+import { writeJson } from 'fs-extra';
 import path from 'path';
-import kebabCase from 'lodash/kebabCase';
-import uniqBy from 'lodash/uniqBy';
+import * as _ from 'lodash';
 import { defaultHandlers, parse as docgenParse } from 'react-docgen';
-import remark from 'remark';
-import remarkVisit from 'unist-util-visit';
-import * as yargs from 'yargs';
-import { getLineFeed } from './helpers';
 import muiDefaultPropsHandler from '../src/modules/utils/defaultPropsHandler';
-import generateMarkdown from '../src/modules/utils/generateMarkdown';
+import propJsdocHandler from '../src/modules/utils/propJsdocHandler';
+import chainedPropHandler from '../src/modules/utils/chainedPropHandler';
 import { findPagesMarkdown, findComponents } from '../src/modules/utils/find';
 import { getHeaders } from '../src/modules/utils/parseMarkdown';
 import parseTest from '../src/modules/utils/parseTest';
-import { pageToTitle } from '../src/modules/utils/helpers';
 import createMuiTheme from '../../packages/material-ui/src/styles/createMuiTheme';
 import getStylesCreator from '../../packages/material-ui-styles/src/getStylesCreator';
 import createGenerateClassName from '../../packages/material-ui-styles/src/createGenerateClassName';
 
 const generateClassName = createGenerateClassName();
 
+const rootDirectory = path.resolve(__dirname, '../../');
+const theme = createMuiTheme();
+
 const inheritedComponentRegexp = /\/\/ @inheritedComponent (.*)/;
 
-/**
- * Receives a component's test information and source code and return's an object
- * containing the inherited component's name and pathname
- *
- * @param {object} testInfo Information retrieved from the component's describeConformance() in its test.js file
- * @param {string} testInfo.forwardsRefTo The name of the element the ref is forwarded to
- * @param {(string | undefined)} testInfo.inheritComponent The name of the component functionality is inherited from
- * @param {string} src The component's source code
- */
 function getInheritance(testInfo, src) {
   let inheritedComponentName = testInfo.inheritComponent;
 
@@ -56,7 +42,7 @@ function getInheritance(testInfo, src) {
       break;
 
     default:
-      pathname = `/api/${kebabCase(inheritedComponentName)}`;
+      pathname = `/api/${_.kebabCase(inheritedComponentName)}`;
       break;
   }
 
@@ -66,135 +52,11 @@ function getInheritance(testInfo, src) {
   };
 }
 
-/**
- * Produces markdown of the description that can be hosted anywhere.
- *
- * By default we assume that the markdown is hosted on material-ui.com which is
- * why the source includes relative url. We transform them to absolute urls with
- * this method.
- *
- * @param {object} api
- * @param {object} options
- */
-function computeApiDescription(api, options) {
-  const { host } = options;
-  return new Promise((resolve, reject) => {
-    remark()
-      .use(function docsLinksAttacher() {
-        return function transformer(tree) {
-          remarkVisit(tree, 'link', (linkNode) => {
-            if (linkNode.url.startsWith('/')) {
-              linkNode.url = `${host}${linkNode.url}`;
-            }
-          });
-        };
-      })
-      .process(api.description, (error, file) => {
-        if (error) reject(error);
-
-        resolve(file.contents.trim());
-      });
-  });
-}
-
-async function annotateComponentDefinition(component, api) {
-  const HOST = 'https://material-ui.com';
-
-  const typesFilename = component.filename.replace(/\.js$/, '.d.ts');
-  const typesSource = readFileSync(typesFilename, { encoding: 'utf8' });
-  const typesAST = await babel.parseAsync(typesSource, {
-    configFile: false,
-    filename: typesFilename,
-    presets: [require.resolve('@babel/preset-typescript')],
-  });
-
-  let start = null;
-  let end = null;
-  traverse(typesAST, {
-    ExportDefaultDeclaration(babelPath) {
-      // export default function Menu() {}
-      let node = babelPath.node;
-      if (node.declaration.type === 'Identifier') {
-        // declare const Menu: {};
-        // export default Menu;
-        const bindingId = babelPath.node.declaration.name;
-        const binding = babelPath.scope.bindings[bindingId];
-        node = binding.path.parentPath.node;
-      }
-
-      const { leadingComments = [] } = node;
-      const [jsdocBlock, ...rest] = leadingComments;
-      if (rest.length > 0) {
-        throw new Error('Should only have a single leading jsdoc block');
-      }
-      if (jsdocBlock !== undefined) {
-        start = jsdocBlock.start;
-        end = jsdocBlock.end;
-      } else {
-        start = node.start - 1;
-        end = start;
-      }
-    },
-  });
-
-  if (end === null || start === 0) {
-    throw new TypeError(
-      "Don't know where to insert the jsdoc block. Probably no `default export` found",
-    );
-  }
-
-  const demos = uniqBy(
-    api.pagesMarkdown.filter((page) => {
-      return page.components.includes(api.name);
-    }, []),
-    (page) => page.pathname,
-  );
-
-  let inheritanceAPILink = null;
-  if (api.inheritance !== null) {
-    const url = api.inheritance.pathname.startsWith('/')
-      ? `${HOST}${rewriteUrlForNextExport(api.inheritance.pathname)}`
-      : api.inheritance.pathname;
-
-    inheritanceAPILink = `[${api.inheritance.component} API](${url})`;
-  }
-
-  const markdownLines = (await computeApiDescription(api, { host: HOST })).split('\n');
-  if (demos.length > 0) {
-    markdownLines.push(
-      'Demos:',
-      '',
-      ...demos.map(
-        (page) => `- [${pageToTitle(page)}](${HOST}${rewriteUrlForNextExport(page.pathname)})`,
-      ),
-      '',
-    );
-  }
-
-  markdownLines.push('API:', '', `- [${api.name} API](${HOST}/api/${kebabCase(api.name)}/)`);
-  if (api.inheritance !== null) {
-    markdownLines.push(`- inherits ${inheritanceAPILink}`);
-  }
-
-  const jsdoc = `/**\n${markdownLines
-    .map((line) => (line.length > 0 ? ` * ${line}` : ` *`))
-    .join('\n')}\n */`;
-  const typesSourceNew = typesSource.slice(0, start) + jsdoc + typesSource.slice(end);
-  writeFileSync(typesFilename, typesSourceNew, { encoding: 'utf8' });
-}
-
-async function buildDocs(options) {
-  const {
-    component: componentObject,
-    outputDirectory,
-    workspaceRoot,
-    pagesMarkdown,
-    theme,
-  } = options;
+async function buildComponentApi(componentObject) {
   const src = readFileSync(componentObject.filename, 'utf8');
 
   if (src.match(/@ignore - internal component\./) || src.match(/@ignore - do not document\./)) {
-    return;
+    return null;
   }
 
   const spread = !src.match(/ = exactProp\(/);
@@ -211,7 +73,7 @@ async function buildDocs(options) {
   if (component.styles && component.default.options) {
     // Collect the customization points of the `classes` property.
     styles.classes = Object.keys(getStylesCreator(component.styles).create(theme)).filter(
-      (className) => !className.match(/^(@media|@keyframes)/),
+      className => !className.match(/^(@media|@keyframes)/),
     );
     styles.name = component.default.options.name;
     styles.globalClasses = styles.classes.reduce((acc, key) => {
@@ -259,20 +121,31 @@ async function buildDocs(options) {
 
   let reactAPI;
   try {
-    reactAPI = docgenParse(src, null, defaultHandlers.concat(muiDefaultPropsHandler), {
-      filename: componentObject.filename,
-    });
+    reactAPI = docgenParse(
+      src,
+      null,
+      defaultHandlers.concat(muiDefaultPropsHandler, propJsdocHandler, chainedPropHandler),
+      {
+        filename: componentObject.filename,
+      },
+    );
   } catch (err) {
-    console.log('Error parsing src for', componentObject.filename);
+    console.error('Error parsing src for', componentObject.filename);
     throw err;
   }
 
+  reactAPI.props = _.mapValues(
+    _.omitBy(reactAPI.props, descriptor => {
+      const hasIgnoreTag = descriptor.tags.find(tag => tag.title === 'ignore') !== undefined;
+      return hasIgnoreTag;
+    }),
+    ({ ...descriptor }) => {
+      return descriptor;
+    },
+  );
   reactAPI.name = name;
   reactAPI.styles = styles;
-  reactAPI.pagesMarkdown = pagesMarkdown;
-  reactAPI.src = src;
   reactAPI.spread = spread;
-  reactAPI.EOL = getLineFeed(src);
 
   const testInfo = await parseTest(componentObject.filename);
   // no Object.assign to visually check for collisions
@@ -283,126 +156,81 @@ async function buildDocs(options) {
   // }
 
   // Relative location in the file system.
-  reactAPI.filename = componentObject.filename.replace(workspaceRoot, '');
+  reactAPI.filename = componentObject.filename.replace(rootDirectory, '');
   reactAPI.inheritance = getInheritance(testInfo, src);
 
-  let markdown;
-  try {
-    markdown = generateMarkdown(reactAPI);
-  } catch (err) {
-    console.log('Error generating markdown for', componentObject.filename);
-    throw err;
+  // eslint-disable-next-line no-console
+  console.log('Built API data for', reactAPI.name);
+  return reactAPI;
+}
+
+async function run() {
+  const outputDir = path.resolve(__dirname, '../public/static/api');
+  const pagesMarkdown = findPagesMarkdown().map(markdown => {
+    const markdownSource = readFileSync(markdown.filename, 'utf8');
+    return {
+      ...markdown,
+      components: getHeaders(markdownSource).components,
+    };
+  });
+  const components = process.argv
+    .slice(2)
+    .map(dir => {
+      return findComponents(path.resolve(dir));
+    })
+    .reduce((accumulatedComponents, partialComponents) => {
+      return accumulatedComponents.concat(partialComponents);
+    }, []);
+
+  /**
+   * @param {string} componentName
+   * @returns {string[]} - list of pathnames to pages using this component
+   */
+  function findPagesOfComponent(componentName) {
+    return Array.from(
+      new Set(
+        pagesMarkdown
+          .filter(markdown => {
+            return markdown.components.includes(componentName);
+          })
+          .map(markdown => {
+            return markdown.pathname;
+          }),
+      ),
+    );
   }
 
-  writeFileSync(
-    path.resolve(outputDirectory, `${kebabCase(reactAPI.name)}.md`),
-    markdown.replace(/\r?\n/g, reactAPI.EOL),
-  );
-  writeFileSync(
-    path.resolve(outputDirectory, `${kebabCase(reactAPI.name)}.js`),
-    `import React from 'react';
-import MarkdownDocs from 'docs/src/modules/components/MarkdownDocs';
-import { prepareMarkdown } from 'docs/src/modules/utils/parseMarkdown';
+  const componentApis = {};
+  await Promise.all(
+    components
+      // .filter(cp => cp.filename.includes('LoadingButton'))
+      .map(async component => {
+      try {
+        const componentApi = await buildComponentApi(component);
+        if (componentApi !== null) {
+          const usedInPages = findPagesOfComponent(componentApi.name);
 
-const pageFilename = 'api/${kebabCase(reactAPI.name)}';
-const requireRaw = require.context('!raw-loader!./', false, /\\/${kebabCase(reactAPI.name)}\\.md$/);
-
-export default function Page({ docs }) {
-  return <MarkdownDocs docs={docs} />;
-}
-
-Page.getInitialProps = () => {
-  const { demos, docs } = prepareMarkdown({ pageFilename, requireRaw });
-  return { demos, docs };
-};
-`.replace(/\r?\n/g, reactAPI.EOL),
-  );
-
-  console.log('Built markdown docs for', reactAPI.name);
-
-  await annotateComponentDefinition(componentObject, reactAPI);
-}
-
-function run(argv) {
-  const workspaceRoot = path.resolve(__dirname, '../../');
-  const componentDirectories = argv.componentDirectories.map((componentDirectory) => {
-    return path.resolve(componentDirectory);
-  });
-  const outputDirectory = path.resolve(argv.outputDirectory);
-  const grep = argv.grep == null ? null : new RegExp(argv.grep);
-
-  mkdirSync(outputDirectory, { mode: 0o777, recursive: true });
-
-  const theme = createMuiTheme();
-
-  const pagesMarkdown = findPagesMarkdown()
-    .map((markdown) => {
-      const markdownSource = readFileSync(markdown.filename, 'utf8');
-      return {
-        ...markdown,
-        components: getHeaders(markdownSource).components,
-      };
-    })
-    .filter((markdown) => markdown.components.length > 0);
-  const components = componentDirectories
-    .reduce((directories, componentDirectory) => {
-      return directories.concat(findComponents(componentDirectory));
-    }, [])
-    .filter((component) => {
-      if (grep === null) {
-        return true;
+          componentApis[componentApi.name] = {
+            ...componentApi,
+            usedInPages,
+          };
+        }
+      } catch (error) {
+        console.warn(`error building docs for ${component.filename}`);
+        console.error(error);
+        process.exit(1);
       }
-      return grep.test(component.filename);
-    });
+    }),
+  );
 
-  const componentBuilds = components.map((component) => {
-    // use Promise.allSettled once we switch to node 12
-    return buildDocs({ component, outputDirectory, pagesMarkdown, theme, workspaceRoot })
-      .then((value) => {
-        return { status: 'fulfilled', value };
-      })
-      .catch((error) => {
-        error.message = `with component ${component.filename}: ${error.message}`;
-
-        return { status: 'rejected', reason: error };
-      });
-  });
-
-  Promise.all(componentBuilds).then((builds) => {
-    const fails = builds.filter(({ status }) => status === 'rejected');
-
-    fails.forEach((build) => {
-      console.error(build.reason);
-    });
-    if (fails.length > 0) {
-      process.exit(1);
-    }
-  });
+  await Promise.all(
+    Object.values(componentApis).map(api => {
+      return writeJson(path.join(outputDir, `${api.name}.json`), api, { spaces: 2 });
+    }),
+  );
 }
 
-yargs
-  .command({
-    command: '$0 <outputDirectory> [componentDirectories...]',
-    description: 'formats codebase',
-    builder: (command) => {
-      return command
-        .positional('outputDirectory', {
-          description: 'directory where the markdown is written to',
-          type: 'string',
-        })
-        .positional('componentDirectories', {
-          description: 'Directories to component sources',
-          type: 'string',
-        })
-        .option('grep', {
-          description:
-            'Only generate markdown for component filenames matching the pattern. The string is treated as a RegExp.',
-          type: 'string',
-        });
-    },
-    handler: run,
-  })
-  .help()
-  .strict(true)
-  .version(false)
-  .parse();
+run().catch(error => {
+  console.error(error, '\n');
+  process.exit();
+});

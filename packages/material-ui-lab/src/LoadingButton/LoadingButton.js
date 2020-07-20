@@ -126,7 +126,7 @@ LoadingButton.propTypes = {
   /**
    * The pending indicator can be positioned on the start, end, or the center of the button.
    */
-  pendingPosition: chainPropTypes(PropTypes.oneOf(['start', 'end', 'center']), (props) => {
+  pendingPosition: chainPropTypes/* @chainedAs ["start", "end", "center"] */(PropTypes.oneOf(['start', 'end', 'center']), (props) => {
     if (props.pendingPosition === 'start' && !props.startIcon) {
       return new Error(
         `Material-UI: The pendingPosition="start" should be used in combination with startIcon.`,
