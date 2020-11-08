@@ -1,0 +1,17 @@
+{
+  "propChildren": "The content of the button.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propDisabled": "If `true`, the button is disabled.",
+  "propPending": "If `true`, the pending indicator is shown.",
+  "propPendingIndicator": "Element placed before the children if the button is in pending state.",
+  "propPendingPosition": "The pending indicator can be positioned on the start, end, or the center of the button.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesPending": "Styles applied to the root element if `pending={true}`.",
+  "stylesPendingIndicator": "Styles applied to the pendingIndicator element.",
+  "stylesPendingIndicatorCenter": "Styles applied to the pendingIndicator element if `pendingPosition=\"center\"`.",
+  "stylesPendingIndicatorStart": "Styles applied to the pendingIndicator element if `pendingPosition=\"start\"`.",
+  "stylesPendingIndicatorEnd": "Styles applied to the pendingIndicator element if `pendingPosition=\"end\"`.",
+  "stylesEndIconPendingEnd": "Styles applied to the endIcon element if `pending={true}` and `pendingPosition=\"end\"`.",
+  "stylesStartIconPendingStart": "Styles applied to the startIcon element if `pending={true}` and `pendingPosition=\"start\"`.",
+  "stylesLabelPendingCenter": "Styles applied to the label element if `pending={true}` and `pendingPosition=\"center\"`."
+}

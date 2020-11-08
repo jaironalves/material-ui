@@ -4,34 +4,13 @@ import {
   parse as docgenParse,
   PropDescriptor,
   PropTypeDescriptor,
-  ReactDocgenApi,
 } from 'react-docgen';
+import {
+  DescribeablePropDescriptor,
+  ReactApi
+} from 'react-doc';
 import { SOURCE_CODE_ROOT_URL, LANGUAGES_IN_PROGRESS } from 'docs/src/modules/constants';
 import { pageToTitle } from './helpers';
-
-interface DescribeablePropDescriptor {
-  annotation: doctrine.Annotation;
-  defaultValue: string | null;
-  required: boolean;
-  type: PropTypeDescriptor;
-}
-
-export interface ReactApi extends ReactDocgenApi {
-  EOL: string;
-  filename: string;
-  forwardsRefTo: string | undefined;
-  inheritance: { component: string; pathname: string } | null;
-  name: string;
-  pagesMarkdown: Array<{ components: string[]; filename: string; pathname: string }>;
-  spread: boolean;
-  src: string;
-  styles: {
-    classes: string[];
-    globalClasses: Record<string, string>;
-    name: string | null;
-    descriptions: Record<string, string>;
-  };
-}
 
 const PATH_REPLACE_REGEX = /\\/g;
 const PATH_SEPARATOR = '/';

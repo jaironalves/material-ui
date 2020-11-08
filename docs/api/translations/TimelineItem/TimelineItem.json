@@ -1,0 +1,11 @@
+{
+  "propChildren": "The content of the component.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesAlignLeft": "Styles applied to the root element if `align=\"left\"`.",
+  "stylesAlignRight": "Styles applied to the root element if `align=\"right\"`.",
+  "stylesAlignAlternate": "Styles applied to the root element if `align=\"alternate\"`.",
+  "stylesMissingOppositeContent": "Styles applied to the root element if no there isn't TimelineOppositeContent provided.",
+  "stylesContent": "Styles applied to the timeline content node.",
+  "stylesOppositeContent": "Styles applied to the timeline opposite content node."
+}

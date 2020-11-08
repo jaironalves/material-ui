@@ -1,0 +1,16 @@
+{
+  "propChildren": "The content of the accordion.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propDefaultExpanded": "If `true`, expands the accordion by default.",
+  "propDisabled": "If `true`, the accordion is displayed in a disabled state.",
+  "propExpanded": "If `true`, expands the accordion, otherwise collapse it.\r\nSetting this prop enables control over the accordion.",
+  "propOnChange": "Callback fired when the expand/collapse state is changed.",
+  "propSquare": "If `true`, rounded corners are disabled.",
+  "propTransitionComponent": "The component used for the transition.\r\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
+  "propTransitionProps": "Props applied to the transition element.\r\nBy default, the element is based on this [`Transition`](http://reactcommunity.org/react-transition-group/transition) component.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesRounded": "Styles applied to the root element unless `square={true}`.",
+  "stylesExpanded": "Pseudo-class applied to the root element if `expanded={true}`.",
+  "stylesDisabled": "Pseudo-class applied to the root element if `disabled={true}`.",
+  "stylesRegion": "Styles applied to the region element, the container of the children."
+}

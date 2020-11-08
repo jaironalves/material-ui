@@ -1,0 +1,10 @@
+{
+  "propChildren": "The content of the table, normally `TableHead` and `TableBody`.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propComponent": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+  "propPadding": "Allows TableCells to inherit padding of the Table.",
+  "propSize": "Allows TableCells to inherit size of the Table.",
+  "propStickyHeader": "Set the header sticky.\r\n\r\n⚠️ It doesn't work with IE11.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesStickyHeader": "Styles applied to the root element if `stickyHeader={true}`."
+}

@@ -1,0 +1,20 @@
+{
+  "propChildren": "In most cases will simply be a string containing a title for the label.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propError": "Mark the step as failed.",
+  "propIcon": "Override the default label of the step icon.",
+  "propOptional": "The optional node to display.",
+  "propStepIconComponent": "The component to render in place of the [`StepIcon`](/api/step-icon/).",
+  "propStepIconProps": "Props applied to the [`StepIcon`](/api/step-icon/) element.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesHorizontal": "Styles applied to the root element if `orientation=\"horizontal\"`.",
+  "stylesVertical": "Styles applied to the root element if `orientation=\"vertical\"`.",
+  "stylesLabel": "Styles applied to the `Typography` component which wraps `children`.",
+  "stylesActive": "Pseudo-class applied to the `Typography` component if `active={true}`.",
+  "stylesCompleted": "Pseudo-class applied to the `Typography` component if `completed={true}`.",
+  "stylesError": "Pseudo-class applied to the root element and `Typography` component if `error={true}`.",
+  "stylesDisabled": "Pseudo-class applied to the root element and `Typography` component if `disabled={true}`.",
+  "stylesIconContainer": "Styles applied to the `icon` container element.",
+  "stylesAlternativeLabel": "Pseudo-class applied to the root and icon container and `Typography` if `alternativeLabel={true}`.",
+  "stylesLabelContainer": "Styles applied to the container element which wraps `Typography` and `optional`."
+}

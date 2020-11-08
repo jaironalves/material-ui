@@ -1,0 +1,15 @@
+{
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propComponent": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+  "propDisableGutters": "If `true`, the left and right padding is removed.",
+  "propFixed": "Set the max-width to match the min-width of the current breakpoint.\r\nThis is useful if you'd prefer to design for a fixed set of sizes\r\ninstead of trying to accommodate a fully fluid viewport.\r\nIt's fluid by default.",
+  "propMaxWidth": "Determine the max-width of the container.\r\nThe container width grows with the size of the screen.\r\nSet to `false` to disable `maxWidth`.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesDisableGutters": "Styles applied to the root element if `disableGutters={true}`.",
+  "stylesFixed": "Styles applied to the root element if `fixed={true}`.",
+  "stylesMaxWidthXs": "Styles applied to the root element if `maxWidth=\"xs\"`.",
+  "stylesMaxWidthSm": "Styles applied to the root element if `maxWidth=\"sm\"`.",
+  "stylesMaxWidthMd": "Styles applied to the root element if `maxWidth=\"md\"`.",
+  "stylesMaxWidthLg": "Styles applied to the root element if `maxWidth=\"lg\"`.",
+  "stylesMaxWidthXl": "Styles applied to the root element if `maxWidth=\"xl\"`."
+}

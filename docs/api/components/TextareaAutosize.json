@@ -1,0 +1,144 @@
+{
+  "description": "",
+  "displayName": "TextareaAutosize",
+  "methods": [],
+  "props": {
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "maxRows": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "number"
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "Maximum number of rows to display.",
+      "tags": []
+    },
+    "minRows": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "number"
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "Minimum number of rows to display.",
+      "jsdocDefaultValue": {
+        "value": "1"
+      },
+      "defaultValue": {
+        "value": "1",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "1"
+        }
+      ]
+    },
+    "onChange": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "placeholder": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "style": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "value": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "arrayOf",
+            "value": {
+              "name": "string"
+            }
+          },
+          {
+            "name": "number"
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    }
+  },
+  "name": "TextareaAutosize",
+  "styles": {
+    "classes": [],
+    "name": null,
+    "descriptions": {},
+    "globalClasses": {}
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLTextAreaElement",
+  "filename": "\\packages\\material-ui\\src\\TextareaAutosize\\TextareaAutosize.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/textarea-autosize"
+  ]
+}

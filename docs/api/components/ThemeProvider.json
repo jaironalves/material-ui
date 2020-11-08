@@ -1,0 +1,20 @@
+{
+  "description": "This component makes the `theme` available down the React tree.\r\nIt should preferably be used at **the root of your component tree**.",
+  "displayName": "ThemeProvider",
+  "methods": [],
+  "props": {},
+  "composes": [
+    "@material-ui/utils"
+  ],
+  "name": "ThemeProvider",
+  "styles": {
+    "classes": [],
+    "name": null,
+    "descriptions": {},
+    "globalClasses": {}
+  },
+  "spread": false,
+  "filename": "\\packages\\material-ui\\src\\styles\\ThemeProvider.js",
+  "inheritance": null,
+  "usedInPages": []
+}

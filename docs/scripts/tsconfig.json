@@ -1,6 +1,6 @@
 {
   "extends": "../../tsconfig.json",
-  "include": ["types.d.ts", "buildApi.ts"],
+  "include": ["../src/types", "buildApi.ts"],
   "compilerOptions": {
     "allowJs": true,
     "isolatedModules": true,

@@ -1,0 +1,20 @@
+{
+  "description": "Refer to the [Icons](/components/icons/) section of the documentation\r\nregarding the available icon options.",
+  "propChildren": "The icon element.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propColor": "The color of the component. It supports those theme colors that make sense for this component.",
+  "propDisabled": "If `true`, the button is disabled.",
+  "propDisableFocusRipple": "If `true`, the  keyboard focus ripple is disabled.",
+  "propDisableRipple": "If `true`, the ripple effect is disabled.\r\n\r\n⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure\r\nto highlight the element by applying separate styles with the `focusVisibleClassName`.",
+  "propEdge": "If given, uses a negative margin to counteract the padding on one\r\nside (this is often helpful for aligning the left or right\r\nside of the icon with content above or below, without ruining the border\r\nsize and shape).",
+  "propSize": "The size of the button.\r\n`small` is equivalent to the dense button styling.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesEdgeStart": "Styles applied to the root element if `edge=\"start\"`.",
+  "stylesEdgeEnd": "Styles applied to the root element if `edge=\"end\"`.",
+  "stylesColorInherit": "Styles applied to the root element if `color=\"inherit\"`.",
+  "stylesColorPrimary": "Styles applied to the root element if `color=\"primary\"`.",
+  "stylesColorSecondary": "Styles applied to the root element if `color=\"secondary\"`.",
+  "stylesDisabled": "Pseudo-class applied to the root element if `disabled={true}`.",
+  "stylesSizeSmall": "Styles applied to the root element if `size=\"small\"`.",
+  "stylesLabel": "Styles applied to the children container element."
+}

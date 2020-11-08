@@ -1,0 +1,351 @@
+{
+  "description": "Responsively hides children based on the selected implementation.",
+  "displayName": "Hidden",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the component.",
+      "tags": []
+    },
+    "implementation": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'css'",
+            "computed": false
+          },
+          {
+            "value": "'js'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "Specify which implementation to use.  'js' is the default, 'css' works better for\r\nserver-side rendering.",
+      "jsdocDefaultValue": {
+        "value": "'js'"
+      },
+      "defaultValue": {
+        "value": "'js'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'js'"
+        }
+      ]
+    },
+    "initialWidth": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'xs'",
+            "computed": false
+          },
+          {
+            "value": "'sm'",
+            "computed": false
+          },
+          {
+            "value": "'md'",
+            "computed": false
+          },
+          {
+            "value": "'lg'",
+            "computed": false
+          },
+          {
+            "value": "'xl'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "You can use this prop when choosing the `js` implementation with server-side rendering.\r\n\r\nAs `window.innerWidth` is unavailable on the server,\r\nwe default to rendering an empty component during the first mount.\r\nYou might want to use a heuristic to approximate\r\nthe screen width of the client browser screen width.\r\n\r\nFor instance, you could be using the user-agent or the client-hints.\r\nhttps://caniuse.com/#search=client%20hint",
+      "tags": []
+    },
+    "lgDown": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, screens this size and down are hidden.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "lgUp": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, screens this size and up are hidden.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "mdDown": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, screens this size and down are hidden.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "mdUp": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, screens this size and up are hidden.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "only": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'xs'",
+                "computed": false
+              },
+              {
+                "value": "'sm'",
+                "computed": false
+              },
+              {
+                "value": "'md'",
+                "computed": false
+              },
+              {
+                "value": "'lg'",
+                "computed": false
+              },
+              {
+                "value": "'xl'",
+                "computed": false
+              }
+            ]
+          },
+          {
+            "name": "arrayOf",
+            "value": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'xs'",
+                  "computed": false
+                },
+                {
+                  "value": "'sm'",
+                  "computed": false
+                },
+                {
+                  "value": "'md'",
+                  "computed": false
+                },
+                {
+                  "value": "'lg'",
+                  "computed": false
+                },
+                {
+                  "value": "'xl'",
+                  "computed": false
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "required": false,
+      "description": "Hide the given breakpoint(s).",
+      "tags": []
+    },
+    "smDown": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, screens this size and down are hidden.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "smUp": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, screens this size and up are hidden.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "xlDown": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, screens this size and down are hidden.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "xlUp": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, screens this size and up are hidden.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "xsDown": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, screens this size and down are hidden.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "xsUp": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, screens this size and up are hidden.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    }
+  },
+  "name": "Hidden",
+  "styles": {
+    "classes": [],
+    "name": null,
+    "descriptions": {},
+    "globalClasses": {}
+  },
+  "spread": true,
+  "filename": "\\packages\\material-ui\\src\\Hidden\\Hidden.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/hidden"
+  ]
+}

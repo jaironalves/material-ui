@@ -1,0 +1,12 @@
+{
+  "propChildren": "Menu item contents.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propComponent": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+  "propDense": "If `true`, compact vertical padding designed for keyboard and mouse input is used.\r\nThe prop defaults to the value inherited from the parent List component.",
+  "propDisableGutters": "If `true`, the left and right padding is removed.",
+  "propListItemClasses": "`classes` prop applied to the [`ListItem`](/api/list-item/) element.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesGutters": "Styles applied to the root element unless `disableGutters={true}`.",
+  "stylesSelected": "Styles applied to the root element if `selected={true}`.",
+  "stylesDense": "Styles applied to the root element if dense."
+}

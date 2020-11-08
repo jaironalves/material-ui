@@ -1,0 +1,74 @@
+{
+  "description": "",
+  "displayName": "TimelineItem",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the component.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    }
+  },
+  "name": "TimelineItem",
+  "styles": {
+    "classes": [
+      "root",
+      "alignLeft",
+      "alignRight",
+      "alignAlternate",
+      "missingOppositeContent",
+      "content",
+      "oppositeContent"
+    ],
+    "name": "MuiTimelineItem",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "alignLeft": "Styles applied to the root element if `align=\"left\"`.",
+      "alignRight": "Styles applied to the root element if `align=\"right\"`.",
+      "alignAlternate": "Styles applied to the root element if `align=\"alternate\"`.",
+      "missingOppositeContent": "Styles applied to the root element if no there isn't TimelineOppositeContent provided.",
+      "content": "Styles applied to the timeline content node.",
+      "oppositeContent": "Styles applied to the timeline opposite content node."
+    },
+    "globalClasses": {
+      "root": "MuiTimelineItem-root",
+      "alignLeft": "MuiTimelineItem-alignLeft",
+      "alignRight": "MuiTimelineItem-alignRight",
+      "alignAlternate": "MuiTimelineItem-alignAlternate",
+      "missingOppositeContent": "MuiTimelineItem-missingOppositeContent",
+      "content": "MuiTimelineItem-content",
+      "oppositeContent": "MuiTimelineItem-oppositeContent"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLLIElement",
+  "filename": "\\packages\\material-ui-lab\\src\\TimelineItem\\TimelineItem.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/timeline"
+  ]
+}

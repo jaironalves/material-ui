@@ -1,0 +1,348 @@
+{
+  "description": "",
+  "displayName": "PaginationItem",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "color": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'primary'",
+            "computed": false
+          },
+          {
+            "value": "'secondary'",
+            "computed": false
+          },
+          {
+            "value": "'standard'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The active color.",
+      "jsdocDefaultValue": {
+        "value": "'standard'"
+      },
+      "defaultValue": {
+        "value": "'standard'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'standard'"
+        }
+      ]
+    },
+    "component": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+      "tags": []
+    },
+    "disabled": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the item is disabled.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "page": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "The current page number.",
+      "tags": []
+    },
+    "selected": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true` the pagination item is selected.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "shape": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'circular'",
+            "computed": false
+          },
+          {
+            "value": "'rounded'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The shape of the pagination item.",
+      "jsdocDefaultValue": {
+        "value": "'circular'"
+      },
+      "defaultValue": {
+        "value": "'circular'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'circular'"
+        }
+      ]
+    },
+    "size": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'large'",
+            "computed": false
+          },
+          {
+            "value": "'medium'",
+            "computed": false
+          },
+          {
+            "value": "'small'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The size of the pagination item.",
+      "jsdocDefaultValue": {
+        "value": "'medium'"
+      },
+      "defaultValue": {
+        "value": "'medium'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'medium'"
+        }
+      ]
+    },
+    "type": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'end-ellipsis'",
+            "computed": false
+          },
+          {
+            "value": "'first'",
+            "computed": false
+          },
+          {
+            "value": "'last'",
+            "computed": false
+          },
+          {
+            "value": "'next'",
+            "computed": false
+          },
+          {
+            "value": "'page'",
+            "computed": false
+          },
+          {
+            "value": "'previous'",
+            "computed": false
+          },
+          {
+            "value": "'start-ellipsis'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The type of pagination item.",
+      "jsdocDefaultValue": {
+        "value": "'page'"
+      },
+      "defaultValue": {
+        "value": "'page'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'page'"
+        }
+      ]
+    },
+    "variant": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'outlined'",
+                "computed": false
+              },
+              {
+                "value": "'text'",
+                "computed": false
+              }
+            ]
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "The pagination item variant.",
+      "jsdocDefaultValue": {
+        "value": "'text'"
+      },
+      "defaultValue": {
+        "value": "'text'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'text'"
+        }
+      ]
+    }
+  },
+  "name": "PaginationItem",
+  "styles": {
+    "classes": [
+      "root",
+      "page",
+      "sizeSmall",
+      "sizeLarge",
+      "text",
+      "textPrimary",
+      "textSecondary",
+      "outlined",
+      "outlinedPrimary",
+      "outlinedSecondary",
+      "rounded",
+      "ellipsis",
+      "focusVisible",
+      "disabled",
+      "selected",
+      "icon"
+    ],
+    "name": "MuiPaginationItem",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "page": "Styles applied to the root element if `type=\"page\"`.",
+      "sizeSmall": "Styles applied applied to the root element if `size=\"small\"`.",
+      "sizeLarge": "Styles applied applied to the root element if `size=\"large\"`.",
+      "text": "Styles applied to the root element if `variant=\"text\"`.",
+      "textPrimary": "Styles applied to the root element if `variant=\"text\"` and `color=\"primary\"`.",
+      "textSecondary": "Styles applied to the root element if `variant=\"text\"` and `color=\"secondary\"`.",
+      "outlined": "Styles applied to the root element if `variant=\"outlined\"`.",
+      "outlinedPrimary": "Styles applied to the root element if `variant=\"outlined\"` and `color=\"primary\"`.",
+      "outlinedSecondary": "Styles applied to the root element if `variant=\"outlined\"` and `color=\"secondary\"`.",
+      "rounded": "Styles applied to the root element if `rounded=\"true\"`.",
+      "ellipsis": "Styles applied to the root element if `type=\"start-ellipsis\"` or `type=\"end-ellipsis\"`.",
+      "focusVisible": "Pseudo-class applied to the root element if keyboard focused.",
+      "disabled": "Pseudo-class applied to the root element if `disabled={true}`.",
+      "selected": "Pseudo-class applied to the root element if `selected={true}`.",
+      "icon": "Styles applied to the icon element."
+    },
+    "globalClasses": {
+      "root": "MuiPaginationItem-root",
+      "page": "MuiPaginationItem-page",
+      "sizeSmall": "MuiPaginationItem-sizeSmall",
+      "sizeLarge": "MuiPaginationItem-sizeLarge",
+      "text": "MuiPaginationItem-text",
+      "textPrimary": "MuiPaginationItem-textPrimary",
+      "textSecondary": "MuiPaginationItem-textSecondary",
+      "outlined": "MuiPaginationItem-outlined",
+      "outlinedPrimary": "MuiPaginationItem-outlinedPrimary",
+      "outlinedSecondary": "MuiPaginationItem-outlinedSecondary",
+      "rounded": "MuiPaginationItem-rounded",
+      "ellipsis": "MuiPaginationItem-ellipsis",
+      "focusVisible": "Mui-focusVisible",
+      "disabled": "Mui-disabled",
+      "selected": "Mui-selected",
+      "icon": "MuiPaginationItem-icon"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLButtonElement",
+  "filename": "\\packages\\material-ui\\src\\PaginationItem\\PaginationItem.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/pagination"
+  ]
+}

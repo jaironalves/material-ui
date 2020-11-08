@@ -1,0 +1,13 @@
+{
+  "propActiveStep": "Set the active step (zero based index).\r\nSet to -1 to disable all the steps.",
+  "propAlternativeLabel": "If set to 'true' and orientation is horizontal,\r\nthen the step label will be positioned under the icon.",
+  "propChildren": "Two or more `<Step />` components.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propConnector": "An element to be placed between each step.",
+  "propNonLinear": "If set the `Stepper` will not assist in controlling steps for linear flow.",
+  "propOrientation": "The stepper orientation (layout flow direction).",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesHorizontal": "Styles applied to the root element if `orientation=\"horizontal\"`.",
+  "stylesVertical": "Styles applied to the root element if `orientation=\"vertical\"`.",
+  "stylesAlternativeLabel": "Styles applied to the root element if `alternativeLabel={true}`."
+}

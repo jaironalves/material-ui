@@ -1,0 +1,7 @@
+{
+  "propChildren": "The content of the component.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propDisableSpacing": "If `true`, the actions do not have additional margin.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesSpacing": "Styles applied to the root element unless `disableSpacing={true}`."
+}

@@ -1,0 +1,6 @@
+{
+  "propChildren": "The content of the component.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propRaised": "If `true`, the card will use raised styling.",
+  "stylesRoot": "Styles applied to the root element."
+}

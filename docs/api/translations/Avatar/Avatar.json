@@ -1,0 +1,18 @@
+{
+  "propAlt": "Used in combination with `src` or `srcSet` to\r\nprovide an alt attribute for the rendered `img` element.",
+  "propChildren": "Used to render icon or text elements inside the Avatar if `src` is not set.\r\nThis can be an element, or just a string.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propComponent": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+  "propImgProps": "Attributes applied to the `img` element if the component is used to display an image.\r\nIt can be used to listen for the loading error event.",
+  "propSizes": "The `sizes` attribute for the `img` element.",
+  "propSrc": "The `src` attribute for the `img` element.",
+  "propSrcSet": "The `srcSet` attribute for the `img` element.\r\nUse this attribute for responsive image display.",
+  "propVariant": "The shape of the avatar.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesColorDefault": "Styles applied to the root element if not `src` or `srcSet`.",
+  "stylesCircular": "Styles applied to the root element if `variant=\"circular\"`.",
+  "stylesRounded": "Styles applied to the root element if `variant=\"rounded\"`.",
+  "stylesSquare": "Styles applied to the root element if `variant=\"square\"`.",
+  "stylesImg": "Styles applied to the img element if either `src` or `srcSet` is defined.",
+  "stylesFallback": "Styles applied to the fallback icon"
+}

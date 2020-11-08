@@ -1,0 +1,14 @@
+{
+  "propChildren": "The content of the button.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propExclusive": "If `true`, only allow one of the child ToggleButton values to be selected.",
+  "propOnChange": "Callback fired when the value changes.",
+  "propOrientation": "The group orientation (layout flow direction).",
+  "propSize": "The size of the buttons.",
+  "propValue": "The currently selected value within the group or an array of selected\r\nvalues when `exclusive` is false.\r\n\r\nThe value must have reference equality with the option in order to be selected.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesVertical": "Styles applied to the root element if `orientation=\"vertical\"`.",
+  "stylesGrouped": "Styles applied to the children.",
+  "stylesGroupedHorizontal": "Styles applied to the children if `orientation=\"horizontal\"`.",
+  "stylesGroupedVertical": "Styles applied to the children if `orientation=\"vertical\"`."
+}

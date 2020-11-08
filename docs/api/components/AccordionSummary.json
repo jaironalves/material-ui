@@ -1,0 +1,103 @@
+{
+  "description": "",
+  "displayName": "AccordionSummary",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the accordion summary.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "expandIcon": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The icon to display as the expand indicator.",
+      "tags": []
+    },
+    "focusVisibleClassName": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "This prop can help a person know which element has the keyboard focus.\r\nThe class name will be applied when the element gain the focus through a keyboard interaction.\r\nIt's a polyfill for the [CSS :focus-visible selector](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo).\r\nThe rationale for using this feature [is explained here](https://github.com/WICG/focus-visible/blob/master/explainer.md).\r\nA [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components\r\nif needed.",
+      "tags": []
+    },
+    "onClick": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    }
+  },
+  "name": "AccordionSummary",
+  "styles": {
+    "classes": [
+      "root",
+      "expanded",
+      "focusVisible",
+      "disabled",
+      "content",
+      "expandIconWrapper"
+    ],
+    "name": "MuiAccordionSummary",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "expanded": "Pseudo-class applied to the root element, children wrapper element and `IconButton` component if `expanded={true}`.",
+      "focusVisible": "Pseudo-class applied to the ButtonBase root element if the button is keyboard focused.",
+      "disabled": "Pseudo-class applied to the root element if `disabled={true}`.",
+      "content": "Styles applied to the children wrapper element.",
+      "expandIconWrapper": "Styles applied to the `expandIcon`'s wrapper element."
+    },
+    "globalClasses": {
+      "root": "MuiAccordionSummary-root",
+      "expanded": "Mui-expanded",
+      "focusVisible": "Mui-focusVisible",
+      "disabled": "Mui-disabled",
+      "content": "MuiAccordionSummary-content",
+      "expandIconWrapper": "MuiAccordionSummary-expandIconWrapper"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\AccordionSummary\\AccordionSummary.js",
+  "inheritance": {
+    "component": "ButtonBase",
+    "pathname": "/api/button-base"
+  },
+  "usedInPages": [
+    "/components/accordion"
+  ]
+}

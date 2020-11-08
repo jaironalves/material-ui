@@ -1,0 +1,9 @@
+{
+  "propChildren": "The content of the component.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propInvisible": "If `true`, the backdrop is invisible.\r\nIt can be used when rendering a popover or a custom select component.",
+  "propOpen": "If `true`, the backdrop is open.",
+  "propTransitionDuration": "The duration for the transition, in milliseconds.\r\nYou may specify a single timeout for all transitions, or individually with an object.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesInvisible": "Styles applied to the root element if `invisible={true}`."
+}

@@ -1,0 +1,326 @@
+{
+  "description": "",
+  "displayName": "Badge",
+  "methods": [],
+  "props": {
+    "anchorOrigin": {
+      "type": {
+        "name": "shape",
+        "value": {
+          "horizontal": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'left'",
+                "computed": false
+              },
+              {
+                "value": "'right'",
+                "computed": false
+              }
+            ],
+            "required": true
+          },
+          "vertical": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'bottom'",
+                "computed": false
+              },
+              {
+                "value": "'top'",
+                "computed": false
+              }
+            ],
+            "required": true
+          }
+        }
+      },
+      "required": false,
+      "description": "The anchor of the badge.",
+      "jsdocDefaultValue": {
+        "value": "{\r\n  vertical: 'top',\r\n  horizontal: 'right',\r\n}"
+      },
+      "defaultValue": {
+        "value": "{\r\n  vertical: 'top',\r\n  horizontal: 'right',\r\n}",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "{\r\n  vertical: 'top',\r\n  horizontal: 'right',\r\n}"
+        }
+      ]
+    },
+    "badgeContent": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content rendered within the badge.",
+      "tags": []
+    },
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The badge will be added relative to this node.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "color": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'default'",
+            "computed": false
+          },
+          {
+            "value": "'error'",
+            "computed": false
+          },
+          {
+            "value": "'primary'",
+            "computed": false
+          },
+          {
+            "value": "'secondary'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The color of the component. It supports those theme colors that make sense for this component.",
+      "jsdocDefaultValue": {
+        "value": "'default'"
+      },
+      "defaultValue": {
+        "value": "'default'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'default'"
+        }
+      ]
+    },
+    "component": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+      "defaultValue": {
+        "value": "'span'",
+        "computed": false
+      },
+      "tags": []
+    },
+    "invisible": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the badge is invisible.",
+      "tags": []
+    },
+    "max": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "Max count to show.",
+      "jsdocDefaultValue": {
+        "value": "99"
+      },
+      "defaultValue": {
+        "value": "99",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "99"
+        }
+      ]
+    },
+    "overlap": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'circular'",
+            "computed": false
+          },
+          {
+            "value": "'rectangular'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "Wrapped shape the badge should overlap.",
+      "jsdocDefaultValue": {
+        "value": "'rectangular'"
+      },
+      "defaultValue": {
+        "value": "'rectangular'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'rectangular'"
+        }
+      ]
+    },
+    "showZero": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Controls whether the badge is hidden when `badgeContent` is zero.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "variant": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'dot'",
+                "computed": false
+              },
+              {
+                "value": "'standard'",
+                "computed": false
+              }
+            ]
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "The variant to use.",
+      "jsdocDefaultValue": {
+        "value": "'standard'"
+      },
+      "defaultValue": {
+        "value": "'standard'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'standard'"
+        }
+      ]
+    }
+  },
+  "name": "Badge",
+  "styles": {
+    "classes": [
+      "root",
+      "badge",
+      "colorPrimary",
+      "colorSecondary",
+      "colorError",
+      "dot",
+      "standard",
+      "anchorOriginTopRightRectangular",
+      "anchorOriginBottomRightRectangular",
+      "anchorOriginTopLeftRectangular",
+      "anchorOriginBottomLeftRectangular",
+      "anchorOriginTopRightCircular",
+      "anchorOriginBottomRightCircular",
+      "anchorOriginTopLeftCircular",
+      "anchorOriginBottomLeftCircular",
+      "invisible"
+    ],
+    "name": "MuiBadge",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "badge": "Styles applied to the badge `span` element.",
+      "colorPrimary": "Styles applied to the root element if `color=\"primary\"`.",
+      "colorSecondary": "Styles applied to the root element if `color=\"secondary\"`.",
+      "colorError": "Styles applied to the root element if `color=\"error\"`.",
+      "dot": "Styles applied to the root element if `variant=\"dot\"`.",
+      "standard": "Styles applied to the root element if `variant=\"standard\"`.",
+      "anchorOriginTopRightRectangular": "Styles applied to the root element if `anchorOrigin={{ 'top', 'right' }} overlap=\"rectangular\"`.",
+      "anchorOriginBottomRightRectangular": "Styles applied to the root element if `anchorOrigin={{ 'bottom', 'right' }} overlap=\"rectangular\"`.",
+      "anchorOriginTopLeftRectangular": "Styles applied to the root element if `anchorOrigin={{ 'top', 'left' }} overlap=\"rectangular\"`.",
+      "anchorOriginBottomLeftRectangular": "Styles applied to the root element if `anchorOrigin={{ 'bottom', 'left' }} overlap=\"rectangular\"`.",
+      "anchorOriginTopRightCircular": "Styles applied to the root element if `anchorOrigin={{ 'top', 'right' }} overlap=\"circular\"`.",
+      "anchorOriginBottomRightCircular": "Styles applied to the root element if `anchorOrigin={{ 'bottom', 'right' }} overlap=\"circular\"`.",
+      "anchorOriginTopLeftCircular": "Styles applied to the root element if `anchorOrigin={{ 'top', 'left' }} overlap=\"circular\"`.",
+      "anchorOriginBottomLeftCircular": "Styles applied to the root element if `anchorOrigin={{ 'bottom', 'left' }} overlap=\"circular\"`.",
+      "invisible": "Pseudo-class to the badge `span` element if `invisible={true}`."
+    },
+    "globalClasses": {
+      "root": "MuiBadge-root",
+      "badge": "MuiBadge-badge",
+      "colorPrimary": "MuiBadge-colorPrimary",
+      "colorSecondary": "MuiBadge-colorSecondary",
+      "colorError": "MuiBadge-colorError",
+      "dot": "MuiBadge-dot",
+      "standard": "MuiBadge-standard",
+      "anchorOriginTopRightRectangular": "MuiBadge-anchorOriginTopRightRectangular",
+      "anchorOriginBottomRightRectangular": "MuiBadge-anchorOriginBottomRightRectangular",
+      "anchorOriginTopLeftRectangular": "MuiBadge-anchorOriginTopLeftRectangular",
+      "anchorOriginBottomLeftRectangular": "MuiBadge-anchorOriginBottomLeftRectangular",
+      "anchorOriginTopRightCircular": "MuiBadge-anchorOriginTopRightCircular",
+      "anchorOriginBottomRightCircular": "MuiBadge-anchorOriginBottomRightCircular",
+      "anchorOriginTopLeftCircular": "MuiBadge-anchorOriginTopLeftCircular",
+      "anchorOriginBottomLeftCircular": "MuiBadge-anchorOriginBottomLeftCircular",
+      "invisible": "MuiBadge-invisible"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLSpanElement",
+  "filename": "\\packages\\material-ui\\src\\Badge\\Badge.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/avatars",
+    "/components/badges"
+  ]
+}

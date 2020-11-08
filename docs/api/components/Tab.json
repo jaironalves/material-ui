@@ -1,0 +1,231 @@
+{
+  "description": "",
+  "displayName": "Tab",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "custom",
+        "raw": "unsupportedProp"
+      },
+      "required": false,
+      "description": "This prop isn't supported.\r\nUse the `component` prop if you need to change the children structure.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "disabled": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the tab is disabled.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "disableFocusRipple": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the  keyboard focus ripple is disabled.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "disableRipple": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the ripple effect is disabled.\r\n\r\n⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure\r\nto highlight the element by applying separate styles with the `focusVisibleClassName`.",
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "icon": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "element"
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "The icon element.",
+      "tags": []
+    },
+    "label": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The label element.",
+      "tags": []
+    },
+    "onChange": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "onClick": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "onFocus": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "value": {
+      "type": {
+        "name": "any"
+      },
+      "required": false,
+      "description": "You can provide your own value. Otherwise, we fallback to the child position index.",
+      "tags": []
+    },
+    "wrapped": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Tab labels appear in a single row.\r\nThey can use a second line if needed.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    }
+  },
+  "name": "Tab",
+  "styles": {
+    "classes": [
+      "root",
+      "labelIcon",
+      "textColorInherit",
+      "textColorPrimary",
+      "textColorSecondary",
+      "selected",
+      "disabled",
+      "fullWidth",
+      "wrapped",
+      "wrapper"
+    ],
+    "name": "MuiTab",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "labelIcon": "Styles applied to the root element if both `icon` and `label` are provided.",
+      "textColorInherit": "Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `textColor=\"inherit\"`.",
+      "textColorPrimary": "Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `textColor=\"primary\"`.",
+      "textColorSecondary": "Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `textColor=\"secondary\"`.",
+      "selected": "Pseudo-class applied to the root element if `selected={true}` (controlled by the Tabs component).",
+      "disabled": "Pseudo-class applied to the root element if `disabled={true}` (controlled by the Tabs component).",
+      "fullWidth": "Styles applied to the root element if `fullWidth={true}` (controlled by the Tabs component).",
+      "wrapped": "Styles applied to the root element if `wrapped={true}`.",
+      "wrapper": "Styles applied to the `icon` and `label`'s wrapper element."
+    },
+    "globalClasses": {
+      "root": "MuiTab-root",
+      "labelIcon": "MuiTab-labelIcon",
+      "textColorInherit": "MuiTab-textColorInherit",
+      "textColorPrimary": "MuiTab-textColorPrimary",
+      "textColorSecondary": "MuiTab-textColorSecondary",
+      "selected": "Mui-selected",
+      "disabled": "Mui-disabled",
+      "fullWidth": "MuiTab-fullWidth",
+      "wrapped": "MuiTab-wrapped",
+      "wrapper": "MuiTab-wrapper"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLButtonElement",
+  "filename": "\\packages\\material-ui\\src\\Tab\\Tab.js",
+  "inheritance": {
+    "component": "ButtonBase",
+    "pathname": "/api/button-base"
+  },
+  "usedInPages": [
+    "/components/tabs"
+  ]
+}

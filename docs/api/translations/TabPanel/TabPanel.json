@@ -1,0 +1,6 @@
+{
+  "propChildren": "The content of the component.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propValue": "The `value` of the corresponding `Tab`. Must use the index of the `Tab` when\r\nno `value` was passed to `Tab`.",
+  "stylesRoot": "Styles applied to the root element."
+}

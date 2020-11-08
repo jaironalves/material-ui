@@ -1,0 +1,5 @@
+{
+  "propChildren": "The content of the accordion details.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "stylesRoot": "Styles applied to the root element."
+}

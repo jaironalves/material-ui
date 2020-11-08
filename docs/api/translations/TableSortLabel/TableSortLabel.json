@@ -1,0 +1,14 @@
+{
+  "description": "A button based label for placing inside `TableCell` for column sorting.",
+  "propActive": "If `true`, the label will have the active styling (should be true for the sorted column).",
+  "propChildren": "Label contents, the arrow will be appended automatically.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propDirection": "The current sort direction.",
+  "propHideSortIcon": "Hide sort icon when active is false.",
+  "propIconComponent": "Sort icon to use.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesActive": "Pseudo-class applied to the root element if `active={true}`.",
+  "stylesIcon": "Styles applied to the icon component.",
+  "stylesIconDirectionDesc": "Styles applied to the icon component if `direction=\"desc\"`.",
+  "stylesIconDirectionAsc": "Styles applied to the icon component if `direction=\"asc\"`."
+}

@@ -1,0 +1,113 @@
+{
+  "description": "Utility component that locks focus inside the component.",
+  "displayName": "Unstable_TrapFocus",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "custom",
+        "raw": "elementAcceptingRef"
+      },
+      "required": false,
+      "description": "A single child content element.",
+      "tags": []
+    },
+    "disableAutoFocus": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the trap focus will not automatically shift focus to itself when it opens, and\r\nreplace it to the last focused element when it closes.\r\nThis also works correctly with any trap focus children that have the `disableAutoFocus` prop.\r\n\r\nGenerally this should never be set to `true` as it makes the trap focus less\r\naccessible to assistive technologies, like screen readers.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "disableEnforceFocus": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the trap focus will not prevent focus from leaving the trap focus while open.\r\n\r\nGenerally this should never be set to `true` as it makes the trap focus less\r\naccessible to assistive technologies, like screen readers.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "disableRestoreFocus": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the trap focus will not restore focus to previously focused element once\r\ntrap focus is hidden.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "getDoc": {
+      "type": {
+        "name": "func"
+      },
+      "required": true,
+      "description": "Return the document to consider.\r\nWe use it to implement the restore focus between different browser documents.",
+      "tags": []
+    },
+    "isEnabled": {
+      "type": {
+        "name": "func"
+      },
+      "required": true,
+      "description": "Do we still want to enforce the focus?\r\nThis prop helps nesting TrapFocus elements.",
+      "tags": []
+    },
+    "open": {
+      "type": {
+        "name": "bool"
+      },
+      "required": true,
+      "description": "If `true`, focus is locked.",
+      "tags": []
+    }
+  },
+  "name": "Unstable_TrapFocus",
+  "styles": {
+    "classes": [],
+    "name": null,
+    "descriptions": {},
+    "globalClasses": {}
+  },
+  "spread": false,
+  "filename": "\\packages\\material-ui\\src\\Unstable_TrapFocus\\Unstable_TrapFocus.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/trap-focus"
+  ]
+}

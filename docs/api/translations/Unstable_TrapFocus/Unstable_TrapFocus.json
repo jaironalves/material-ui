@@ -1,0 +1,10 @@
+{
+  "description": "Utility component that locks focus inside the component.",
+  "propChildren": "A single child content element.",
+  "propDisableAutoFocus": "If `true`, the trap focus will not automatically shift focus to itself when it opens, and\r\nreplace it to the last focused element when it closes.\r\nThis also works correctly with any trap focus children that have the `disableAutoFocus` prop.\r\n\r\nGenerally this should never be set to `true` as it makes the trap focus less\r\naccessible to assistive technologies, like screen readers.",
+  "propDisableEnforceFocus": "If `true`, the trap focus will not prevent focus from leaving the trap focus while open.\r\n\r\nGenerally this should never be set to `true` as it makes the trap focus less\r\naccessible to assistive technologies, like screen readers.",
+  "propDisableRestoreFocus": "If `true`, the trap focus will not restore focus to previously focused element once\r\ntrap focus is hidden.",
+  "propGetDoc": "Return the document to consider.\r\nWe use it to implement the restore focus between different browser documents.",
+  "propIsEnabled": "Do we still want to enforce the focus?\r\nThis prop helps nesting TrapFocus elements.",
+  "propOpen": "If `true`, focus is locked."
+}

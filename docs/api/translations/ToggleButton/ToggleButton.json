@@ -1,0 +1,16 @@
+{
+  "propChildren": "The content of the button.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propDisabled": "If `true`, the button is disabled.",
+  "propDisableFocusRipple": "If `true`, the  keyboard focus ripple is disabled.",
+  "propDisableRipple": "If `true`, the ripple effect is disabled.\r\n\r\n⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure\r\nto highlight the element by applying separate styles with the `focusVisibleClassName`.",
+  "propSelected": "If `true`, the button is rendered in an active state.",
+  "propSize": "The size of the button.\r\nThe prop defaults to the value inherited from the parent ToggleButtonGroup component.",
+  "propValue": "The value to associate with the button when selected in a\r\nToggleButtonGroup.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesDisabled": "Pseudo-class applied to the root element if `disabled={true}`.",
+  "stylesSelected": "Pseudo-class applied to the root element if `selected={true}`.",
+  "stylesLabel": "Styles applied to the `label` wrapper element.",
+  "stylesSizeSmall": "Styles applied to the root element if `size=\"small\"`.",
+  "stylesSizeLarge": "Styles applied to the root element if `size=\"large\"`."
+}

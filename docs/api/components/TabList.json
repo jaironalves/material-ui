@@ -1,0 +1,35 @@
+{
+  "description": "",
+  "displayName": "TabList",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "arrayOf",
+        "value": {
+          "name": "element"
+        }
+      },
+      "required": false,
+      "description": "A list of `<Tab />` elements.",
+      "tags": []
+    }
+  },
+  "name": "TabList",
+  "styles": {
+    "classes": [],
+    "name": null,
+    "descriptions": {},
+    "globalClasses": {}
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui-lab\\src\\TabList\\TabList.js",
+  "inheritance": {
+    "component": "Tabs",
+    "pathname": "/api/tabs"
+  },
+  "usedInPages": [
+    "/components/tabs"
+  ]
+}

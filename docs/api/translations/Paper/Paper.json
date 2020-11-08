@@ -1,0 +1,12 @@
+{
+  "propChildren": "The content of the component.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propComponent": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+  "propElevation": "Shadow depth, corresponds to `dp` in the spec.\r\nIt accepts values between 0 and 24 inclusive.",
+  "propSquare": "If `true`, rounded corners are disabled.",
+  "propVariant": "The variant to use.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesRounded": "Styles applied to the root element unless `square={true}`.",
+  "stylesOutlined": "Styles applied to the root element if `variant=\"outlined\"`.",
+  "stylesElevation": "Styles applied to the root element if `variant=\"elevation\"`."
+}

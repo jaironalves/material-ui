@@ -1,0 +1,7 @@
+{
+  "description": "A simple wrapper to apply `List` styles to an `Avatar`.",
+  "propChildren": "The content of the component – normally `Avatar`.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesAlignItemsFlexStart": "Styles applied to the root element when the parent `ListItem` uses `alignItems=\"flex-start\"`."
+}

@@ -1,0 +1,16 @@
+{
+  "propAnchorEl": "A HTML element, or a function that returns it.\r\nIt's used to set the position of the menu.",
+  "propAutoFocus": "If `true` (Default) will focus the `[role=\"menu\"]` if no focusable child is found. Disabled\r\nchildren are not focusable. If you set this prop to `false` focus will be placed\r\non the parent modal container. This has severe accessibility implications\r\nand should only be considered if you manage focus otherwise.",
+  "propChildren": "Menu contents, normally `MenuItem`s.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propDisableAutoFocusItem": "When opening the menu will not focus the active item but the `[role=\"menu\"]`\r\nunless `autoFocus` is also set to `false`. Not using the default means not\r\nfollowing WAI-ARIA authoring practices. Please be considerate about possible\r\naccessibility implications.",
+  "propMenuListProps": "Props applied to the [`MenuList`](/api/menu-list/) element.",
+  "propOnClose": "Callback fired when the component requests to be closed.",
+  "propOpen": "If `true`, the menu is visible.",
+  "propPopoverClasses": "`classes` prop applied to the [`Popover`](/api/popover/) element.",
+  "propTransitionDuration": "The length of the transition in `ms`, or 'auto'",
+  "propTransitionProps": "Props applied to the transition element.\r\nBy default, the element is based on this [`Transition`](http://reactcommunity.org/react-transition-group/transition) component.",
+  "propVariant": "The variant to use. Use `menu` to prevent selected items from impacting the initial focus\r\nand the vertical alignment relative to the anchor element.",
+  "stylesPaper": "Styles applied to the `Paper` component.",
+  "stylesList": "Styles applied to the `List` component via `MenuList`."
+}

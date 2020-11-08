@@ -1,0 +1,10 @@
+{
+  "propChildren": "The content of the component.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propDirection": "Which direction should the button indicate?",
+  "propDisabled": "If `true`, the element is disabled.",
+  "propOrientation": "The tabs orientation (layout flow direction).",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesVertical": "Styles applied to the root element if `orientation=\"vertical\"`.",
+  "stylesDisabled": "Pseudo-class applied to the root element if `disabled={true}`."
+}

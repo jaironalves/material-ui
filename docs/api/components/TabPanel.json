@@ -1,0 +1,64 @@
+{
+  "description": "",
+  "displayName": "TabPanel",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the component.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "value": {
+      "type": {
+        "name": "string"
+      },
+      "required": true,
+      "description": "The `value` of the corresponding `Tab`. Must use the index of the `Tab` when\r\nno `value` was passed to `Tab`.",
+      "tags": []
+    }
+  },
+  "name": "TabPanel",
+  "styles": {
+    "classes": [
+      "root"
+    ],
+    "name": "MuiTabPanel",
+    "descriptions": {
+      "root": "Styles applied to the root element."
+    },
+    "globalClasses": {
+      "root": "MuiTabPanel-root"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui-lab\\src\\TabPanel\\TabPanel.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/tabs"
+  ]
+}

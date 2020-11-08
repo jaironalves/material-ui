@@ -1,0 +1,19 @@
+{
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propDelay": "Adds a transition delay, to allow a series of SpeedDialActions to be animated.",
+  "propFabProps": "Props applied to the [`Fab`](/api/fab/) component.",
+  "propIcon": "The Icon to display in the SpeedDial Fab.",
+  "propId": "This prop is used to help implement the accessibility logic.\r\nIf you don't provide this prop. It falls back to a randomly generated id.",
+  "propOpen": "If `true`, the tooltip is shown.",
+  "propTooltipClasses": "`classes` prop applied to the [`Tooltip`](/api/tooltip/) element.",
+  "propTooltipOpen": "Make the tooltip always visible when the SpeedDial is open.",
+  "propTooltipPlacement": "Placement of the tooltip.",
+  "propTooltipTitle": "Label to display in the tooltip.",
+  "stylesFab": "Styles applied to the Fab component.",
+  "stylesFabClosed": "Styles applied to the Fab component if `open={false}`.",
+  "stylesStaticTooltip": "Styles applied to the root element if `tooltipOpen={true}`.",
+  "stylesStaticTooltipClosed": "Styles applied to the root element if `tooltipOpen={true}` and `open={false}`.",
+  "stylesStaticTooltipLabel": "Styles applied to the static tooltip label if `tooltipOpen={true}`.",
+  "stylesTooltipPlacementLeft": "Styles applied to the root if `tooltipOpen={true}` and `tooltipPlacement=\"left\"``",
+  "stylesTooltipPlacementRight": "Styles applied to the root if `tooltipOpen={true}` and `tooltipPlacement=\"right\"``"
+}

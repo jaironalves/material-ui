@@ -1,0 +1,383 @@
+{
+  "description": "",
+  "displayName": "ButtonGroup",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the button group.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "color": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'inherit'",
+            "computed": false
+          },
+          {
+            "value": "'primary'",
+            "computed": false
+          },
+          {
+            "value": "'secondary'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The color of the component. It supports those theme colors that make sense for this component.",
+      "jsdocDefaultValue": {
+        "value": "'primary'"
+      },
+      "defaultValue": {
+        "value": "'primary'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'primary'"
+        }
+      ]
+    },
+    "component": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+      "defaultValue": {
+        "value": "'div'",
+        "computed": false
+      },
+      "tags": []
+    },
+    "disabled": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the buttons are disabled.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "disableElevation": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, no elevation is used.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "disableFocusRipple": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the button keyboard focus ripple is disabled.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "disableRipple": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the button ripple effect is disabled.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "fullWidth": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the buttons will take up the full width of its container.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "orientation": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'horizontal'",
+            "computed": false
+          },
+          {
+            "value": "'vertical'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The group orientation (layout flow direction).",
+      "jsdocDefaultValue": {
+        "value": "'horizontal'"
+      },
+      "defaultValue": {
+        "value": "'horizontal'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'horizontal'"
+        }
+      ]
+    },
+    "size": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'large'",
+            "computed": false
+          },
+          {
+            "value": "'medium'",
+            "computed": false
+          },
+          {
+            "value": "'small'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The size of the button.\r\n`small` is equivalent to the dense button styling.",
+      "jsdocDefaultValue": {
+        "value": "'medium'"
+      },
+      "defaultValue": {
+        "value": "'medium'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'medium'"
+        }
+      ]
+    },
+    "variant": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'contained'",
+                "computed": false
+              },
+              {
+                "value": "'outlined'",
+                "computed": false
+              },
+              {
+                "value": "'text'",
+                "computed": false
+              }
+            ]
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "The variant to use.",
+      "jsdocDefaultValue": {
+        "value": "'outlined'"
+      },
+      "defaultValue": {
+        "value": "'outlined'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'outlined'"
+        }
+      ]
+    }
+  },
+  "name": "ButtonGroup",
+  "styles": {
+    "classes": [
+      "root",
+      "contained",
+      "outlined",
+      "text",
+      "disableElevation",
+      "disabled",
+      "fullWidth",
+      "vertical",
+      "grouped",
+      "groupedHorizontal",
+      "groupedVertical",
+      "groupedText",
+      "groupedTextHorizontal",
+      "groupedTextVertical",
+      "groupedTextPrimary",
+      "groupedTextSecondary",
+      "groupedOutlined",
+      "groupedOutlinedHorizontal",
+      "groupedOutlinedVertical",
+      "groupedOutlinedPrimary",
+      "groupedOutlinedSecondary",
+      "groupedContained",
+      "groupedContainedHorizontal",
+      "groupedContainedVertical",
+      "groupedContainedPrimary",
+      "groupedContainedSecondary"
+    ],
+    "name": "MuiButtonGroup",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "contained": "Styles applied to the root element if `variant=\"contained\"`.",
+      "outlined": "Styles applied to the root element if `variant=\"outlined\"`.",
+      "text": "Styles applied to the root element if `variant=\"text\"`.",
+      "disableElevation": "Styles applied to the root element if `disableElevation={true}`.",
+      "disabled": "Pseudo-class applied to child elements if `disabled={true}`.",
+      "fullWidth": "Styles applied to the root element if `fullWidth={true}`.",
+      "vertical": "Styles applied to the root element if `orientation=\"vertical\"`.",
+      "grouped": "Styles applied to the children.",
+      "groupedHorizontal": "Styles applied to the children if `orientation=\"horizontal\"`.",
+      "groupedVertical": "Styles applied to the children if `orientation=\"vertical\"`.",
+      "groupedText": "Styles applied to the children if `variant=\"text\"`.",
+      "groupedTextHorizontal": "Styles applied to the children if `variant=\"text\"` and `orientation=\"horizontal\"`.",
+      "groupedTextVertical": "Styles applied to the children if `variant=\"text\"` and `orientation=\"vertical\"`.",
+      "groupedTextPrimary": "Styles applied to the children if `variant=\"text\"` and `color=\"primary\"`.",
+      "groupedTextSecondary": "Styles applied to the children if `variant=\"text\"` and `color=\"secondary\"`.",
+      "groupedOutlined": "Styles applied to the children if `variant=\"outlined\"`.",
+      "groupedOutlinedHorizontal": "Styles applied to the children if `variant=\"outlined\"` and `orientation=\"horizontal\"`.",
+      "groupedOutlinedVertical": "Styles applied to the children if `variant=\"outlined\"` and `orientation=\"vertical\"`.",
+      "groupedOutlinedPrimary": "Styles applied to the children if `variant=\"outlined\"` and `color=\"primary\"`.",
+      "groupedOutlinedSecondary": "Styles applied to the children if `variant=\"outlined\"` and `color=\"secondary\"`.",
+      "groupedContained": "Styles applied to the children if `variant=\"contained\"`.",
+      "groupedContainedHorizontal": "Styles applied to the children if `variant=\"contained\"` and `orientation=\"horizontal\"`.",
+      "groupedContainedVertical": "Styles applied to the children if `variant=\"contained\"` and `orientation=\"vertical\"`.",
+      "groupedContainedPrimary": "Styles applied to the children if `variant=\"contained\"` and `color=\"primary\"`.",
+      "groupedContainedSecondary": "Styles applied to the children if `variant=\"contained\"` and `color=\"secondary\"`."
+    },
+    "globalClasses": {
+      "root": "MuiButtonGroup-root",
+      "contained": "MuiButtonGroup-contained",
+      "outlined": "MuiButtonGroup-outlined",
+      "text": "MuiButtonGroup-text",
+      "disableElevation": "MuiButtonGroup-disableElevation",
+      "disabled": "Mui-disabled",
+      "fullWidth": "MuiButtonGroup-fullWidth",
+      "vertical": "MuiButtonGroup-vertical",
+      "grouped": "MuiButtonGroup-grouped",
+      "groupedHorizontal": "MuiButtonGroup-groupedHorizontal",
+      "groupedVertical": "MuiButtonGroup-groupedVertical",
+      "groupedText": "MuiButtonGroup-groupedText",
+      "groupedTextHorizontal": "MuiButtonGroup-groupedTextHorizontal",
+      "groupedTextVertical": "MuiButtonGroup-groupedTextVertical",
+      "groupedTextPrimary": "MuiButtonGroup-groupedTextPrimary",
+      "groupedTextSecondary": "MuiButtonGroup-groupedTextSecondary",
+      "groupedOutlined": "MuiButtonGroup-groupedOutlined",
+      "groupedOutlinedHorizontal": "MuiButtonGroup-groupedOutlinedHorizontal",
+      "groupedOutlinedVertical": "MuiButtonGroup-groupedOutlinedVertical",
+      "groupedOutlinedPrimary": "MuiButtonGroup-groupedOutlinedPrimary",
+      "groupedOutlinedSecondary": "MuiButtonGroup-groupedOutlinedSecondary",
+      "groupedContained": "MuiButtonGroup-groupedContained",
+      "groupedContainedHorizontal": "MuiButtonGroup-groupedContainedHorizontal",
+      "groupedContainedVertical": "MuiButtonGroup-groupedContainedVertical",
+      "groupedContainedPrimary": "MuiButtonGroup-groupedContainedPrimary",
+      "groupedContainedSecondary": "MuiButtonGroup-groupedContainedSecondary"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\ButtonGroup\\ButtonGroup.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/button-group"
+  ]
+}

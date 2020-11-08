@@ -1,0 +1,23 @@
+{
+  "propChildren": "The content of the button.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propColor": "The color of the component. It supports those theme colors that make sense for this component.",
+  "propComponent": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+  "propDisabled": "If `true`, the button is disabled.",
+  "propDisableFocusRipple": "If `true`, the  keyboard focus ripple is disabled.",
+  "propDisableRipple": "If `true`, the ripple effect is disabled.",
+  "propHref": "The URL to link to when the button is clicked.\r\nIf defined, an `a` element will be used as the root node.",
+  "propSize": "The size of the button.\r\n`small` is equivalent to the dense button styling.",
+  "propVariant": "The variant to use.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesLabel": "Styles applied to the span element that wraps the children.",
+  "stylesPrimary": "Styles applied to the root element if `color=\"primary\"`.",
+  "stylesSecondary": "Styles applied to the root element if `color=\"secondary\"`.",
+  "stylesExtended": "Styles applied to the root element if `variant=\"extended\"`.",
+  "stylesCircular": "Styles applied to the root element if `variant=\"circular\"`.",
+  "stylesFocusVisible": "Pseudo-class applied to the ButtonBase root element if the button is keyboard focused.",
+  "stylesDisabled": "Pseudo-class applied to the root element if `disabled={true}`.",
+  "stylesColorInherit": "Styles applied to the root element if `color=\"inherit\"`.",
+  "stylesSizeSmall": "Styles applied to the root element if `size=\"small\"``.",
+  "stylesSizeMedium": "Styles applied to the root element if `size=\"medium\"``."
+}

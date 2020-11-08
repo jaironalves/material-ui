@@ -1,0 +1,17 @@
+{
+  "description": "Responsively hides children based on the selected implementation.",
+  "propChildren": "The content of the component.",
+  "propImplementation": "Specify which implementation to use.  'js' is the default, 'css' works better for\r\nserver-side rendering.",
+  "propInitialWidth": "You can use this prop when choosing the `js` implementation with server-side rendering.\r\n\r\nAs `window.innerWidth` is unavailable on the server,\r\nwe default to rendering an empty component during the first mount.\r\nYou might want to use a heuristic to approximate\r\nthe screen width of the client browser screen width.\r\n\r\nFor instance, you could be using the user-agent or the client-hints.\r\nhttps://caniuse.com/#search=client%20hint",
+  "propLgDown": "If `true`, screens this size and down are hidden.",
+  "propLgUp": "If `true`, screens this size and up are hidden.",
+  "propMdDown": "If `true`, screens this size and down are hidden.",
+  "propMdUp": "If `true`, screens this size and up are hidden.",
+  "propOnly": "Hide the given breakpoint(s).",
+  "propSmDown": "If `true`, screens this size and down are hidden.",
+  "propSmUp": "If `true`, screens this size and up are hidden.",
+  "propXlDown": "If `true`, screens this size and down are hidden.",
+  "propXlUp": "If `true`, screens this size and up are hidden.",
+  "propXsDown": "If `true`, screens this size and down are hidden.",
+  "propXsUp": "If `true`, screens this size and up are hidden."
+}

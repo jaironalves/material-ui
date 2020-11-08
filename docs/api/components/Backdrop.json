@@ -1,0 +1,120 @@
+{
+  "description": "",
+  "displayName": "Backdrop",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the component.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "invisible": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the backdrop is invisible.\r\nIt can be used when rendering a popover or a custom select component.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "open": {
+      "type": {
+        "name": "bool"
+      },
+      "required": true,
+      "description": "If `true`, the backdrop is open.",
+      "tags": []
+    },
+    "transitionDuration": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "number"
+          },
+          {
+            "name": "shape",
+            "value": {
+              "appear": {
+                "name": "number",
+                "required": false
+              },
+              "enter": {
+                "name": "number",
+                "required": false
+              },
+              "exit": {
+                "name": "number",
+                "required": false
+              }
+            }
+          }
+        ]
+      },
+      "required": false,
+      "description": "The duration for the transition, in milliseconds.\r\nYou may specify a single timeout for all transitions, or individually with an object.",
+      "tags": []
+    }
+  },
+  "name": "Backdrop",
+  "styles": {
+    "classes": [
+      "root",
+      "invisible"
+    ],
+    "name": "MuiBackdrop",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "invisible": "Styles applied to the root element if `invisible={true}`."
+    },
+    "globalClasses": {
+      "root": "MuiBackdrop-root",
+      "invisible": "MuiBackdrop-invisible"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\Backdrop\\Backdrop.js",
+  "inheritance": {
+    "component": "Fade",
+    "pathname": "/api/fade"
+  },
+  "usedInPages": [
+    "/components/backdrop"
+  ]
+}

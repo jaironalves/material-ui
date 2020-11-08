@@ -1,0 +1,8 @@
+{
+  "description": "`FormGroup` wraps controls such as `Checkbox` and `Switch`.\r\nIt provides compact row layout.\r\nFor the `Radio`, you should be using the `RadioGroup` component instead of this one.",
+  "propChildren": "The content of the component.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propRow": "Display group of elements in a compact row.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesRow": "Styles applied to the root element if `row={true}`."
+}

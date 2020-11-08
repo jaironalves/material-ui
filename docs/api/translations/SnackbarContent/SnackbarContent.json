@@ -1,0 +1,9 @@
+{
+  "propAction": "The action to display. It renders after the message, at the end of the snackbar.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propMessage": "The message to display.",
+  "propRole": "The ARIA role attribute of the element.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesMessage": "Styles applied to the message wrapper element.",
+  "stylesAction": "Styles applied to the action wrapper element if `action` is provided."
+}

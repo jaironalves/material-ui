@@ -1,0 +1,241 @@
+{
+  "description": "",
+  "displayName": "TreeItem",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the component.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "collapseIcon": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The icon used to collapse the node.",
+      "tags": []
+    },
+    "ContentComponent": {
+      "type": {
+        "name": "custom",
+        "raw": "elementTypeAcceptingRef"
+      },
+      "required": false,
+      "description": "The component used for the content node.",
+      "jsdocDefaultValue": {
+        "value": "TreeItemContent"
+      },
+      "defaultValue": {
+        "value": "TreeItemContent",
+        "computed": true
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "TreeItemContent"
+        }
+      ]
+    },
+    "ContentProps": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Props applied to ContentComponent",
+      "tags": []
+    },
+    "disabled": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the node is disabled.",
+      "tags": []
+    },
+    "endIcon": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The icon displayed next to a end node.",
+      "tags": []
+    },
+    "expandIcon": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The icon used to expand the node.",
+      "tags": []
+    },
+    "icon": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The icon to display next to the tree node's label.",
+      "tags": []
+    },
+    "id": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "label": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The tree node label.",
+      "tags": []
+    },
+    "nodeId": {
+      "type": {
+        "name": "string"
+      },
+      "required": true,
+      "description": "The id of the node.",
+      "tags": []
+    },
+    "onClick": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "onFocus": {
+      "type": {
+        "name": "custom",
+        "raw": "unsupportedProp"
+      },
+      "required": false,
+      "description": "This prop isn't supported.\r\nUse the `onNodeFocus` callback on the tree if you need to monitor a node's focus.",
+      "tags": []
+    },
+    "onMouseDown": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "TransitionComponent": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "The component used for the transition.\r\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
+      "jsdocDefaultValue": {
+        "value": "Collapse"
+      },
+      "defaultValue": {
+        "value": "Collapse",
+        "computed": true
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "Collapse"
+        }
+      ]
+    },
+    "TransitionProps": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Props applied to the transition element.\r\nBy default, the element is based on this [`Transition`](http://reactcommunity.org/react-transition-group/transition) component.",
+      "tags": []
+    }
+  },
+  "name": "TreeItem",
+  "styles": {
+    "classes": [
+      "root",
+      "group",
+      "content",
+      "expanded",
+      "selected",
+      "focused",
+      "disabled",
+      "iconContainer",
+      "label"
+    ],
+    "name": "MuiTreeItem",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "group": "Styles applied to the `role=\"group\"` element.",
+      "content": "Styles applied to the content element.",
+      "expanded": "Pseudo-class applied to the content element when expanded.",
+      "selected": "Pseudo-class applied to the content element when selected.",
+      "focused": "Pseudo-class applied to the content element when focused.",
+      "disabled": "Pseudo-class applied to the element when disabled.",
+      "iconContainer": "Styles applied to the tree node icon.",
+      "label": "Styles applied to the label element."
+    },
+    "globalClasses": {
+      "root": "MuiTreeItem-root",
+      "group": "MuiTreeItem-group",
+      "content": "MuiTreeItem-content",
+      "expanded": "Mui-expanded",
+      "selected": "Mui-selected",
+      "focused": "Mui-focused",
+      "disabled": "Mui-disabled",
+      "iconContainer": "MuiTreeItem-iconContainer",
+      "label": "MuiTreeItem-label"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLLIElement",
+  "filename": "\\packages\\material-ui-lab\\src\\TreeItem\\TreeItem.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/tree-view"
+  ]
+}

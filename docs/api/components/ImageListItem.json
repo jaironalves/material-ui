@@ -1,0 +1,130 @@
+{
+  "description": "",
+  "displayName": "ImageListItem",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "While you can pass any node as children, the main use case is for an img.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "cols": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "Width of the item in number of grid columns.",
+      "jsdocDefaultValue": {
+        "value": "1"
+      },
+      "defaultValue": {
+        "value": "1",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "1"
+        }
+      ]
+    },
+    "component": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+      "defaultValue": {
+        "value": "'li'",
+        "computed": false
+      },
+      "tags": []
+    },
+    "rows": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "Height of the item in number of grid rows.",
+      "jsdocDefaultValue": {
+        "value": "1"
+      },
+      "defaultValue": {
+        "value": "1",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "1"
+        }
+      ]
+    },
+    "style": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    }
+  },
+  "name": "ImageListItem",
+  "styles": {
+    "classes": [
+      "root",
+      "img",
+      "standard",
+      "woven"
+    ],
+    "name": "MuiImageListItem",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "img": "Styles applied to an `img` element to ensure it covers the item.",
+      "standard": "Styles applied to the root element if `variant=\"standard\"`.",
+      "woven": "Styles applied to the root element if `variant=\"woven\"`."
+    },
+    "globalClasses": {
+      "root": "MuiImageListItem-root",
+      "img": "MuiImageListItem-img",
+      "standard": "MuiImageListItem-standard",
+      "woven": "MuiImageListItem-woven"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLLIElement",
+  "filename": "\\packages\\material-ui\\src\\ImageListItem\\ImageListItem.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/image-list"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "description": "",
+  "displayName": "CardActions",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the component.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "disableSpacing": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the actions do not have additional margin.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    }
+  },
+  "name": "CardActions",
+  "styles": {
+    "classes": [
+      "root",
+      "spacing"
+    ],
+    "name": "MuiCardActions",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "spacing": "Styles applied to the root element unless `disableSpacing={true}`."
+    },
+    "globalClasses": {
+      "root": "MuiCardActions-root",
+      "spacing": "MuiCardActions-spacing"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\CardActions\\CardActions.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/cards"
+  ]
+}

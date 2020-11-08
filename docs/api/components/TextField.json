@@ -1,0 +1,523 @@
+{
+  "description": "The `TextField` is a convenience wrapper for the most common cases (80%).\r\nIt cannot be all things to all people, otherwise the API would grow out of control.\r\n\r\n## Advanced Configuration\r\n\r\nIt's important to understand that the text field is a simple abstraction\r\non top of the following components:\r\n\r\n- [FormControl](/api/form-control/)\r\n- [InputLabel](/api/input-label/)\r\n- [FilledInput](/api/filled-input/)\r\n- [OutlinedInput](/api/outlined-input/)\r\n- [Input](/api/input/)\r\n- [FormHelperText](/api/form-helper-text/)\r\n\r\nIf you wish to alter the props applied to the `input` element, you can do so as follows:\r\n\r\n```jsx\r\nconst inputProps = {\r\n  step: 300,\r\n};\r\n\r\nreturn <TextField id=\"time\" type=\"time\" inputProps={inputProps} />;\r\n```\r\n\r\nFor advanced cases, please look at the source of TextField by clicking on the\r\n\"Edit this page\" button above. Consider either:\r\n\r\n- using the upper case props for passing values directly to the components\r\n- using the underlying components directly as shown in the demos",
+  "displayName": "TextField",
+  "methods": [],
+  "props": {
+    "autoComplete": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "This prop helps users to fill forms faster, especially on mobile devices.\r\nThe name can be confusing, as it's more like an autofill.\r\nYou can learn more about it [following the specification](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).",
+      "tags": []
+    },
+    "autoFocus": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the `input` element is focused during the first mount.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "color": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'primary'",
+            "computed": false
+          },
+          {
+            "value": "'secondary'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The color of the component. It supports those theme colors that make sense for this component.",
+      "jsdocDefaultValue": {
+        "value": "'primary'"
+      },
+      "defaultValue": {
+        "value": "'primary'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'primary'"
+        }
+      ]
+    },
+    "defaultValue": {
+      "type": {
+        "name": "any"
+      },
+      "required": false,
+      "description": "The default value of the `input` element.",
+      "tags": []
+    },
+    "disabled": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the `input` element is disabled.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "error": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the label is displayed in an error state.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "FormHelperTextProps": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Props applied to the [`FormHelperText`](/api/form-helper-text/) element.",
+      "tags": []
+    },
+    "fullWidth": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the input will take up the full width of its container.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "helperText": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The helper text content.",
+      "tags": []
+    },
+    "id": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "The id of the `input` element.\r\nUse this prop to make `label` and `helperText` accessible for screen readers.",
+      "tags": []
+    },
+    "InputLabelProps": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Props applied to the [`InputLabel`](/api/input-label/) element.",
+      "tags": []
+    },
+    "inputProps": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "[Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.",
+      "tags": []
+    },
+    "InputProps": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Props applied to the Input element.\r\nIt will be a [`FilledInput`](/api/filled-input/),\r\n[`OutlinedInput`](/api/outlined-input/) or [`Input`](/api/input/)\r\ncomponent depending on the `variant` prop value.",
+      "tags": []
+    },
+    "inputRef": {
+      "type": {
+        "name": "custom",
+        "raw": "refType"
+      },
+      "required": false,
+      "description": "Pass a ref to the `input` element.",
+      "tags": []
+    },
+    "label": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The label content.",
+      "tags": []
+    },
+    "margin": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'dense'",
+            "computed": false
+          },
+          {
+            "value": "'none'",
+            "computed": false
+          },
+          {
+            "value": "'normal'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "If `dense` or `normal`, will adjust vertical spacing of this and contained components.",
+      "tags": []
+    },
+    "maxRows": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "number"
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "Maximum number of rows to display when multiline option is set to true.",
+      "tags": []
+    },
+    "minRows": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "number"
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "Minimum number of rows to display when multiline option is set to true.",
+      "tags": []
+    },
+    "multiline": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, a `textarea` element is rendered.instead of an input.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "name": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "Name attribute of the `input` element.",
+      "tags": []
+    },
+    "onBlur": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "onChange": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "Callback fired when the value is changed.",
+      "tags": [
+        {
+          "title": "param",
+          "description": "The event source of the callback.\r\nYou can pull out the new value by accessing `event.target.value` (string).",
+          "type": {
+            "type": "NameExpression",
+            "name": "object"
+          },
+          "name": "event"
+        }
+      ]
+    },
+    "onFocus": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "placeholder": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "The short hint displayed in the input before the user enters a value.",
+      "tags": []
+    },
+    "required": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the label is displayed as required and the `input` element is required.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "rows": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "number"
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "Number of rows to display when multiline option is set to true.",
+      "tags": []
+    },
+    "select": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Render a [`Select`](/api/select/) element while passing the Input element to `Select` as `input` parameter.\r\nIf this option is set you must pass the options of the select as children.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "SelectProps": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Props applied to the [`Select`](/api/select/) element.",
+      "tags": []
+    },
+    "size": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'medium'",
+            "computed": false
+          },
+          {
+            "value": "'small'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The size of the text field.",
+      "tags": []
+    },
+    "type": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).",
+      "tags": []
+    },
+    "value": {
+      "type": {
+        "name": "any"
+      },
+      "required": false,
+      "description": "The value of the `input` element, required for a controlled component.",
+      "tags": []
+    },
+    "variant": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'filled'",
+            "computed": false
+          },
+          {
+            "value": "'outlined'",
+            "computed": false
+          },
+          {
+            "value": "'standard'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The variant to use.",
+      "jsdocDefaultValue": {
+        "value": "'standard'"
+      },
+      "defaultValue": {
+        "value": "'standard'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'standard'"
+        }
+      ]
+    }
+  },
+  "name": "TextField",
+  "styles": {
+    "classes": [
+      "root"
+    ],
+    "name": "MuiTextField",
+    "descriptions": {
+      "root": "Styles applied to the root element."
+    },
+    "globalClasses": {
+      "root": "MuiTextField-root"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\TextField\\TextField.js",
+  "inheritance": {
+    "component": "FormControl",
+    "pathname": "/api/form-control"
+  },
+  "usedInPages": [
+    "/components/autocomplete",
+    "/components/pickers",
+    "/components/text-fields"
+  ]
+}

@@ -1,0 +1,491 @@
+{
+  "description": "",
+  "displayName": "Popover",
+  "methods": [],
+  "props": {
+    "action": {
+      "type": {
+        "name": "custom",
+        "raw": "refType"
+      },
+      "required": false,
+      "description": "A ref for imperative actions.\r\nIt currently only supports updatePosition() action.",
+      "tags": []
+    },
+    "anchorEl": {
+      "type": {
+        "name": "chained",
+        "raw": "chainPropTypes/* @chainedAs [\"HTMLElementType\", \"func\"] */(PropTypes.oneOfType([HTMLElementType, PropTypes.func]), (props) => {\r\n  if (props.open && (!props.anchorReference || props.anchorReference === 'anchorEl')) {\r\n    const resolvedAnchorEl = getAnchorEl(props.anchorEl);\r\n\r\n    if (resolvedAnchorEl && resolvedAnchorEl.nodeType === 1) {\r\n      const box = resolvedAnchorEl.getBoundingClientRect();\r\n\r\n      if (\r\n        process.env.NODE_ENV !== 'test' &&\r\n        box.top === 0 &&\r\n        box.left === 0 &&\r\n        box.right === 0 &&\r\n        box.bottom === 0\r\n      ) {\r\n        return new Error(\r\n          [\r\n            'Material-UI: The `anchorEl` prop provided to the component is invalid.',\r\n            'The anchor element should be part of the document layout.',\r\n            \"Make sure the element is present in the document or that it's not display none.\",\r\n          ].join('\\n'),\r\n        );\r\n      }\r\n    } else {\r\n      return new Error(\r\n        [\r\n          'Material-UI: The `anchorEl` prop provided to the component is invalid.',\r\n          `It should be an Element instance but it's \\`${resolvedAnchorEl}\\` instead.`,\r\n        ].join('\\n'),\r\n      );\r\n    }\r\n  }\r\n\r\n  return null;\r\n})",
+        "chained": {
+          "name": "union",
+          "value": [
+            {
+              "name": "HTMLElementType"
+            },
+            {
+              "name": "func"
+            }
+          ]
+        }
+      },
+      "required": false,
+      "description": "A HTML element, or a function that returns it.\r\nIt's used to set the position of the popover.",
+      "tags": []
+    },
+    "anchorOrigin": {
+      "type": {
+        "name": "shape",
+        "value": {
+          "horizontal": {
+            "name": "union",
+            "value": [
+              {
+                "name": "enum",
+                "value": [
+                  {
+                    "value": "'center'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'left'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'right'",
+                    "computed": false
+                  }
+                ]
+              },
+              {
+                "name": "number"
+              }
+            ],
+            "required": true
+          },
+          "vertical": {
+            "name": "union",
+            "value": [
+              {
+                "name": "enum",
+                "value": [
+                  {
+                    "value": "'bottom'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'center'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'top'",
+                    "computed": false
+                  }
+                ]
+              },
+              {
+                "name": "number"
+              }
+            ],
+            "required": true
+          }
+        }
+      },
+      "required": false,
+      "description": "This is the point on the anchor where the popover's\r\n`anchorEl` will attach to. This is not used when the\r\nanchorReference is 'anchorPosition'.\r\n\r\nOptions:\r\nvertical: [top, center, bottom];\r\nhorizontal: [left, center, right].",
+      "jsdocDefaultValue": {
+        "value": "{\r\n  vertical: 'top',\r\n  horizontal: 'left',\r\n}"
+      },
+      "defaultValue": {
+        "value": "{\r\n  vertical: 'top',\r\n  horizontal: 'left',\r\n}",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "{\r\n  vertical: 'top',\r\n  horizontal: 'left',\r\n}"
+        }
+      ]
+    },
+    "anchorPosition": {
+      "type": {
+        "name": "shape",
+        "value": {
+          "left": {
+            "name": "number",
+            "required": true
+          },
+          "top": {
+            "name": "number",
+            "required": true
+          }
+        }
+      },
+      "required": false,
+      "description": "This is the position that may be used\r\nto set the position of the popover.\r\nThe coordinates are relative to\r\nthe application's client area.",
+      "tags": []
+    },
+    "anchorReference": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'anchorEl'",
+            "computed": false
+          },
+          {
+            "value": "'anchorPosition'",
+            "computed": false
+          },
+          {
+            "value": "'none'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "This determines which anchor prop to refer to to set\r\nthe position of the popover.",
+      "jsdocDefaultValue": {
+        "value": "'anchorEl'"
+      },
+      "defaultValue": {
+        "value": "'anchorEl'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'anchorEl'"
+        }
+      ]
+    },
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the component.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "container": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "custom",
+            "raw": "HTMLElementType"
+          },
+          {
+            "name": "func"
+          }
+        ]
+      },
+      "required": false,
+      "description": "A HTML element, component instance, or function that returns either.\r\nThe `container` will passed to the Modal component.\r\n\r\nBy default, it uses the body of the anchorEl's top-level document object,\r\nso it's simply `document.body` most of the time.",
+      "tags": []
+    },
+    "elevation": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "The elevation of the popover.",
+      "jsdocDefaultValue": {
+        "value": "8"
+      },
+      "defaultValue": {
+        "value": "8",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "8"
+        }
+      ]
+    },
+    "getContentAnchorEl": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "This function is called in order to retrieve the content anchor element.\r\nIt's the opposite of the `anchorEl` prop.\r\nThe content anchor element should be an element inside the popover.\r\nIt's used to correctly scroll and set the position of the popover.\r\nThe positioning strategy tries to make the content anchor element just above the\r\nanchor element.",
+      "tags": []
+    },
+    "marginThreshold": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "Specifies how close to the edge of the window the popover can appear.",
+      "jsdocDefaultValue": {
+        "value": "16"
+      },
+      "defaultValue": {
+        "value": "16",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "16"
+        }
+      ]
+    },
+    "onClose": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "Callback fired when the component requests to be closed.\r\nThe `reason` parameter can optionally be used to control the response to `onClose`.",
+      "tags": []
+    },
+    "open": {
+      "type": {
+        "name": "bool"
+      },
+      "required": true,
+      "description": "If `true`, the popover is visible.",
+      "tags": []
+    },
+    "PaperProps": {
+      "type": {
+        "name": "shape",
+        "value": {
+          "component": {
+            "name": "custom",
+            "raw": "elementTypeAcceptingRef",
+            "required": false
+          }
+        }
+      },
+      "required": false,
+      "description": "Props applied to the [`Paper`](/api/paper/) element.",
+      "jsdocDefaultValue": {
+        "value": "{}"
+      },
+      "defaultValue": {
+        "value": "{}",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "{}"
+        }
+      ]
+    },
+    "transformOrigin": {
+      "type": {
+        "name": "shape",
+        "value": {
+          "horizontal": {
+            "name": "union",
+            "value": [
+              {
+                "name": "enum",
+                "value": [
+                  {
+                    "value": "'center'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'left'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'right'",
+                    "computed": false
+                  }
+                ]
+              },
+              {
+                "name": "number"
+              }
+            ],
+            "required": true
+          },
+          "vertical": {
+            "name": "union",
+            "value": [
+              {
+                "name": "enum",
+                "value": [
+                  {
+                    "value": "'bottom'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'center'",
+                    "computed": false
+                  },
+                  {
+                    "value": "'top'",
+                    "computed": false
+                  }
+                ]
+              },
+              {
+                "name": "number"
+              }
+            ],
+            "required": true
+          }
+        }
+      },
+      "required": false,
+      "description": "This is the point on the popover which\r\nwill attach to the anchor's origin.\r\n\r\nOptions:\r\nvertical: [top, center, bottom, x(px)];\r\nhorizontal: [left, center, right, x(px)].",
+      "jsdocDefaultValue": {
+        "value": "{\r\n  vertical: 'top',\r\n  horizontal: 'left',\r\n}"
+      },
+      "defaultValue": {
+        "value": "{\r\n  vertical: 'top',\r\n  horizontal: 'left',\r\n}",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "{\r\n  vertical: 'top',\r\n  horizontal: 'left',\r\n}"
+        }
+      ]
+    },
+    "TransitionComponent": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "The component used for the transition.\r\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
+      "jsdocDefaultValue": {
+        "value": "Grow"
+      },
+      "defaultValue": {
+        "value": "Grow",
+        "computed": true
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "Grow"
+        }
+      ]
+    },
+    "transitionDuration": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'auto'",
+                "computed": false
+              }
+            ]
+          },
+          {
+            "name": "number"
+          },
+          {
+            "name": "shape",
+            "value": {
+              "appear": {
+                "name": "number",
+                "required": false
+              },
+              "enter": {
+                "name": "number",
+                "required": false
+              },
+              "exit": {
+                "name": "number",
+                "required": false
+              }
+            }
+          }
+        ]
+      },
+      "required": false,
+      "description": "Set to 'auto' to automatically calculate transition time based on height.",
+      "jsdocDefaultValue": {
+        "value": "'auto'"
+      },
+      "defaultValue": {
+        "value": "'auto'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'auto'"
+        }
+      ]
+    },
+    "TransitionProps": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Props applied to the transition element.\r\nBy default, the element is based on this [`Transition`](http://reactcommunity.org/react-transition-group/transition) component.",
+      "jsdocDefaultValue": {
+        "value": "{}"
+      },
+      "defaultValue": {
+        "value": "{}",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "{}"
+        }
+      ]
+    }
+  },
+  "name": "Popover",
+  "styles": {
+    "classes": [
+      "root",
+      "paper"
+    ],
+    "name": "MuiPopover",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "paper": "Styles applied to the `Paper` component."
+    },
+    "globalClasses": {
+      "root": "MuiPopover-root",
+      "paper": "MuiPopover-paper"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\Popover\\Popover.js",
+  "inheritance": {
+    "component": "Modal",
+    "pathname": "/api/modal"
+  },
+  "usedInPages": [
+    "/components/menus",
+    "/components/popover"
+  ]
+}

@@ -1,14 +1,20 @@
 /* eslint-disable no-console */
-import { mkdirSync, readFileSync } from 'fs';
+import { mkdirSync, readdirSync, readFileSync } from 'fs';
 import path from 'path';
+import rimraf from 'rimraf';
 import { writeJson } from 'fs-extra';
 import * as _ from 'lodash';
 import { defaultHandlers, parse as docgenParse } from 'react-docgen';
+import { ReactApi, ReactApiData } from 'react-doc';
 import * as yargs from 'yargs';
 import muiDefaultPropsHandler from '../src/modules/utils/defaultPropsHandler';
 import propJsdocHandler from '../src/modules/utils/propJsdocHandler';
 import chainedPropHandler from '../src/modules/utils/chainedPropHandler';
-import { createDescribeableProp, ReactApi } from '../src/modules/utils/generateMarkdown';
+import { createDescribeableProp } from '../src/modules/utils/generateMarkdown';
+import {
+  buildComponentApiI18n,
+  buildComponentApiI18nJson,
+} from '../src/modules/utils/generateDocs';
 import { findPagesMarkdown, findComponents } from '../src/modules/utils/find';
 import { getHeaders } from '../src/modules/utils/parseMarkdown';
 import parseTest from '../src/modules/utils/parseTest';
@@ -197,9 +203,10 @@ async function buildComponentApi(componentObject: { filename: string }) {
   }
 
   reactAPI.props = _.mapValues(
-    _.omitBy(reactAPI.props, (descriptor, name) => {
-      const describeableProp = createDescribeableProp(descriptor, name)
-      const hasIgnoreTag = describeableProp?.annotation.tags.find(tag => tag.title === 'ignore') !== undefined;
+    _.omitBy(reactAPI.props, (descriptor, propName) => {
+      const describeableProp = createDescribeableProp(descriptor, propName);
+      const hasIgnoreTag =
+        describeableProp?.annotation.tags.find((tag) => tag.title === 'ignore') !== undefined;
       return hasIgnoreTag;
     }),
     ({ ...descriptor }) => {
@@ -241,15 +248,24 @@ async function buildComponentApi(componentObject: { filename: string }) {
   return reactAPI;
 }
 
-async function run(argv: { componentDirectories?: string[]; grep?: string; outputDirectory?: string }) {
-  
+async function run(argv: {
+  componentDirectories?: string[];
+  grep?: string;
+  outputDirectory?: string;
+}) {
   const componentDirectories = argv.componentDirectories!.map((componentDirectory) => {
     return path.resolve(componentDirectory);
   });
-  const outputDirectory = path.resolve(argv.outputDirectory!);
-  const grep = argv.grep == null ? null : new RegExp(argv.grep);
 
-  mkdirSync(outputDirectory, { mode: 0o777, recursive: true });
+  const outputDirectory = path.resolve(argv.outputDirectory!);
+  const outputDirectoryComponents = path.join(outputDirectory, 'components');
+  const outputDirectoryTranslations = path.join(outputDirectory, 'translations');
+
+  rimraf.sync(outputDirectoryComponents);
+  mkdirSync(outputDirectoryComponents, { mode: 0o777, recursive: true });
+  mkdirSync(outputDirectoryTranslations, { mode: 0o777, recursive: true });
+
+  const grep = argv.grep == null ? null : new RegExp(argv.grep);
 
   const components = componentDirectories
     .reduce((directories, componentDirectory) => {
@@ -262,55 +278,96 @@ async function run(argv: { componentDirectories?: string[]; grep?: string; outpu
       return grep.test(component.filename);
     });
 
-  const outputDir = path.resolve(__dirname, '../public/static/api');
-  const pagesMarkdown = findPagesMarkdown().map(markdown => {
+  const pagesMarkdown = findPagesMarkdown().map((markdown) => {
     const markdownSource = readFileSync(markdown.filename, 'utf8');
     return {
       ...markdown,
       components: getHeaders(markdownSource).components,
     };
-  });  
-  
+  });
+
   function findPagesOfComponent(componentName: string) {
     return Array.from(
       new Set(
         pagesMarkdown
-          .filter(markdown => {
+          .filter((markdown) => {
             return markdown.components.includes(componentName);
           })
-          .map(markdown => {
+          .map((markdown) => {
             return markdown.pathname;
           }),
       ),
     );
   }
 
-  const componentApis: (ReactApi & {usedInPages: string[]})[] = [];
+  const componentApisData: ReactApiData[] = [];
+
   await Promise.all(
     components
-      // .filter(cp => cp.filename.includes('LoadingButton'))
-      .map(async component => {
-      try {
-        const componentApi = await buildComponentApi(component);
-        if (componentApi !== null) {
-          const usedInPages = findPagesOfComponent(componentApi.name);
+      // .filter((cp) => cp.filename.endsWith('Button.js'))
+      .map(async (component) => {
+        try {
+          const componentApi = await buildComponentApi(component);
+          if (componentApi !== null) {
+            const usedInPages = findPagesOfComponent(componentApi.name);
 
-          componentApis.push({
-            ...componentApi,
-            usedInPages,
-          });
+            const componentApiJson = {
+              ...componentApi,
+              usedInPages,
+            };
+            const componentApiI18n = buildComponentApiI18n(componentApiJson);
+            const componentApiI18nJson = buildComponentApiI18nJson(componentApiI18n);
+
+            componentApisData.push({
+              api: componentApiJson,
+              i18n: componentApiI18n,
+              i18nJson: componentApiI18nJson,
+            });
+          }
+        } catch (error) {
+          console.warn(`error building docs for ${component.filename}`);
+          console.error(error);
+          process.exit(1);
         }
-      } catch (error) {
-        console.warn(`error building docs for ${component.filename}`);
-        console.error(error);
-        process.exit(1);
-      }
+      }),
+  );
+
+  const translationsExistDirs = readdirSync(outputDirectoryTranslations, { withFileTypes: true })
+    .filter((dirEntry) => dirEntry.isDirectory())
+    .map((dirEntry) => dirEntry.name);
+
+  const transalationsDirs = Object.values(componentApisData).map(
+    (apiData) => apiData.api.name,
+  );
+
+  // Clear removed components
+  await Promise.all(
+    _.difference(translationsExistDirs, transalationsDirs).map(async (dirname) => {
+      const remover = path.join(outputDirectoryTranslations, dirname);
+
+      // eslint-disable-next-line no-console
+      return rimraf(remover, () => console.log(`Removing API translation directory ${dirname}`));
     }),
   );
 
   await Promise.all(
-    Object.values(componentApis).map(api => {
-      return writeJson(path.join(outputDir, `${api.name}.json`), api, { spaces: 2 });
+    Object.values(componentApisData).map(async (data) => {
+
+      const apiName = data.api.name;
+
+      const outputDirectoryTranslation = path.join(outputDirectoryTranslations, `${apiName}`);
+      mkdirSync(outputDirectoryTranslation, { mode: 0o777, recursive: true });
+
+      // eslint-disable-next-line no-console
+      console.log('Writing API JSON data for', apiName);
+
+      await writeJson(path.join(outputDirectoryComponents, `${apiName}.json`), data.api, {
+        spaces: 2,
+      });
+
+      return writeJson(path.join(outputDirectoryTranslation, `${apiName}.json`), data.i18nJson, {
+        spaces: 2,
+      });
     }),
   );
 }

@@ -1,0 +1,291 @@
+{
+  "description": "",
+  "displayName": "Divider",
+  "methods": [],
+  "props": {
+    "absolute": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Absolutely position the element.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the component.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "component": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+      "defaultValue": {
+        "value": "children ? 'div' : 'hr'",
+        "computed": false
+      },
+      "tags": []
+    },
+    "flexItem": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, a vertical divider will have the correct height when used in flex container.\r\n(By default, a vertical divider will have a calculated height of `0px` if it is the child of a flex container.)",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "light": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the divider will have a lighter color.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "orientation": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'horizontal'",
+            "computed": false
+          },
+          {
+            "value": "'vertical'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The divider orientation.",
+      "jsdocDefaultValue": {
+        "value": "'horizontal'"
+      },
+      "defaultValue": {
+        "value": "'horizontal'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'horizontal'"
+        }
+      ]
+    },
+    "role": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "defaultValue": {
+        "value": "Component !== 'hr' ? 'separator' : undefined",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "textAlign": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'center'",
+            "computed": false
+          },
+          {
+            "value": "'left'",
+            "computed": false
+          },
+          {
+            "value": "'right'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The text alignment.",
+      "jsdocDefaultValue": {
+        "value": "'center'"
+      },
+      "defaultValue": {
+        "value": "'center'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'center'"
+        }
+      ]
+    },
+    "variant": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'fullWidth'",
+                "computed": false
+              },
+              {
+                "value": "'inset'",
+                "computed": false
+              },
+              {
+                "value": "'middle'",
+                "computed": false
+              }
+            ]
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "The variant to use.",
+      "jsdocDefaultValue": {
+        "value": "'fullWidth'"
+      },
+      "defaultValue": {
+        "value": "'fullWidth'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'fullWidth'"
+        }
+      ]
+    }
+  },
+  "name": "Divider",
+  "styles": {
+    "classes": [
+      "root",
+      "absolute",
+      "inset",
+      "fullWidth",
+      "light",
+      "middle",
+      "vertical",
+      "flexItem",
+      "withChildren",
+      "withChildrenVertical",
+      "textAlignRight",
+      "textAlignLeft",
+      "wrapper",
+      "wrapperVertical"
+    ],
+    "name": "MuiDivider",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "absolute": "Styles applied to the root element if `absolute={true}`.",
+      "inset": "Styles applied to the root element if `variant=\"inset\"`.",
+      "fullWidth": "Styles applied to the root element if `variant=\"fullWidth\"`.",
+      "light": "Styles applied to the root element if `light={true}`.",
+      "middle": "Styles applied to the root element if `variant=\"middle\"`.",
+      "vertical": "Styles applied to the root element if `orientation=\"vertical\"`.",
+      "flexItem": "Styles applied to the root element if `flexItem={true}`.",
+      "withChildren": "Styles applied to the root element if divider have text.",
+      "withChildrenVertical": "Styles applied to the root element if divider have text and `orientation=\"vertical\"`.",
+      "textAlignRight": "Styles applied to the root element if `textAlign=\"right\" orientation=\"horizontal\"`.",
+      "textAlignLeft": "Styles applied to the root element if `textAlign=\"left\" orientation=\"horizontal\"`.",
+      "wrapper": "Styles applied to the span children element if `orientation=\"horizontal\"`.",
+      "wrapperVertical": "Styles applied to the span children element if `orientation=\"vertical\"`."
+    },
+    "globalClasses": {
+      "root": "MuiDivider-root",
+      "absolute": "MuiDivider-absolute",
+      "inset": "MuiDivider-inset",
+      "fullWidth": "MuiDivider-fullWidth",
+      "light": "MuiDivider-light",
+      "middle": "MuiDivider-middle",
+      "vertical": "MuiDivider-vertical",
+      "flexItem": "MuiDivider-flexItem",
+      "withChildren": "MuiDivider-withChildren",
+      "withChildrenVertical": "MuiDivider-withChildrenVertical",
+      "textAlignRight": "MuiDivider-textAlignRight",
+      "textAlignLeft": "MuiDivider-textAlignLeft",
+      "wrapper": "MuiDivider-wrapper",
+      "wrapperVertical": "MuiDivider-wrapperVertical"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLHRElement",
+  "filename": "\\packages\\material-ui\\src\\Divider\\Divider.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/dividers",
+    "/components/lists"
+  ]
+}

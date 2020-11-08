@@ -1,0 +1,10 @@
+{
+  "propChildren": "Step content.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propTransitionComponent": "The component used for the transition.\r\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
+  "propTransitionDuration": "Adjust the duration of the content expand transition.\r\nPassed as a prop to the transition component.\r\n\r\nSet to 'auto' to automatically calculate transition time based on height.",
+  "propTransitionProps": "Props applied to the transition element.\r\nBy default, the element is based on this [`Transition`](http://reactcommunity.org/react-transition-group/transition) component.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesLast": "Styles applied to the root element if `last={true}` (controlled by `Step`).",
+  "stylesTransition": "Styles applied to the Transition component."
+}

@@ -1,0 +1,21 @@
+{
+  "propChildren": "This prop isn't supported.\r\nUse the `component` prop if you need to change the children structure.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propDisabled": "If `true`, the tab is disabled.",
+  "propDisableFocusRipple": "If `true`, the  keyboard focus ripple is disabled.",
+  "propDisableRipple": "If `true`, the ripple effect is disabled.\r\n\r\n⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure\r\nto highlight the element by applying separate styles with the `focusVisibleClassName`.",
+  "propIcon": "The icon element.",
+  "propLabel": "The label element.",
+  "propValue": "You can provide your own value. Otherwise, we fallback to the child position index.",
+  "propWrapped": "Tab labels appear in a single row.\r\nThey can use a second line if needed.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesLabelIcon": "Styles applied to the root element if both `icon` and `label` are provided.",
+  "stylesTextColorInherit": "Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `textColor=\"inherit\"`.",
+  "stylesTextColorPrimary": "Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `textColor=\"primary\"`.",
+  "stylesTextColorSecondary": "Styles applied to the root element if the parent [`Tabs`](/api/tabs/) has `textColor=\"secondary\"`.",
+  "stylesSelected": "Pseudo-class applied to the root element if `selected={true}` (controlled by the Tabs component).",
+  "stylesDisabled": "Pseudo-class applied to the root element if `disabled={true}` (controlled by the Tabs component).",
+  "stylesFullWidth": "Styles applied to the root element if `fullWidth={true}` (controlled by the Tabs component).",
+  "stylesWrapped": "Styles applied to the root element if `wrapped={true}`.",
+  "stylesWrapper": "Styles applied to the `icon` and `label`'s wrapper element."
+}

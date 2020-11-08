@@ -1,0 +1,11 @@
+{
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propIcon": "The icon to display in the SpeedDial Floating Action Button.",
+  "propOpenIcon": "The icon to display in the SpeedDial Floating Action Button when the SpeedDial is open.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesIcon": "Styles applied to the icon component.",
+  "stylesIconOpen": "Styles applied to the icon component if `open={true}`.",
+  "stylesIconWithOpenIconOpen": "Styles applied to the icon when an `openIcon` is provided and if `open={true}`.",
+  "stylesOpenIcon": "Styles applied to the `openIcon` if provided.",
+  "stylesOpenIconOpen": "Styles applied to the `openIcon` if provided and if `open={true}`."
+}

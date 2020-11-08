@@ -1,0 +1,7 @@
+{
+  "description": "Must be used as the last child of ListItem to function properly.",
+  "propChildren": "The content of the component, normally an `IconButton` or selection control.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesDisableGutters": "Styles applied to the root element when the parent `ListItem` has `disableGutters={true}`."
+}

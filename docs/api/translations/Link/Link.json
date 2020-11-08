@@ -1,0 +1,15 @@
+{
+  "propChildren": "The content of the link.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propColor": "The color of the link.",
+  "propComponent": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+  "propTypographyClasses": "`classes` prop applied to the [`Typography`](/api/typography/) element.",
+  "propUnderline": "Controls when the link should have an underline.",
+  "propVariant": "Applies the theme typography styles.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesUnderlineNone": "Styles applied to the root element if `underline=\"none\"`.",
+  "stylesUnderlineHover": "Styles applied to the root element if `underline=\"hover\"`.",
+  "stylesUnderlineAlways": "Styles applied to the root element if `underline=\"always\"`.",
+  "stylesButton": "Styles applied to the root element if `component=\"button\"`.",
+  "stylesFocusVisible": "Pseudo-class applied to the root element if the link is keyboard focused."
+}

@@ -1,0 +1,454 @@
+{
+  "description": "Poppers rely on the 3rd party library [Popper.js](https://popper.js.org/docs/v2/) for positioning.",
+  "displayName": "Popper",
+  "methods": [],
+  "props": {
+    "anchorEl": {
+      "type": {
+        "name": "chained",
+        "raw": "chainPropTypes/* @chainedAs [\"HTMLElementType\", \"object\", \"func\"] */(\r\n  PropTypes.oneOfType([HTMLElementType, PropTypes.object, PropTypes.func]),\r\n  (props) => {\r\n    if (props.open) {\r\n      const resolvedAnchorEl = getAnchorEl(props.anchorEl);\r\n\r\n      if (resolvedAnchorEl && resolvedAnchorEl.nodeType === 1) {\r\n        const box = resolvedAnchorEl.getBoundingClientRect();\r\n\r\n        if (\r\n          process.env.NODE_ENV !== 'test' &&\r\n          box.top === 0 &&\r\n          box.left === 0 &&\r\n          box.right === 0 &&\r\n          box.bottom === 0\r\n        ) {\r\n          return new Error(\r\n            [\r\n              'Material-UI: The `anchorEl` prop provided to the component is invalid.',\r\n              'The anchor element should be part of the document layout.',\r\n              \"Make sure the element is present in the document or that it's not display none.\",\r\n            ].join('\\n'),\r\n          );\r\n        }\r\n      } else if (\r\n        !resolvedAnchorEl ||\r\n        typeof resolvedAnchorEl.getBoundingClientRect !== 'function' ||\r\n        (resolvedAnchorEl.contextElement != null &&\r\n          resolvedAnchorEl.contextElement.nodeType !== 1)\r\n      ) {\r\n        return new Error(\r\n          [\r\n            'Material-UI: The `anchorEl` prop provided to the component is invalid.',\r\n            'It should be an HTML element instance or a virtualElement ',\r\n            '(https://popper.js.org/docs/v2/virtual-elements/).',\r\n          ].join('\\n'),\r\n        );\r\n      }\r\n    }\r\n\r\n    return null;\r\n  },\r\n)",
+        "chained": {
+          "name": "union",
+          "value": [
+            {
+              "name": "HTMLElementType"
+            },
+            {
+              "name": "object"
+            },
+            {
+              "name": "func"
+            }
+          ]
+        }
+      },
+      "required": false,
+      "description": "A HTML element, [virtualElement](https://popper.js.org/docs/v2/virtual-elements/),\r\nor a function that returns either.\r\nIt's used to set the position of the popper.\r\nThe return value will passed as the reference object of the Popper instance.",
+      "tags": []
+    },
+    "children": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "node"
+          },
+          {
+            "name": "func"
+          }
+        ]
+      },
+      "required": false,
+      "description": "Popper render function or node.",
+      "tags": []
+    },
+    "container": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "custom",
+            "raw": "HTMLElementType"
+          },
+          {
+            "name": "func"
+          }
+        ]
+      },
+      "required": false,
+      "description": "A HTML element or function that returns one.\r\nThe `container` will have the portal children appended to it.\r\n\r\nBy default, it uses the body of the top-level document object,\r\nso it's simply `document.body` most of the time.",
+      "tags": []
+    },
+    "disablePortal": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "The `children` will be inside the DOM hierarchy of the parent component.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "keepMounted": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Always keep the children in the DOM.\r\nThis prop can be useful in SEO situation or\r\nwhen you want to maximize the responsiveness of the Popper.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "modifiers": {
+      "type": {
+        "name": "arrayOf",
+        "value": {
+          "name": "shape",
+          "value": {
+            "data": {
+              "name": "object",
+              "required": false
+            },
+            "effect": {
+              "name": "func",
+              "required": false
+            },
+            "enabled": {
+              "name": "bool",
+              "required": false
+            },
+            "fn": {
+              "name": "func",
+              "required": false
+            },
+            "name": {
+              "name": "any",
+              "required": true
+            },
+            "options": {
+              "name": "object",
+              "required": false
+            },
+            "phase": {
+              "name": "enum",
+              "value": [
+                {
+                  "value": "'afterMain'",
+                  "computed": false
+                },
+                {
+                  "value": "'afterRead'",
+                  "computed": false
+                },
+                {
+                  "value": "'afterWrite'",
+                  "computed": false
+                },
+                {
+                  "value": "'beforeMain'",
+                  "computed": false
+                },
+                {
+                  "value": "'beforeRead'",
+                  "computed": false
+                },
+                {
+                  "value": "'beforeWrite'",
+                  "computed": false
+                },
+                {
+                  "value": "'main'",
+                  "computed": false
+                },
+                {
+                  "value": "'read'",
+                  "computed": false
+                },
+                {
+                  "value": "'write'",
+                  "computed": false
+                }
+              ],
+              "required": false
+            },
+            "requires": {
+              "name": "arrayOf",
+              "value": {
+                "name": "string"
+              },
+              "required": false
+            },
+            "requiresIfExists": {
+              "name": "arrayOf",
+              "value": {
+                "name": "string"
+              },
+              "required": false
+            }
+          }
+        }
+      },
+      "required": false,
+      "description": "Popper.js is based on a \"plugin-like\" architecture,\r\nmost of its features are fully encapsulated \"modifiers\".\r\n\r\nA modifier is a function that is called each time Popper.js needs to\r\ncompute the position of the popper.\r\nFor this reason, modifiers should be very performant to avoid bottlenecks.\r\nTo learn how to create a modifier, [read the modifiers documentation](https://popper.js.org/docs/v2/modifiers/).",
+      "tags": []
+    },
+    "open": {
+      "type": {
+        "name": "bool"
+      },
+      "required": true,
+      "description": "If `true`, the popper is visible.",
+      "tags": []
+    },
+    "placement": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'auto-end'",
+            "computed": false
+          },
+          {
+            "value": "'auto-start'",
+            "computed": false
+          },
+          {
+            "value": "'auto'",
+            "computed": false
+          },
+          {
+            "value": "'bottom-end'",
+            "computed": false
+          },
+          {
+            "value": "'bottom-start'",
+            "computed": false
+          },
+          {
+            "value": "'bottom'",
+            "computed": false
+          },
+          {
+            "value": "'left-end'",
+            "computed": false
+          },
+          {
+            "value": "'left-start'",
+            "computed": false
+          },
+          {
+            "value": "'left'",
+            "computed": false
+          },
+          {
+            "value": "'right-end'",
+            "computed": false
+          },
+          {
+            "value": "'right-start'",
+            "computed": false
+          },
+          {
+            "value": "'right'",
+            "computed": false
+          },
+          {
+            "value": "'top-end'",
+            "computed": false
+          },
+          {
+            "value": "'top-start'",
+            "computed": false
+          },
+          {
+            "value": "'top'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "Popper placement.",
+      "jsdocDefaultValue": {
+        "value": "'bottom'"
+      },
+      "defaultValue": {
+        "value": "'bottom'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'bottom'"
+        }
+      ]
+    },
+    "popperOptions": {
+      "type": {
+        "name": "shape",
+        "value": {
+          "modifiers": {
+            "name": "array",
+            "required": false
+          },
+          "onFirstUpdate": {
+            "name": "func",
+            "required": false
+          },
+          "placement": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'auto-end'",
+                "computed": false
+              },
+              {
+                "value": "'auto-start'",
+                "computed": false
+              },
+              {
+                "value": "'auto'",
+                "computed": false
+              },
+              {
+                "value": "'bottom-end'",
+                "computed": false
+              },
+              {
+                "value": "'bottom-start'",
+                "computed": false
+              },
+              {
+                "value": "'bottom'",
+                "computed": false
+              },
+              {
+                "value": "'left-end'",
+                "computed": false
+              },
+              {
+                "value": "'left-start'",
+                "computed": false
+              },
+              {
+                "value": "'left'",
+                "computed": false
+              },
+              {
+                "value": "'right-end'",
+                "computed": false
+              },
+              {
+                "value": "'right-start'",
+                "computed": false
+              },
+              {
+                "value": "'right'",
+                "computed": false
+              },
+              {
+                "value": "'top-end'",
+                "computed": false
+              },
+              {
+                "value": "'top-start'",
+                "computed": false
+              },
+              {
+                "value": "'top'",
+                "computed": false
+              }
+            ],
+            "required": false
+          },
+          "strategy": {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'absolute'",
+                "computed": false
+              },
+              {
+                "value": "'fixed'",
+                "computed": false
+              }
+            ],
+            "required": false
+          }
+        }
+      },
+      "required": false,
+      "description": "Options provided to the [`Popper.js`](https://popper.js.org/docs/v2/constructors/#options) instance.",
+      "jsdocDefaultValue": {
+        "value": "{}"
+      },
+      "defaultValue": {
+        "value": "{}",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "{}"
+        }
+      ]
+    },
+    "popperRef": {
+      "type": {
+        "name": "custom",
+        "raw": "refType"
+      },
+      "required": false,
+      "description": "A ref that points to the used popper instance.",
+      "tags": []
+    },
+    "style": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "transition": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Help supporting a react-transition-group/Transition component.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    }
+  },
+  "name": "Popper",
+  "styles": {
+    "classes": [],
+    "name": null,
+    "descriptions": {},
+    "globalClasses": {}
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\Popper\\Popper.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/autocomplete",
+    "/components/menus",
+    "/components/popper"
+  ]
+}

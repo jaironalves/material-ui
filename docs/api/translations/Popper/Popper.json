@@ -1,0 +1,14 @@
+{
+  "description": "Poppers rely on the 3rd party library [Popper.js](https://popper.js.org/docs/v2/) for positioning.",
+  "propAnchorEl": "A HTML element, [virtualElement](https://popper.js.org/docs/v2/virtual-elements/),\r\nor a function that returns either.\r\nIt's used to set the position of the popper.\r\nThe return value will passed as the reference object of the Popper instance.",
+  "propChildren": "Popper render function or node.",
+  "propContainer": "A HTML element or function that returns one.\r\nThe `container` will have the portal children appended to it.\r\n\r\nBy default, it uses the body of the top-level document object,\r\nso it's simply `document.body` most of the time.",
+  "propDisablePortal": "The `children` will be inside the DOM hierarchy of the parent component.",
+  "propKeepMounted": "Always keep the children in the DOM.\r\nThis prop can be useful in SEO situation or\r\nwhen you want to maximize the responsiveness of the Popper.",
+  "propModifiers": "Popper.js is based on a \"plugin-like\" architecture,\r\nmost of its features are fully encapsulated \"modifiers\".\r\n\r\nA modifier is a function that is called each time Popper.js needs to\r\ncompute the position of the popper.\r\nFor this reason, modifiers should be very performant to avoid bottlenecks.\r\nTo learn how to create a modifier, [read the modifiers documentation](https://popper.js.org/docs/v2/modifiers/).",
+  "propOpen": "If `true`, the popper is visible.",
+  "propPlacement": "Popper placement.",
+  "propPopperOptions": "Options provided to the [`Popper.js`](https://popper.js.org/docs/v2/constructors/#options) instance.",
+  "propPopperRef": "A ref that points to the used popper instance.",
+  "propTransition": "Help supporting a react-transition-group/Transition component."
+}

@@ -1,0 +1,452 @@
+{
+  "description": "",
+  "displayName": "Tabs",
+  "methods": [],
+  "props": {
+    "action": {
+      "type": {
+        "name": "custom",
+        "raw": "refType"
+      },
+      "required": false,
+      "description": "Callback fired when the component mounts.\r\nThis is useful when you want to trigger an action programmatically.\r\nIt supports two actions: `updateIndicator()` and `updateScrollButtons()`",
+      "tags": [
+        {
+          "title": "param",
+          "description": "This object contains all possible actions\r\nthat can be triggered programmatically.",
+          "type": {
+            "type": "NameExpression",
+            "name": "object"
+          },
+          "name": "actions"
+        }
+      ]
+    },
+    "allowScrollButtonsMobile": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the scroll buttons aren't forced hidden on mobile.\r\nBy default the scroll buttons are hidden on mobile and takes precedence over `scrollButtons`.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "aria-label": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "The label for the Tabs as a string.",
+      "tags": []
+    },
+    "aria-labelledby": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "An id or list of ids separated by a space that label the Tabs.",
+      "tags": []
+    },
+    "centered": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the tabs are centered.\r\nThis prop is intended for large views.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the component.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "component": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+      "defaultValue": {
+        "value": "'div'",
+        "computed": false
+      },
+      "tags": []
+    },
+    "indicatorColor": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'primary'",
+            "computed": false
+          },
+          {
+            "value": "'secondary'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "Determines the color of the indicator.",
+      "jsdocDefaultValue": {
+        "value": "'secondary'"
+      },
+      "defaultValue": {
+        "value": "'secondary'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'secondary'"
+        }
+      ]
+    },
+    "onChange": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "Callback fired when the value changes.",
+      "tags": [
+        {
+          "title": "param",
+          "description": "The event source of the callback. **Warning**: This is a generic event not a change event.",
+          "type": {
+            "type": "NameExpression",
+            "name": "object"
+          },
+          "name": "event"
+        },
+        {
+          "title": "param",
+          "description": "We default to the index of the child (number)",
+          "type": {
+            "type": "NameExpression",
+            "name": "any"
+          },
+          "name": "value"
+        }
+      ]
+    },
+    "orientation": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'horizontal'",
+            "computed": false
+          },
+          {
+            "value": "'vertical'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The tabs orientation (layout flow direction).",
+      "jsdocDefaultValue": {
+        "value": "'horizontal'"
+      },
+      "defaultValue": {
+        "value": "'horizontal'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'horizontal'"
+        }
+      ]
+    },
+    "ScrollButtonComponent": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "The component used to render the scroll buttons.",
+      "jsdocDefaultValue": {
+        "value": "TabScrollButton"
+      },
+      "defaultValue": {
+        "value": "TabScrollButton",
+        "computed": true
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "TabScrollButton"
+        }
+      ]
+    },
+    "scrollButtons": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'auto'",
+            "computed": false
+          },
+          {
+            "value": "false",
+            "computed": false
+          },
+          {
+            "value": "true",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "Determine behavior of scroll buttons when tabs are set to scroll:\r\n\r\n- `auto` will only present them when not all the items are visible.\r\n- `true` will always present them.\r\n- `false` will never present them.\r\n\r\nBy default the scroll buttons are hidden on mobile.\r\nThis behavior can be disabled with `allowScrollButtonsMobile`.",
+      "jsdocDefaultValue": {
+        "value": "'auto'"
+      },
+      "defaultValue": {
+        "value": "'auto'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'auto'"
+        }
+      ]
+    },
+    "selectionFollowsFocus": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true` the selected tab changes on focus. Otherwise it only\r\nchanges on activation.",
+      "tags": []
+    },
+    "TabIndicatorProps": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Props applied to the tab indicator element.",
+      "jsdocDefaultValue": {
+        "value": "{}"
+      },
+      "defaultValue": {
+        "value": "{}",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "{}"
+        }
+      ]
+    },
+    "TabScrollButtonProps": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Props applied to the [`TabScrollButton`](/api/tab-scroll-button/) element.",
+      "tags": []
+    },
+    "textColor": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'inherit'",
+            "computed": false
+          },
+          {
+            "value": "'primary'",
+            "computed": false
+          },
+          {
+            "value": "'secondary'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "Determines the color of the `Tab`.",
+      "jsdocDefaultValue": {
+        "value": "'inherit'"
+      },
+      "defaultValue": {
+        "value": "'inherit'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'inherit'"
+        }
+      ]
+    },
+    "value": {
+      "type": {
+        "name": "any"
+      },
+      "required": false,
+      "description": "The value of the currently selected `Tab`.\r\nIf you don't want any selected `Tab`, you can set this prop to `false`.",
+      "tags": []
+    },
+    "variant": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'fullWidth'",
+            "computed": false
+          },
+          {
+            "value": "'scrollable'",
+            "computed": false
+          },
+          {
+            "value": "'standard'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "Determines additional display behavior of the tabs:\r\n\r\n - `scrollable` will invoke scrolling properties and allow for horizontally\r\n scrolling (or swiping) of the tab bar.\r\n -`fullWidth` will make the tabs grow to use all the available space,\r\n which should be used for small views, like on mobile.\r\n - `standard` will render the default state.",
+      "jsdocDefaultValue": {
+        "value": "'standard'"
+      },
+      "defaultValue": {
+        "value": "'standard'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'standard'"
+        }
+      ]
+    },
+    "visibleScrollbar": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the scrollbar is visible. It can be useful when displaying\r\na long vertical list of tabs.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    }
+  },
+  "name": "Tabs",
+  "styles": {
+    "classes": [
+      "root",
+      "vertical",
+      "flexContainer",
+      "flexContainerVertical",
+      "centered",
+      "scroller",
+      "fixed",
+      "scrollableX",
+      "scrollableY",
+      "hideScrollbar",
+      "scrollButtons",
+      "scrollButtonsHideMobile",
+      "indicator"
+    ],
+    "name": "MuiTabs",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "vertical": "Styles applied to the root element if `orientation=\"vertical\"`.",
+      "flexContainer": "Styles applied to the flex container element.",
+      "flexContainerVertical": "Styles applied to the flex container element if `orientation=\"vertical\"`.",
+      "centered": "Styles applied to the flex container element if `centered={true}` & `!variant=\"scrollable\"`.",
+      "scroller": "Styles applied to the tablist element.",
+      "fixed": "Styles applied to the tablist element if `!variant=\"scrollable\"`\b\b\b.",
+      "scrollableX": "Styles applied to the tablist element if `variant=\"scrollable\"` and `orientation=\"horizontal\"`.",
+      "scrollableY": "Styles applied to the tablist element if `variant=\"scrollable\"` and `orientation=\"vertical\"`.",
+      "hideScrollbar": "Styles applied to the tablist element if `variant=\"scrollable\"` and `visibleScrollbar={false}`.",
+      "scrollButtons": "Styles applied to the `ScrollButtonComponent` component.",
+      "scrollButtonsHideMobile": "Styles applied to the `ScrollButtonComponent` component if `allowScrollButtonsMobile={true}`.",
+      "indicator": "Styles applied to the `TabIndicator` component."
+    },
+    "globalClasses": {
+      "root": "MuiTabs-root",
+      "vertical": "MuiTabs-vertical",
+      "flexContainer": "MuiTabs-flexContainer",
+      "flexContainerVertical": "MuiTabs-flexContainerVertical",
+      "centered": "MuiTabs-centered",
+      "scroller": "MuiTabs-scroller",
+      "fixed": "MuiTabs-fixed",
+      "scrollableX": "MuiTabs-scrollableX",
+      "scrollableY": "MuiTabs-scrollableY",
+      "hideScrollbar": "MuiTabs-hideScrollbar",
+      "scrollButtons": "MuiTabs-scrollButtons",
+      "scrollButtonsHideMobile": "MuiTabs-scrollButtonsHideMobile",
+      "indicator": "MuiTabs-indicator"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\Tabs\\Tabs.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/tabs"
+  ]
+}

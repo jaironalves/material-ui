@@ -1,0 +1,22 @@
+{
+  "propAction": "A ref for imperative actions.\r\nIt currently only supports updatePosition() action.",
+  "propAnchorEl": "A HTML element, or a function that returns it.\r\nIt's used to set the position of the popover.",
+  "propAnchorOrigin": "This is the point on the anchor where the popover's\r\n`anchorEl` will attach to. This is not used when the\r\nanchorReference is 'anchorPosition'.\r\n\r\nOptions:\r\nvertical: [top, center, bottom];\r\nhorizontal: [left, center, right].",
+  "propAnchorPosition": "This is the position that may be used\r\nto set the position of the popover.\r\nThe coordinates are relative to\r\nthe application's client area.",
+  "propAnchorReference": "This determines which anchor prop to refer to to set\r\nthe position of the popover.",
+  "propChildren": "The content of the component.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propContainer": "A HTML element, component instance, or function that returns either.\r\nThe `container` will passed to the Modal component.\r\n\r\nBy default, it uses the body of the anchorEl's top-level document object,\r\nso it's simply `document.body` most of the time.",
+  "propElevation": "The elevation of the popover.",
+  "propGetContentAnchorEl": "This function is called in order to retrieve the content anchor element.\r\nIt's the opposite of the `anchorEl` prop.\r\nThe content anchor element should be an element inside the popover.\r\nIt's used to correctly scroll and set the position of the popover.\r\nThe positioning strategy tries to make the content anchor element just above the\r\nanchor element.",
+  "propMarginThreshold": "Specifies how close to the edge of the window the popover can appear.",
+  "propOnClose": "Callback fired when the component requests to be closed.\r\nThe `reason` parameter can optionally be used to control the response to `onClose`.",
+  "propOpen": "If `true`, the popover is visible.",
+  "propPaperProps": "Props applied to the [`Paper`](/api/paper/) element.",
+  "propTransformOrigin": "This is the point on the popover which\r\nwill attach to the anchor's origin.\r\n\r\nOptions:\r\nvertical: [top, center, bottom, x(px)];\r\nhorizontal: [left, center, right, x(px)].",
+  "propTransitionComponent": "The component used for the transition.\r\n[Follow this guide](/components/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.",
+  "propTransitionDuration": "Set to 'auto' to automatically calculate transition time based on height.",
+  "propTransitionProps": "Props applied to the transition element.\r\nBy default, the element is based on this [`Transition`](http://reactcommunity.org/react-transition-group/transition) component.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesPaper": "Styles applied to the `Paper` component."
+}

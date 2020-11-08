@@ -1,0 +1,79 @@
+{
+  "description": "",
+  "displayName": "DialogContent",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The content of the component.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "dividers": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Display the top and bottom dividers.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    }
+  },
+  "name": "DialogContent",
+  "styles": {
+    "classes": [
+      "root",
+      "dividers"
+    ],
+    "name": "MuiDialogContent",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "dividers": "Styles applied to the root element if `dividers={true}`."
+    },
+    "globalClasses": {
+      "root": "MuiDialogContent-root",
+      "dividers": "MuiDialogContent-dividers"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\DialogContent\\DialogContent.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/dialogs"
+  ]
+}

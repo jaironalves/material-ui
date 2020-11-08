@@ -1,0 +1,12 @@
+{
+  "propChildren": "The content of the accordion summary.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propExpandIcon": "The icon to display as the expand indicator.",
+  "propFocusVisibleClassName": "This prop can help a person know which element has the keyboard focus.\r\nThe class name will be applied when the element gain the focus through a keyboard interaction.\r\nIt's a polyfill for the [CSS :focus-visible selector](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo).\r\nThe rationale for using this feature [is explained here](https://github.com/WICG/focus-visible/blob/master/explainer.md).\r\nA [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components\r\nif needed.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesExpanded": "Pseudo-class applied to the root element, children wrapper element and `IconButton` component if `expanded={true}`.",
+  "stylesFocusVisible": "Pseudo-class applied to the ButtonBase root element if the button is keyboard focused.",
+  "stylesDisabled": "Pseudo-class applied to the root element if `disabled={true}`.",
+  "stylesContent": "Styles applied to the children wrapper element.",
+  "stylesExpandIconWrapper": "Styles applied to the `expandIcon`'s wrapper element."
+}

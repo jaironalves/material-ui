@@ -1,0 +1,182 @@
+{
+  "description": "",
+  "displayName": "ImageListItemBar",
+  "methods": [],
+  "props": {
+    "actionIcon": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "An IconButton element to be used as secondary action target\r\n(primary action target is the item itself).",
+      "tags": []
+    },
+    "actionPosition": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'left'",
+            "computed": false
+          },
+          {
+            "value": "'right'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "Position of secondary action IconButton.",
+      "jsdocDefaultValue": {
+        "value": "'right'"
+      },
+      "defaultValue": {
+        "value": "'right'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'right'"
+        }
+      ]
+    },
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "position": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'below'",
+            "computed": false
+          },
+          {
+            "value": "'bottom'",
+            "computed": false
+          },
+          {
+            "value": "'top'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "Position of the title bar.",
+      "jsdocDefaultValue": {
+        "value": "'bottom'"
+      },
+      "defaultValue": {
+        "value": "'bottom'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'bottom'"
+        }
+      ]
+    },
+    "subtitle": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "String or element serving as subtitle (support text).",
+      "tags": []
+    },
+    "title": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "Title to be displayed.",
+      "tags": []
+    }
+  },
+  "name": "ImageListItemBar",
+  "styles": {
+    "classes": [
+      "root",
+      "positionBottom",
+      "positionTop",
+      "positionBelow",
+      "titleWrap",
+      "titleWrapBelow",
+      "titleWrapActionPosLeft",
+      "titleWrapActionPosRight",
+      "title",
+      "subtitle",
+      "actionIcon",
+      "actionIconActionPosLeft"
+    ],
+    "name": "MuiImageListItemBar",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "positionBottom": "Styles applied to the root element if `position=\"bottom\"`.",
+      "positionTop": "Styles applied to the root element if `position=\"top\"`.",
+      "positionBelow": "Styles applied to the root element if `position=\"below\"`.",
+      "titleWrap": "Styles applied to the title and subtitle container element.",
+      "titleWrapBelow": "Styles applied to the title and subtitle container element if `position=\"below\"`.",
+      "titleWrapActionPosLeft": "Styles applied to the container element if `actionPosition=\"left\"`.",
+      "titleWrapActionPosRight": "Styles applied to the container element if `actionPosition=\"right\"`.",
+      "title": "Styles applied to the title container element.",
+      "subtitle": "Styles applied to the subtitle container element.",
+      "actionIcon": "Styles applied to the actionIcon if supplied.",
+      "actionIconActionPosLeft": "Styles applied to the actionIcon if `actionPosition=\"left\"`."
+    },
+    "globalClasses": {
+      "root": "MuiImageListItemBar-root",
+      "positionBottom": "MuiImageListItemBar-positionBottom",
+      "positionTop": "MuiImageListItemBar-positionTop",
+      "positionBelow": "MuiImageListItemBar-positionBelow",
+      "titleWrap": "MuiImageListItemBar-titleWrap",
+      "titleWrapBelow": "MuiImageListItemBar-titleWrapBelow",
+      "titleWrapActionPosLeft": "MuiImageListItemBar-titleWrapActionPosLeft",
+      "titleWrapActionPosRight": "MuiImageListItemBar-titleWrapActionPosRight",
+      "title": "MuiImageListItemBar-title",
+      "subtitle": "MuiImageListItemBar-subtitle",
+      "actionIcon": "MuiImageListItemBar-actionIcon",
+      "actionIconActionPosLeft": "MuiImageListItemBar-actionIconActionPosLeft"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\ImageListItemBar\\ImageListItemBar.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/image-list"
+  ]
+}

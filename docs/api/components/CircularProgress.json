@@ -1,0 +1,244 @@
+{
+  "description": "## ARIA\r\n\r\nIf the progress bar is describing the loading progress of a particular region of a page,\r\nyou should use `aria-describedby` to point to the progress bar, and set the `aria-busy`\r\nattribute to `true` on that region until it has finished loading.",
+  "displayName": "CircularProgress",
+  "methods": [],
+  "props": {
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "color": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'inherit'",
+            "computed": false
+          },
+          {
+            "value": "'primary'",
+            "computed": false
+          },
+          {
+            "value": "'secondary'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The color of the component. It supports those theme colors that make sense for this component.",
+      "jsdocDefaultValue": {
+        "value": "'primary'"
+      },
+      "defaultValue": {
+        "value": "'primary'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'primary'"
+        }
+      ]
+    },
+    "disableShrink": {
+      "type": {
+        "name": "chained",
+        "raw": "chainPropTypes(PropTypes.bool, (props) => {\r\n  if (props.disableShrink && props.variant && props.variant !== 'indeterminate') {\r\n    return new Error(\r\n      'Material-UI: You have provided the `disableShrink` prop ' +\r\n        'with a variant other than `indeterminate`. This will have no effect.',\r\n    );\r\n  }\r\n\r\n  return null;\r\n})",
+        "chained": {
+          "name": "bool"
+        }
+      },
+      "required": false,
+      "description": "If `true`, the shrink animation is disabled.\r\nThis only works if variant is `indeterminate`.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "size": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "number"
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "The size of the circle.\r\nIf using a number, the pixel unit is assumed.\r\nIf using a string, you need to provide the CSS unit, e.g '3rem'.",
+      "jsdocDefaultValue": {
+        "value": "40"
+      },
+      "defaultValue": {
+        "value": "40",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "40"
+        }
+      ]
+    },
+    "style": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "thickness": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "The thickness of the circle.",
+      "jsdocDefaultValue": {
+        "value": "3.6"
+      },
+      "defaultValue": {
+        "value": "3.6",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "3.6"
+        }
+      ]
+    },
+    "value": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "The value of the progress indicator for the determinate variant.\r\nValue between 0 and 100.",
+      "jsdocDefaultValue": {
+        "value": "0"
+      },
+      "defaultValue": {
+        "value": "0",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "0"
+        }
+      ]
+    },
+    "variant": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'determinate'",
+            "computed": false
+          },
+          {
+            "value": "'indeterminate'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The variant to use.\r\nUse indeterminate when there is no progress value.",
+      "jsdocDefaultValue": {
+        "value": "'indeterminate'"
+      },
+      "defaultValue": {
+        "value": "'indeterminate'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'indeterminate'"
+        }
+      ]
+    }
+  },
+  "name": "CircularProgress",
+  "styles": {
+    "classes": [
+      "root",
+      "determinate",
+      "indeterminate",
+      "colorPrimary",
+      "colorSecondary",
+      "svg",
+      "circle",
+      "circleDeterminate",
+      "circleIndeterminate",
+      "circleDisableShrink"
+    ],
+    "name": "MuiCircularProgress",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "determinate": "Styles applied to the root element if `variant=\"determinate\"`.",
+      "indeterminate": "Styles applied to the root element if `variant=\"indeterminate\"`.",
+      "colorPrimary": "Styles applied to the root element if `color=\"primary\"`.",
+      "colorSecondary": "Styles applied to the root element if `color=\"secondary\"`.",
+      "svg": "Styles applied to the `svg` element.",
+      "circle": "Styles applied to the `circle` svg path.",
+      "circleDeterminate": "Styles applied to the `circle` svg path if `variant=\"determinate\"`.",
+      "circleIndeterminate": "Styles applied to the `circle` svg path if `variant=\"indeterminate\"`.",
+      "circleDisableShrink": "Styles applied to the `circle` svg path if `disableShrink={true}`."
+    },
+    "globalClasses": {
+      "root": "MuiCircularProgress-root",
+      "determinate": "MuiCircularProgress-determinate",
+      "indeterminate": "MuiCircularProgress-indeterminate",
+      "colorPrimary": "MuiCircularProgress-colorPrimary",
+      "colorSecondary": "MuiCircularProgress-colorSecondary",
+      "svg": "MuiCircularProgress-svg",
+      "circle": "MuiCircularProgress-circle",
+      "circleDeterminate": "MuiCircularProgress-circleDeterminate",
+      "circleIndeterminate": "MuiCircularProgress-circleIndeterminate",
+      "circleDisableShrink": "MuiCircularProgress-circleDisableShrink"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\CircularProgress\\CircularProgress.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/progress"
+  ]
+}

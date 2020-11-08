@@ -1,0 +1,9 @@
+{
+  "propChildren": "The avatars to stack.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propMax": "Max avatars to show before +x.",
+  "propSpacing": "Spacing between avatars.",
+  "propVariant": "The shape of the avatars.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesAvatar": "Styles applied to the avatar elements."
+}

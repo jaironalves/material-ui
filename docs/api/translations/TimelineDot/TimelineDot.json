@@ -1,0 +1,15 @@
+{
+  "propChildren": "The content of the component.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propColor": "The dot can have a different colors.",
+  "propVariant": "The dot can appear filled or outlined.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesFilled": "Styles applied to the root element if `variant=\"filled\"`.",
+  "stylesOutlined": "Styles applied to the root element if `variant=\"outlined\"`.",
+  "stylesFilledGrey": "Styles applied to the root element if `color=\"grey\"` and `variant=\"filled\"`.",
+  "stylesOutlinedGrey": "Styles applied to the root element if `color=\"grey\"` and `variant=\"outlined\"`.",
+  "stylesFilledPrimary": "Styles applied to the root element if `color=\"primary\"` and `variant=\"filled\"`.",
+  "stylesOutlinedPrimary": "Styles applied to the root element if `color=\"primary\"` and `variant=\"outlined\"`.",
+  "stylesFilledSecondary": "Styles applied to the root element if `color=\"secondary\"` and `variant=\"filled\"`.",
+  "stylesOutlinedSecondary": "Styles applied to the root element if `color=\"secondary\"` and `variant=\"outlined\"`."
+}

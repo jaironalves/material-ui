@@ -1,0 +1,20 @@
+{
+  "description": "## ARIA\r\n\r\nIf the progress bar is describing the loading progress of a particular region of a page,\r\nyou should use `aria-describedby` to point to the progress bar, and set the `aria-busy`\r\nattribute to `true` on that region until it has finished loading.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propColor": "The color of the component. It supports those theme colors that make sense for this component.",
+  "propDisableShrink": "If `true`, the shrink animation is disabled.\r\nThis only works if variant is `indeterminate`.",
+  "propSize": "The size of the circle.\r\nIf using a number, the pixel unit is assumed.\r\nIf using a string, you need to provide the CSS unit, e.g '3rem'.",
+  "propThickness": "The thickness of the circle.",
+  "propValue": "The value of the progress indicator for the determinate variant.\r\nValue between 0 and 100.",
+  "propVariant": "The variant to use.\r\nUse indeterminate when there is no progress value.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesDeterminate": "Styles applied to the root element if `variant=\"determinate\"`.",
+  "stylesIndeterminate": "Styles applied to the root element if `variant=\"indeterminate\"`.",
+  "stylesColorPrimary": "Styles applied to the root element if `color=\"primary\"`.",
+  "stylesColorSecondary": "Styles applied to the root element if `color=\"secondary\"`.",
+  "stylesSvg": "Styles applied to the `svg` element.",
+  "stylesCircle": "Styles applied to the `circle` svg path.",
+  "stylesCircleDeterminate": "Styles applied to the `circle` svg path if `variant=\"determinate\"`.",
+  "stylesCircleIndeterminate": "Styles applied to the `circle` svg path if `variant=\"indeterminate\"`.",
+  "stylesCircleDisableShrink": "Styles applied to the `circle` svg path if `disableShrink={true}`."
+}

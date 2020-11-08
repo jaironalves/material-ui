@@ -1,0 +1,10 @@
+{
+  "propChildren": "Can be a `StepLabel` or a node to place inside `StepLabel` as children.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propIcon": "The icon displayed by the step label.",
+  "propOptional": "The optional node to display.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesHorizontal": "Styles applied to the root element if `orientation=\"horizontal\"`.",
+  "stylesVertical": "Styles applied to the root element if `orientation=\"vertical\"`.",
+  "stylesTouchRipple": "Styles applied to the `ButtonBase` touch-ripple."
+}

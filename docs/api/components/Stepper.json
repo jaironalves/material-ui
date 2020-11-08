@@ -1,0 +1,175 @@
+{
+  "description": "",
+  "displayName": "Stepper",
+  "methods": [],
+  "props": {
+    "activeStep": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "Set the active step (zero based index).\r\nSet to -1 to disable all the steps.",
+      "jsdocDefaultValue": {
+        "value": "0"
+      },
+      "defaultValue": {
+        "value": "0",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "0"
+        }
+      ]
+    },
+    "alternativeLabel": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If set to 'true' and orientation is horizontal,\r\nthen the step label will be positioned under the icon.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "Two or more `<Step />` components.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "connector": {
+      "type": {
+        "name": "element"
+      },
+      "required": false,
+      "description": "An element to be placed between each step.",
+      "jsdocDefaultValue": {
+        "value": "<StepConnector />"
+      },
+      "defaultValue": {
+        "value": "<StepConnector />",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "<StepConnector />"
+        }
+      ]
+    },
+    "nonLinear": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If set the `Stepper` will not assist in controlling steps for linear flow.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "orientation": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'horizontal'",
+            "computed": false
+          },
+          {
+            "value": "'vertical'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The stepper orientation (layout flow direction).",
+      "jsdocDefaultValue": {
+        "value": "'horizontal'"
+      },
+      "defaultValue": {
+        "value": "'horizontal'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'horizontal'"
+        }
+      ]
+    }
+  },
+  "name": "Stepper",
+  "styles": {
+    "classes": [
+      "root",
+      "horizontal",
+      "vertical",
+      "alternativeLabel"
+    ],
+    "name": "MuiStepper",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "horizontal": "Styles applied to the root element if `orientation=\"horizontal\"`.",
+      "vertical": "Styles applied to the root element if `orientation=\"vertical\"`.",
+      "alternativeLabel": "Styles applied to the root element if `alternativeLabel={true}`."
+    },
+    "globalClasses": {
+      "root": "MuiStepper-root",
+      "horizontal": "MuiStepper-horizontal",
+      "vertical": "MuiStepper-vertical",
+      "alternativeLabel": "MuiStepper-alternativeLabel"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLDivElement",
+  "filename": "\\packages\\material-ui\\src\\Stepper\\Stepper.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/steppers"
+  ]
+}

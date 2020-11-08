@@ -1,0 +1,15 @@
+{
+  "propActive": "Sets the step as active. Is passed to child components.",
+  "propChildren": "Should be `Step` sub-components such as `StepLabel`, `StepContent`.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propCompleted": "Mark the step as completed. Is passed to child components.",
+  "propDisabled": "Mark the step as disabled, will also disable the button if\r\n`StepButton` is a child of `Step`. Is passed to child components.",
+  "propExpanded": "Expand the step.",
+  "propIndex": "The position of the step.\r\nThe prop defaults to the value inherited from the parent Stepper component.",
+  "propLast": "If `true`, the Step is displayed as rendered last.\r\nThe prop defaults to the value inherited from the parent Stepper component.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesHorizontal": "Styles applied to the root element if `orientation=\"horizontal\"`.",
+  "stylesVertical": "Styles applied to the root element if `orientation=\"vertical\"`.",
+  "stylesAlternativeLabel": "Styles applied to the root element if `alternativeLabel={true}`.",
+  "stylesCompleted": "Pseudo-class applied to the root element if `completed={true}`."
+}

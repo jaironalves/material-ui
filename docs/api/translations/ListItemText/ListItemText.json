@@ -1,0 +1,16 @@
+{
+  "propChildren": "Alias for the `primary` prop.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propDisableTypography": "If `true`, the children won't be wrapped by a Typography component.\r\nThis can be useful to render an alternative Typography variant by wrapping\r\nthe `children` (or `primary`) text, and optional `secondary` text\r\nwith the Typography component.",
+  "propInset": "If `true`, the children are indented.\r\nThis should be used if there is no left avatar or left icon.",
+  "propPrimary": "The main content element.",
+  "propPrimaryTypographyProps": "These props will be forwarded to the primary typography component\r\n(as long as disableTypography is not `true`).",
+  "propSecondary": "The secondary content element.",
+  "propSecondaryTypographyProps": "These props will be forwarded to the secondary typography component\r\n(as long as disableTypography is not `true`).",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesMultiline": "Styles applied to the `Typography` components if primary and secondary are set.",
+  "stylesDense": "Styles applied to the `Typography` components if dense.",
+  "stylesInset": "Styles applied to the root element if `inset={true}`.",
+  "stylesPrimary": "Styles applied to the primary `Typography` component.",
+  "stylesSecondary": "Styles applied to the secondary `Typography` component."
+}

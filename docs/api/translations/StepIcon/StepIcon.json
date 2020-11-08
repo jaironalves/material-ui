@@ -1,0 +1,12 @@
+{
+  "propActive": "Whether this step is active.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propCompleted": "Mark the step as completed. Is passed to child components.",
+  "propError": "Mark the step as failed.",
+  "propIcon": "The label displayed in the step icon.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesText": "Styles applied to the SVG text element.",
+  "stylesActive": "Pseudo-class applied to the root element if `active={true}`.",
+  "stylesCompleted": "Pseudo-class applied to the root element if `completed={true}`.",
+  "stylesError": "Pseudo-class applied to the root element if `error={true}`."
+}

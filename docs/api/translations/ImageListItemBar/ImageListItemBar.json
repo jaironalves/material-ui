@@ -1,0 +1,20 @@
+{
+  "propActionIcon": "An IconButton element to be used as secondary action target\r\n(primary action target is the item itself).",
+  "propActionPosition": "Position of secondary action IconButton.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propPosition": "Position of the title bar.",
+  "propSubtitle": "String or element serving as subtitle (support text).",
+  "propTitle": "Title to be displayed.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesPositionBottom": "Styles applied to the root element if `position=\"bottom\"`.",
+  "stylesPositionTop": "Styles applied to the root element if `position=\"top\"`.",
+  "stylesPositionBelow": "Styles applied to the root element if `position=\"below\"`.",
+  "stylesTitleWrap": "Styles applied to the title and subtitle container element.",
+  "stylesTitleWrapBelow": "Styles applied to the title and subtitle container element if `position=\"below\"`.",
+  "stylesTitleWrapActionPosLeft": "Styles applied to the container element if `actionPosition=\"left\"`.",
+  "stylesTitleWrapActionPosRight": "Styles applied to the container element if `actionPosition=\"right\"`.",
+  "stylesTitle": "Styles applied to the title container element.",
+  "stylesSubtitle": "Styles applied to the subtitle container element.",
+  "stylesActionIcon": "Styles applied to the actionIcon if supplied.",
+  "stylesActionIconActionPosLeft": "Styles applied to the actionIcon if `actionPosition=\"left\"`."
+}

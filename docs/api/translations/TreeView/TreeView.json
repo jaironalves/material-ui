@@ -1,0 +1,20 @@
+{
+  "propChildren": "The content of the component.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propDefaultCollapseIcon": "The default icon used to collapse the node.",
+  "propDefaultEndIcon": "The default icon displayed next to a end node. This is applied to all\r\ntree nodes and can be overridden by the TreeItem `icon` prop.",
+  "propDefaultExpanded": "Expanded node ids. (Uncontrolled)",
+  "propDefaultExpandIcon": "The default icon used to expand the node.",
+  "propDefaultParentIcon": "The default icon displayed next to a parent node. This is applied to all\r\nparent nodes and can be overridden by the TreeItem `icon` prop.",
+  "propDefaultSelected": "Selected node ids. (Uncontrolled)\r\nWhen `multiSelect` is true this takes an array of strings; when false (default) a string.",
+  "propDisabledItemsFocusable": "If `true`, will allow focus on disabled items.",
+  "propDisableSelection": "If `true` selection is disabled.",
+  "propExpanded": "Expanded node ids. (Controlled)",
+  "propId": "This prop is used to help implement the accessibility logic.\r\nIf you don't provide this prop. It falls back to a randomly generated id.",
+  "propMultiSelect": "If true `ctrl` and `shift` will trigger multiselect.",
+  "propOnNodeFocus": "Callback fired when tree items are focused.",
+  "propOnNodeSelect": "Callback fired when tree items are selected/unselected.",
+  "propOnNodeToggle": "Callback fired when tree items are expanded/collapsed.",
+  "propSelected": "Selected node ids. (Controlled)\r\nWhen `multiSelect` is true this takes an array of strings; when false (default) a string.",
+  "stylesRoot": "Styles applied to the root element."
+}

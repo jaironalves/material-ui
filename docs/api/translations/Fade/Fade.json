@@ -1,0 +1,7 @@
+{
+  "description": "The Fade transition is used by the [Modal](/components/modal/) component.\r\nIt uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.",
+  "propAppear": "Perform the enter transition when it first mounts if `in` is also `true`.\r\nSet this to `false` to disable this behavior.",
+  "propChildren": "A single child content element.",
+  "propIn": "If `true`, the component will transition in.",
+  "propTimeout": "The duration for the transition, in milliseconds.\r\nYou may specify a single timeout for all transitions, or individually with an object."
+}

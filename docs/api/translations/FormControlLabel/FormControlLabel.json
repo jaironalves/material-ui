@@ -1,0 +1,18 @@
+{
+  "description": "Drop in replacement of the `Radio`, `Switch` and `Checkbox` component.\r\nUse this component if you want to display an extra label.",
+  "propChecked": "If `true`, the component appears selected.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propControl": "A control element. For instance, it can be a `Radio`, a `Switch` or a `Checkbox`.",
+  "propDisabled": "If `true`, the control is disabled.",
+  "propInputRef": "Pass a ref to the `input` element.",
+  "propLabel": "The text to be used in an enclosing label element.",
+  "propLabelPlacement": "The position of the label.",
+  "propOnChange": "Callback fired when the state is changed.",
+  "propValue": "The value of the component.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesLabelPlacementStart": "Styles applied to the root element if `labelPlacement=\"start\"`.",
+  "stylesLabelPlacementTop": "Styles applied to the root element if `labelPlacement=\"top\"`.",
+  "stylesLabelPlacementBottom": "Styles applied to the root element if `labelPlacement=\"bottom\"`.",
+  "stylesDisabled": "Pseudo-class applied to the root element if `disabled={true}`.",
+  "stylesLabel": "Styles applied to the label's Typography component."
+}

@@ -1,0 +1,8 @@
+{
+  "description": "The Slide transition is used by the [Drawer](/components/drawers/) component.\r\nIt uses [react-transition-group](https://github.com/reactjs/react-transition-group) internally.",
+  "propAppear": "Perform the enter transition when it first mounts if `in` is also `true`.\r\nSet this to `false` to disable this behavior.",
+  "propChildren": "A single child content element.",
+  "propDirection": "Direction the child node will enter from.",
+  "propIn": "If `true`, show the component; triggers the enter or exit animation.",
+  "propTimeout": "The duration for the transition, in milliseconds.\r\nYou may specify a single timeout for all transitions, or individually with an object."
+}

@@ -1,0 +1,17 @@
+{
+  "propChildren": "The content of the component.",
+  "propClasses": "Override or extend the styles applied to the component.",
+  "propColor": "The color of the component. It supports those theme colors that make sense for this component.",
+  "propPosition": "The positioning type. The behavior of the different options is described\r\n[in the MDN web docs](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning).\r\nNote: `sticky` is not universally supported and will fall back to `static` when unavailable.",
+  "stylesRoot": "Styles applied to the root element.",
+  "stylesPositionFixed": "Styles applied to the root element if `position=\"fixed\"`.",
+  "stylesPositionAbsolute": "Styles applied to the root element if `position=\"absolute\"`.",
+  "stylesPositionSticky": "Styles applied to the root element if `position=\"sticky\"`.",
+  "stylesPositionStatic": "Styles applied to the root element if `position=\"static\"`.",
+  "stylesPositionRelative": "Styles applied to the root element if `position=\"relative\"`.",
+  "stylesColorDefault": "Styles applied to the root element if `color=\"default\"`.",
+  "stylesColorPrimary": "Styles applied to the root element if `color=\"primary\"`.",
+  "stylesColorSecondary": "Styles applied to the root element if `color=\"secondary\"`.",
+  "stylesColorInherit": "Styles applied to the root element if `color=\"inherit\"`.",
+  "stylesColorTransparent": "Styles applied to the root element if `color=\"transparent\"`."
+}

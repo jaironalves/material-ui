@@ -1,0 +1,444 @@
+{
+  "description": "",
+  "displayName": "Rating",
+  "methods": [],
+  "props": {
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "defaultValue": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "The default value. Use when the component is not controlled.",
+      "jsdocDefaultValue": {
+        "value": "null"
+      },
+      "defaultValue": {
+        "value": "null",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "null"
+        }
+      ]
+    },
+    "disabled": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "If `true`, the rating is disabled.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "emptyIcon": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The icon to display when empty.",
+      "jsdocDefaultValue": {
+        "value": "<StarBorder fontSize=\"inherit\" />"
+      },
+      "defaultValue": {
+        "value": "<StarBorder fontSize=\"inherit\" />",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "<StarBorder fontSize=\"inherit\" />"
+        }
+      ]
+    },
+    "emptyLabelText": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The label read when the rating input is empty.",
+      "jsdocDefaultValue": {
+        "value": "'Empty'"
+      },
+      "defaultValue": {
+        "value": "'Empty'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'Empty'"
+        }
+      ]
+    },
+    "getLabelText": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "Accepts a function which returns a string value that provides a user-friendly name for the current value of the rating.\r\n\r\nFor localization purposes, you can use the provided [translations](/guides/localization/).",
+      "jsdocDefaultValue": {
+        "value": "function defaultLabelText(value) {\r\n  return `${value} Star${value !== 1 ? 's' : ''}`;\r\n}"
+      },
+      "defaultValue": {
+        "value": "function defaultLabelText(value) {\r\n  return `${value} Star${value !== 1 ? 's' : ''}`;\r\n}",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "param",
+          "description": "The rating label's value to format.",
+          "type": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "name": "value"
+        },
+        {
+          "title": "returns",
+          "description": null,
+          "type": {
+            "type": "NameExpression",
+            "name": "string"
+          }
+        },
+        {
+          "title": "default",
+          "description": "function defaultLabelText(value) {\r\n  return `${value} Star${value !== 1 ? 's' : ''}`;\r\n}"
+        }
+      ]
+    },
+    "icon": {
+      "type": {
+        "name": "node"
+      },
+      "required": false,
+      "description": "The icon to display.",
+      "jsdocDefaultValue": {
+        "value": "<Star fontSize=\"inherit\" />"
+      },
+      "defaultValue": {
+        "value": "<Star fontSize=\"inherit\" />",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "<Star fontSize=\"inherit\" />"
+        }
+      ]
+    },
+    "IconContainerComponent": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "The component containing the icon.",
+      "jsdocDefaultValue": {
+        "value": "function IconContainer(props) {\r\n  const { value, ...other } = props;\r\n  return <span {...other} />;\r\n}"
+      },
+      "defaultValue": {
+        "value": "function IconContainer(props) {\r\n  const { value, ...other } = props;\r\n  return <span {...other} />;\r\n}",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "function IconContainer(props) {\r\n  const { value, ...other } = props;\r\n  return <span {...other} />;\r\n}"
+        }
+      ]
+    },
+    "max": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "Maximum rating.",
+      "jsdocDefaultValue": {
+        "value": "5"
+      },
+      "defaultValue": {
+        "value": "5",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "5"
+        }
+      ]
+    },
+    "name": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "The name attribute of the radio `input` elements.\r\nThis input `name` should be unique within the page.\r\nBeing unique within a form is insufficient since the `name` is used to generated IDs.",
+      "tags": []
+    },
+    "onChange": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "Callback fired when the value changes.",
+      "tags": [
+        {
+          "title": "param",
+          "description": "The event source of the callback.",
+          "type": {
+            "type": "NameExpression",
+            "name": "object"
+          },
+          "name": "event"
+        },
+        {
+          "title": "param",
+          "description": "The new value.",
+          "type": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "name": "value"
+        }
+      ]
+    },
+    "onChangeActive": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "Callback function that is fired when the hover state changes.",
+      "tags": [
+        {
+          "title": "param",
+          "description": "The event source of the callback.",
+          "type": {
+            "type": "NameExpression",
+            "name": "object"
+          },
+          "name": "event"
+        },
+        {
+          "title": "param",
+          "description": "The new value.",
+          "type": {
+            "type": "NameExpression",
+            "name": "number"
+          },
+          "name": "value"
+        }
+      ]
+    },
+    "onMouseLeave": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "onMouseMove": {
+      "type": {
+        "name": "func"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "precision": {
+      "type": {
+        "name": "chained",
+        "raw": "chainPropTypes(PropTypes.number, (props) => {\r\n  if (props.precision < 0.1) {\r\n    return new Error(\r\n      [\r\n        'Material-UI: The prop `precision` should be above 0.1.',\r\n        'A value below this limit has an imperceptible impact.',\r\n      ].join('\\n'),\r\n    );\r\n  }\r\n  return null;\r\n})",
+        "chained": {
+          "name": "number"
+        }
+      },
+      "required": false,
+      "description": "The minimum increment value change allowed.",
+      "jsdocDefaultValue": {
+        "value": "1"
+      },
+      "defaultValue": {
+        "value": "1",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "1"
+        }
+      ]
+    },
+    "readOnly": {
+      "type": {
+        "name": "bool"
+      },
+      "required": false,
+      "description": "Removes all hover effects and pointer events.",
+      "jsdocDefaultValue": {
+        "value": "false"
+      },
+      "defaultValue": {
+        "value": "false",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "false"
+        }
+      ]
+    },
+    "size": {
+      "type": {
+        "name": "enum",
+        "value": [
+          {
+            "value": "'large'",
+            "computed": false
+          },
+          {
+            "value": "'medium'",
+            "computed": false
+          },
+          {
+            "value": "'small'",
+            "computed": false
+          }
+        ]
+      },
+      "required": false,
+      "description": "The size of the rating.",
+      "jsdocDefaultValue": {
+        "value": "'medium'"
+      },
+      "defaultValue": {
+        "value": "'medium'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'medium'"
+        }
+      ]
+    },
+    "value": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "The rating value.",
+      "tags": []
+    }
+  },
+  "name": "Rating",
+  "styles": {
+    "classes": [
+      "root",
+      "sizeSmall",
+      "sizeLarge",
+      "readOnly",
+      "disabled",
+      "focusVisible",
+      "visuallyHidden",
+      "label",
+      "labelEmptyValueActive",
+      "icon",
+      "iconEmpty",
+      "iconFilled",
+      "iconHover",
+      "iconFocus",
+      "iconActive",
+      "decimal"
+    ],
+    "name": "MuiRating",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "sizeSmall": "Styles applied to the root element if `size=\"small\"`.",
+      "sizeLarge": "Styles applied to the root element if `size=\"large\"`.",
+      "readOnly": "Styles applied to the root element if `readOnly={true}`.",
+      "disabled": "Pseudo-class applied to the root element if `disabled={true}`.",
+      "focusVisible": "Pseudo-class applied to the root element if keyboard focused.",
+      "visuallyHidden": "Visually hide an element.",
+      "label": "Styles applied to the label elements.",
+      "labelEmptyValueActive": "Styles applied to the label of the \"no value\" input when it is active.",
+      "icon": "Styles applied to the icon wrapping elements.",
+      "iconEmpty": "Styles applied to the icon wrapping elements when empty.",
+      "iconFilled": "Styles applied to the icon wrapping elements when filled.",
+      "iconHover": "Styles applied to the icon wrapping elements when hover.",
+      "iconFocus": "Styles applied to the icon wrapping elements when focus.",
+      "iconActive": "Styles applied to the icon wrapping elements when active.",
+      "decimal": "Styles applied to the icon wrapping elements when decimals are necessary."
+    },
+    "globalClasses": {
+      "root": "MuiRating-root",
+      "sizeSmall": "MuiRating-sizeSmall",
+      "sizeLarge": "MuiRating-sizeLarge",
+      "readOnly": "MuiRating-readOnly",
+      "disabled": "Mui-disabled",
+      "focusVisible": "Mui-focusVisible",
+      "visuallyHidden": "MuiRating-visuallyHidden",
+      "label": "MuiRating-label",
+      "labelEmptyValueActive": "MuiRating-labelEmptyValueActive",
+      "icon": "MuiRating-icon",
+      "iconEmpty": "MuiRating-iconEmpty",
+      "iconFilled": "MuiRating-iconFilled",
+      "iconHover": "MuiRating-iconHover",
+      "iconFocus": "MuiRating-iconFocus",
+      "iconActive": "MuiRating-iconActive",
+      "decimal": "MuiRating-decimal"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLSpanElement",
+  "filename": "\\packages\\material-ui\\src\\Rating\\Rating.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/rating"
+  ]
+}

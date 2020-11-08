@@ -1,0 +1,213 @@
+{
+  "description": "",
+  "displayName": "ImageList",
+  "methods": [],
+  "props": {
+    "children": {
+      "type": {
+        "name": "node"
+      },
+      "required": true,
+      "description": "Items that will be in the image list.",
+      "tags": []
+    },
+    "classes": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "Override or extend the styles applied to the component.",
+      "tags": []
+    },
+    "className": {
+      "type": {
+        "name": "string"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "cols": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "Number of columns.",
+      "jsdocDefaultValue": {
+        "value": "2"
+      },
+      "defaultValue": {
+        "value": "2",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "2"
+        }
+      ]
+    },
+    "component": {
+      "type": {
+        "name": "elementType"
+      },
+      "required": false,
+      "description": "The component used for the root node.\r\nEither a string to use a HTML element or a component.",
+      "defaultValue": {
+        "value": "'ul'",
+        "computed": false
+      },
+      "tags": []
+    },
+    "gap": {
+      "type": {
+        "name": "number"
+      },
+      "required": false,
+      "description": "The gap between items in px.",
+      "jsdocDefaultValue": {
+        "value": "4"
+      },
+      "defaultValue": {
+        "value": "4",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "4"
+        }
+      ]
+    },
+    "rowHeight": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'auto'",
+                "computed": false
+              }
+            ]
+          },
+          {
+            "name": "number"
+          }
+        ]
+      },
+      "required": false,
+      "description": "The height of one row in px.",
+      "jsdocDefaultValue": {
+        "value": "'auto'"
+      },
+      "defaultValue": {
+        "value": "'auto'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'auto'"
+        }
+      ]
+    },
+    "style": {
+      "type": {
+        "name": "object"
+      },
+      "required": false,
+      "description": "",
+      "tags": [
+        {
+          "title": "ignore",
+          "description": null
+        }
+      ]
+    },
+    "variant": {
+      "type": {
+        "name": "union",
+        "value": [
+          {
+            "name": "enum",
+            "value": [
+              {
+                "value": "'masonry'",
+                "computed": false
+              },
+              {
+                "value": "'quilted'",
+                "computed": false
+              },
+              {
+                "value": "'standard'",
+                "computed": false
+              },
+              {
+                "value": "'woven'",
+                "computed": false
+              }
+            ]
+          },
+          {
+            "name": "string"
+          }
+        ]
+      },
+      "required": false,
+      "description": "The variant to use.",
+      "jsdocDefaultValue": {
+        "value": "'standard'"
+      },
+      "defaultValue": {
+        "value": "'standard'",
+        "computed": false
+      },
+      "tags": [
+        {
+          "title": "default",
+          "description": "'standard'"
+        }
+      ]
+    }
+  },
+  "name": "ImageList",
+  "styles": {
+    "classes": [
+      "root",
+      "masonry",
+      "quilted",
+      "standard",
+      "woven"
+    ],
+    "name": "MuiImageList",
+    "descriptions": {
+      "root": "Styles applied to the root element.",
+      "masonry": "Styles applied to the root element if `variant=\"masonry\"`.",
+      "quilted": "Styles applied to the root element if `variant=\"quilted\"`.",
+      "standard": "Styles applied to the root element if `variant=\"standard\"`.",
+      "woven": "Styles applied to the root element if `variant=\"woven\"`."
+    },
+    "globalClasses": {
+      "root": "MuiImageList-root",
+      "masonry": "MuiImageList-masonry",
+      "quilted": "MuiImageList-quilted",
+      "standard": "MuiImageList-standard",
+      "woven": "MuiImageList-woven"
+    }
+  },
+  "spread": true,
+  "forwardsRefTo": "HTMLUListElement",
+  "filename": "\\packages\\material-ui\\src\\ImageList\\ImageList.js",
+  "inheritance": null,
+  "usedInPages": [
+    "/components/image-list"
+  ]
+}
