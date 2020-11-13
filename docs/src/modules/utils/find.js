@@ -82,7 +82,7 @@ const jsRegex = /\.js$/;
 const blackList = ['/.eslintrc', '/_document', '/_app'];
 
 function findComponentApiPages() {
-  const apiDir = path.resolve(__dirname, '../../../api');
+  const apiDir = path.resolve(__dirname, '../../../api/components');
   const components = glob
     .sync(path.resolve(__dirname, path.join(apiDir, '*.json')))
     .map(filename => path.basename(filename, '.json'))

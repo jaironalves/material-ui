@@ -763,12 +763,12 @@ ApiPage.getInitialProps = async ctx => {
   // extra nesting to aid Dead Code Elimination of the client bundle
   if (!process.browser) {
     if (typeof req.get !== 'function') {
-      const requireApi = require.context('docs/api', false, /\.json$/);
+      const requireApi = require.context('docs/api/components', false, /\.json$/);
       return { api: requireApi(`./${componentId}.json`) };
     }
   }
 
-  const relativeApiUrl = `/docs/api/${componentId}.json`;
+  const relativeApiUrl = `/docs/api/components/${componentId}.json`;
   const apiUrl = process.browser
     ? relativeApiUrl
     : `${req.protocol}://${req.get('Host')}${relativeApiUrl}`;
